@@ -109,18 +109,19 @@ explicit version/commit selection and should never silently fall back from v0.3.
 
 ## Multi-Model Campaign Results (`p4_normal`, `reasoning_effort=low`)
 
-Six complete 50-task cohorts and three partial/quota-blocked cohorts were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"`. Across all evaluated models, **23 / 50 tasks (46.0%)** were solved by at least one model.
+Seven complete single-route 50-task cohorts, one complete split-route 50-task cohort (`muse-spark-1.3`), and one quota-blocked cohort (`kimi/k3-256k`) were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"`. Across all evaluated models, **25 / 50 tasks (50.0%)** were solved by at least one model.
 
-### Complete Cohorts (50/50 valid verifier verdicts, 0 `INFRA_INVALID`)
+### Complete Single-Route Cohorts (50/50 valid verifier verdicts, 0 `INFRA_INVALID`)
 
-| Rank | Model | Solved | Valid Verdicts | Solve Rate | Total Tokens | Total Requests | Cum. Time (s) |
-|---:|---|---:|---:|---:|---:|---:|---:|
-| 1 | **`openai/gpt-6.1-sol`** | **20** | 50/50 | **40.0%** | 2,180,066 | 560 | 24,340.0 |
-| 1 (tie) | **`google/gemini-4-argon-eap`** | **20** | 50/50 | **40.0%** | 2,918,787 | 480 | 16,274.9 |
-| 3 | **`openai/gpt-6-luna`** | **10** | 50/50 | **20.0%** | 2,150,310 | 596 | 17,743.4 |
-| 3 (tie) | **`zai/glm-5.3`** | **10** | 50/50 | **20.0%** | 3,741,342 | 702 | 16,994.3 |
-| 5 | **`xai/grok-4.7`** | **8** | 50/50 | **16.0%** | 2,792,065 | 443 | 10,495.9 |
-| 5 (tie) | **`anthropic/claude-opus-5-5`** | **8** | 50/50 | **16.0%** | 3,080,091 | 377 | 8,054.0 |
+| Rank | Model | Solved | Valid Verdicts | Solve Rate | Total Tokens | Total Requests | Cum. Time (s) | Notes |
+|---:|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | **`anthropic/claude-opus-5-5`** | **23** | 50/50 | **46.0%** | 4,666,790 | 502 | 9,835.3 | Evaluated on harness commit `a05b165` (fixes asymmetric 0-vs-2 space proof indentation and preserves `read_file`/attempt history/repetition warnings across repair resets; pre-fix baseline was `8/50 = 16.0%`). |
+| 2 | **`openai/gpt-6.1-sol`** | **20** | 50/50 | **40.0%** | 2,180,066 | 560 | 24,340.0 | Native provider route |
+| 2 (tie) | **`google/gemini-4-argon-eap`** | **20** | 50/50 | **40.0%** | 2,918,787 | 480 | 16,274.9 | Native provider route |
+| 4 | **`muse-code/muse-wonder-1.0`** | **18** | 50/50 | **36.0%** | 3,625,999 | 531 | 10,883.9 | Muse Code subscription route (`muse_code_subscription`) |
+| 5 | **`openai/gpt-6-luna`** | **10** | 50/50 | **20.0%** | 2,150,310 | 596 | 17,743.4 | Native provider route |
+| 5 (tie) | **`zai/glm-5.3`** | **10** | 50/50 | **20.0%** | 3,741,342 | 702 | 16,994.3 | Native provider route |
+| 7 | **`xai/grok-4.7`** | **8** | 50/50 | **16.0%** | 2,792,065 | 443 | 10,495.9 | Native provider route |
 
 ### Split-Route / Quota-Blocked Cohorts
 
@@ -133,7 +134,7 @@ Six complete 50-task cohorts and three partial/quota-blocked cohorts were evalua
 
 ### Committed Campaign Artifacts
 
-- [`leaderboard.json`](./leaderboard.json) — machine-readable v0.3 STRAT-50 leaderboard, solved task lists per model, and union of solved tasks (`23/50`).
+- [`leaderboard.json`](./leaderboard.json) — machine-readable v0.3 STRAT-50 leaderboard, solved task lists per model, and union of solved tasks (`25/50`).
 - [`summary.json`](./summary.json) — per-model aggregate metrics and lane status.
 - [`results.json`](./results.json) — deduplicated per-task outcomes across evaluated models.
-- [`results_muse_code_subscription.json`](./results_muse_code_subscription.json) — separately labelled subscription route records for `muse-code/muse-spark-1.3`.
+- [`results_muse_code_subscription.json`](./results_muse_code_subscription.json) — separately labelled subscription route records for `muse-code/muse-spark-1.3` and `muse-code/muse-wonder-1.0`.
