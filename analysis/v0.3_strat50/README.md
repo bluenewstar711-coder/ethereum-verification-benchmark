@@ -109,14 +109,14 @@ explicit version/commit selection and should never silently fall back from v0.3.
 
 ## Multi-Model Campaign Results (`p4_normal`, `reasoning_effort=low`)
 
-Eight complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"`. Across all evaluated models, **29 / 50 tasks (58.0%)** were solved by at least one model.
+Eight complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"`. Across all evaluated models, **30 / 50 tasks (60.0%)** were solved by at least one model.
 
 ### Complete Cohorts (50/50 valid verifier verdicts, 0 `INFRA_INVALID`)
 
 | Rank | Model | Solved | Valid Verdicts | Solve Rate | Total Tokens | Total Requests | Cum. Time (s) | Notes |
 |---:|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | **`anthropic/claude-opus-5-5`** | **27** | 50/50 | **54.0%** | 4,666,790 | 502 | 9,835.3 | Evaluated on fixed harness (`a05b165` + verifier skeleton theorem resolution; pre-fix baseline was `8/50 = 16.0%`). |
-| 2 | **`google/gemini-4-argon-eap`** | **24** | 50/50 | **48.0%** | 2,918,787 | 480 | 16,274.9 | Native provider route (re-verified with skeleton theorem resolution). |
+| 1 | **`google/gemini-4-argon-eap`** | **27** | 50/50 | **54.0%** | 3,280,792 | 475 | 13,134.5 | Evaluated on fixed harness (`a05b165` + `a8843ba`; pre-fix baseline was `20/50 = 40.0%`). |
+| 1 (tie) | **`anthropic/claude-opus-5-5`** | **27** | 50/50 | **54.0%** | 4,666,790 | 502 | 9,835.3 | Evaluated on fixed harness (`a05b165` + `a8843ba`; pre-fix baseline was `8/50 = 16.0%`). |
 | 3 | **`openai/gpt-6.1-sol`** | **22** | 50/50 | **44.0%** | 2,180,066 | 560 | 24,340.0 | Native provider route (re-verified with skeleton theorem resolution). |
 | 4 | **`muse-code/muse-wonder-1.0`** | **19** | 50/50 | **38.0%** | 3,625,999 | 531 | 10,883.9 | Muse Code subscription route (`muse_code_subscription`). |
 | 5 | **`openai/gpt-6-luna`** | **12** | 50/50 | **24.0%** | 2,150,310 | 596 | 17,743.4 | Native provider route. |
@@ -132,7 +132,7 @@ Eight complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) wer
 
 ### Committed Campaign Artifacts
 
-- [`leaderboard.json`](./leaderboard.json) — machine-readable v0.3 STRAT-50 leaderboard, solved task lists per model, and union of solved tasks (`29/50`).
+- [`leaderboard.json`](./leaderboard.json) — machine-readable v0.3 STRAT-50 leaderboard, solved task lists per model, and union of solved tasks (`30/50`).
 - [`summary.json`](./summary.json) — per-model aggregate metrics and lane status.
 - [`results.json`](./results.json) — deduplicated per-task outcomes across evaluated models (with per-task `provider_model` and `route_label` provenance).
 - [`results_muse_code_subscription.json`](./results_muse_code_subscription.json) — subscription route records for `muse-code/muse-spark-1.3` and `muse-code/muse-wonder-1.0`.
