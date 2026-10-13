@@ -106,12 +106,38 @@ def _decl_name(theorem_name: str | None) -> str | None:
     return theorem_name.split(".")[-1]
 
 
-def _theorem_signature(text: str, theorem_name: str | None) -> str | None:
+def _skeleton_theorem_decl_name(original_text: str, theorem_name: str | None) -> str | None:
     name = _decl_name(theorem_name)
+    if name and re.search(rf"\btheorem\s+{re.escape(name)}\b", original_text):
+        return name
+    match = re.search(r"(?m)^\s*theorem\s+([A-Za-z0-9_']+)\b", original_text)
+    if match:
+        return match.group(1)
+    return name
+
+
+def _skeleton_qualified_theorem_name(original_text: str, theorem_name: str | None) -> str | None:
+    decl = _skeleton_theorem_decl_name(original_text, theorem_name)
+    if not decl:
+        return theorem_name
+    ns_match = re.search(r"(?m)^\s*namespace\s+([A-Za-z0-9_.']+)\b", original_text)
+    if ns_match:
+        return f"{ns_match.group(1)}.{decl}"
+    return decl
+
+
+def _theorem_signature(text: str, theorem_name: str | None, *, original_text: str | None = None) -> str | None:
+    name = (
+        _skeleton_theorem_decl_name(original_text, theorem_name)
+        if original_text is not None
+        else _decl_name(theorem_name)
+    )
     if not name:
         return None
     pattern = re.compile(rf"\btheorem\s+{re.escape(name)}\b(?P<body>.*?)(?::=\s*by|:=)", re.DOTALL)
     match = pattern.search(text)
+    if not match and original_text is None:
+        match = re.search(r"(?ms)^\s*theorem\s+[A-Za-z0-9_']+\b(?P<body>.*?)(?::=\s*by|:=)", text)
     if not match:
         return None
     return " ".join(match.group(0).split())
@@ -135,8 +161,9 @@ def _policy_failure(task: Task, submitted_file: Path, submitted_workspace: Path)
                 if not (submitted_workspace / rel).is_file():
                     return "hidden_import"
     original_file = ROOT / task.editable_files[0]
-    original_sig = _theorem_signature(original_file.read_text(encoding="utf-8"), task.theorem_name)
-    submitted_sig = _theorem_signature(text, task.theorem_name)
+    original_text = original_file.read_text(encoding="utf-8")
+    original_sig = _theorem_signature(original_text, task.theorem_name, original_text=original_text)
+    submitted_sig = _theorem_signature(text, task.theorem_name, original_text=original_text)
     if submitted_sig is None:
         return "theorem_missing"
     if original_sig is not None and submitted_sig != original_sig:
@@ -228,8 +255,10 @@ def verify_group(
             targets.append(TargetResult(task.task_ref, task.theorem_name, task.points, status, _compact_output(output)))
             continue
         if task.theorem_name:
+            original_text = (ROOT / rel).read_text(encoding="utf-8")
+            qualified_name = _skeleton_qualified_theorem_name(original_text, task.theorem_name) or task.theorem_name
             with tempfile.NamedTemporaryFile("w", suffix=".lean", dir=verifier_repo, delete=False, encoding="utf-8") as check_file:
-                check_file.write(f"import {module}\n#check {task.theorem_name}\n")
+                check_file.write(f"import {module}\n#check {qualified_name}\n")
                 check_path = Path(check_file.name)
             code, check_output = _run(["lake", "env", "lean", str(check_path)], verifier_repo, timeout_seconds)
             check_path.unlink(missing_ok=True)

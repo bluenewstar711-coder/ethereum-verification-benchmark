@@ -1,6 +1,6 @@
 [
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -19,10 +19,11 @@
     "prompt_tokens": 29313,
     "completion_tokens": 5280,
     "total_tokens": 34593,
-    "requests": 6
+    "requests": 6,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -41,10 +42,11 @@
     "prompt_tokens": 23653,
     "completion_tokens": 3531,
     "total_tokens": 27184,
-    "requests": 5
+    "requests": 5,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -63,10 +65,11 @@
     "prompt_tokens": 0,
     "completion_tokens": 0,
     "total_tokens": 0,
-    "requests": 0
+    "requests": 0,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -85,10 +88,11 @@
     "prompt_tokens": 0,
     "completion_tokens": 0,
     "total_tokens": 0,
-    "requests": 0
+    "requests": 0,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -107,10 +111,11 @@
     "prompt_tokens": 0,
     "completion_tokens": 0,
     "total_tokens": 0,
-    "requests": 0
+    "requests": 0,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -129,10 +134,11 @@
     "prompt_tokens": 0,
     "completion_tokens": 0,
     "total_tokens": 0,
-    "requests": 0
+    "requests": 0,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -151,10 +157,11 @@
     "prompt_tokens": 0,
     "completion_tokens": 0,
     "total_tokens": 0,
-    "requests": 0
+    "requests": 0,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -173,10 +180,11 @@
     "prompt_tokens": 0,
     "completion_tokens": 0,
     "total_tokens": 0,
-    "requests": 0
+    "requests": 0,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -195,10 +203,11 @@
     "prompt_tokens": 0,
     "completion_tokens": 0,
     "total_tokens": 0,
-    "requests": 0
+    "requests": 0,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -217,10 +226,11 @@
     "prompt_tokens": 23784,
     "completion_tokens": 2829,
     "total_tokens": 26613,
-    "requests": 5
+    "requests": 5,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -239,10 +249,11 @@
     "prompt_tokens": 96674,
     "completion_tokens": 22819,
     "total_tokens": 119493,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -261,10 +272,11 @@
     "prompt_tokens": 94451,
     "completion_tokens": 31763,
     "total_tokens": 126214,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -283,10 +295,11 @@
     "prompt_tokens": 70611,
     "completion_tokens": 25926,
     "total_tokens": 96537,
-    "requests": 15
+    "requests": 15,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -305,10 +318,11 @@
     "prompt_tokens": 88449,
     "completion_tokens": 21728,
     "total_tokens": 110177,
-    "requests": 19
+    "requests": 19,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -327,10 +341,11 @@
     "prompt_tokens": 82999,
     "completion_tokens": 34367,
     "total_tokens": 117366,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -349,10 +364,11 @@
     "prompt_tokens": 88978,
     "completion_tokens": 22878,
     "total_tokens": 111856,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -371,10 +387,11 @@
     "prompt_tokens": 81848,
     "completion_tokens": 22167,
     "total_tokens": 104015,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -393,10 +410,11 @@
     "prompt_tokens": 47503,
     "completion_tokens": 10044,
     "total_tokens": 57547,
-    "requests": 10
+    "requests": 10,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -415,10 +433,11 @@
     "prompt_tokens": 85151,
     "completion_tokens": 28825,
     "total_tokens": 113976,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -437,10 +456,11 @@
     "prompt_tokens": 92513,
     "completion_tokens": 2334,
     "total_tokens": 94847,
-    "requests": 15
+    "requests": 15,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -459,10 +479,11 @@
     "prompt_tokens": 53880,
     "completion_tokens": 13980,
     "total_tokens": 67860,
-    "requests": 11
+    "requests": 11,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -481,10 +502,11 @@
     "prompt_tokens": 38457,
     "completion_tokens": 8751,
     "total_tokens": 47208,
-    "requests": 9
+    "requests": 9,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -503,10 +525,11 @@
     "prompt_tokens": 84970,
     "completion_tokens": 14324,
     "total_tokens": 99294,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
-    "model": "muse-code/muse-spark-1.3",
+    "model": "muse-spark-1.3",
     "route_label": "muse_code_subscription",
     "panel": "STRAT-50",
     "profile": "high_p4_normal",
@@ -525,7 +548,8 @@
     "prompt_tokens": 55603,
     "completion_tokens": 24074,
     "total_tokens": 79677,
-    "requests": 12
+    "requests": 12,
+    "provider_model": "muse-code/muse-spark-1.3"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -548,7 +572,8 @@
     "prompt_tokens": 98974,
     "completion_tokens": 33815,
     "total_tokens": 132789,
-    "requests": 16
+    "requests": 16,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -571,7 +596,8 @@
     "prompt_tokens": 121323,
     "completion_tokens": 27952,
     "total_tokens": 149275,
-    "requests": 19
+    "requests": 19,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -594,7 +620,8 @@
     "prompt_tokens": 65460,
     "completion_tokens": 17215,
     "total_tokens": 82675,
-    "requests": 12
+    "requests": 12,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -617,7 +644,8 @@
     "prompt_tokens": 105919,
     "completion_tokens": 27744,
     "total_tokens": 133663,
-    "requests": 20
+    "requests": 20,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -640,7 +668,8 @@
     "prompt_tokens": 131932,
     "completion_tokens": 30181,
     "total_tokens": 162113,
-    "requests": 21
+    "requests": 21,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -663,7 +692,8 @@
     "prompt_tokens": 88022,
     "completion_tokens": 47794,
     "total_tokens": 135816,
-    "requests": 15
+    "requests": 15,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -686,7 +716,8 @@
     "prompt_tokens": 46120,
     "completion_tokens": 10654,
     "total_tokens": 56774,
-    "requests": 9
+    "requests": 9,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -709,7 +740,8 @@
     "prompt_tokens": 42511,
     "completion_tokens": 11781,
     "total_tokens": 54292,
-    "requests": 8
+    "requests": 8,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -732,7 +764,8 @@
     "prompt_tokens": 39872,
     "completion_tokens": 5759,
     "total_tokens": 45631,
-    "requests": 8
+    "requests": 8,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -755,7 +788,8 @@
     "prompt_tokens": 17806,
     "completion_tokens": 500,
     "total_tokens": 18306,
-    "requests": 4
+    "requests": 4,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -778,7 +812,8 @@
     "prompt_tokens": 13393,
     "completion_tokens": 338,
     "total_tokens": 13731,
-    "requests": 3
+    "requests": 3,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -801,7 +836,8 @@
     "prompt_tokens": 20759,
     "completion_tokens": 595,
     "total_tokens": 21354,
-    "requests": 4
+    "requests": 4,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -824,7 +860,8 @@
     "prompt_tokens": 57978,
     "completion_tokens": 11644,
     "total_tokens": 69622,
-    "requests": 11
+    "requests": 11,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -838,16 +875,17 @@
     "max_turns": 50,
     "task_ref": "ipor/plasma_vault_redeem_split/fee_payout_bounded_by_fee_free",
     "attempt_num": 1,
-    "final_class": "GENUINE_FAIL",
-    "passed": false,
+    "final_class": "SOLVED",
+    "passed": true,
     "run_dir": "results/runs/20261013T075835-default-fair-muse-code-muse-wonder-1-0-ipor__plasma_vault_redeem_split__fee_payout_bounded_by_fee_free",
-    "returncode": 1,
+    "returncode": 0,
     "elapsed_seconds": 31.2,
     "error_detail": null,
     "prompt_tokens": 20142,
     "completion_tokens": 685,
     "total_tokens": 20827,
-    "requests": 4
+    "requests": 4,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -870,7 +908,8 @@
     "prompt_tokens": 19235,
     "completion_tokens": 1870,
     "total_tokens": 21105,
-    "requests": 4
+    "requests": 4,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -893,7 +932,8 @@
     "prompt_tokens": 32354,
     "completion_tokens": 4792,
     "total_tokens": 37146,
-    "requests": 6
+    "requests": 6,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -916,7 +956,8 @@
     "prompt_tokens": 54039,
     "completion_tokens": 12506,
     "total_tokens": 66545,
-    "requests": 10
+    "requests": 10,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -939,7 +980,8 @@
     "prompt_tokens": 119278,
     "completion_tokens": 21916,
     "total_tokens": 141194,
-    "requests": 20
+    "requests": 20,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -962,7 +1004,8 @@
     "prompt_tokens": 43302,
     "completion_tokens": 10559,
     "total_tokens": 53861,
-    "requests": 8
+    "requests": 8,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -985,7 +1028,8 @@
     "prompt_tokens": 13654,
     "completion_tokens": 434,
     "total_tokens": 14088,
-    "requests": 3
+    "requests": 3,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1008,7 +1052,8 @@
     "prompt_tokens": 31045,
     "completion_tokens": 2530,
     "total_tokens": 33575,
-    "requests": 6
+    "requests": 6,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1031,7 +1076,8 @@
     "prompt_tokens": 40344,
     "completion_tokens": 5855,
     "total_tokens": 46199,
-    "requests": 8
+    "requests": 8,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1054,7 +1100,8 @@
     "prompt_tokens": 29436,
     "completion_tokens": 3639,
     "total_tokens": 33075,
-    "requests": 6
+    "requests": 6,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1077,7 +1124,8 @@
     "prompt_tokens": 63047,
     "completion_tokens": 16428,
     "total_tokens": 79475,
-    "requests": 11
+    "requests": 11,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1100,7 +1148,8 @@
     "prompt_tokens": 23671,
     "completion_tokens": 2448,
     "total_tokens": 26119,
-    "requests": 4
+    "requests": 4,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1123,7 +1172,8 @@
     "prompt_tokens": 31280,
     "completion_tokens": 5221,
     "total_tokens": 36501,
-    "requests": 6
+    "requests": 6,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1146,7 +1196,8 @@
     "prompt_tokens": 56045,
     "completion_tokens": 14260,
     "total_tokens": 70305,
-    "requests": 10
+    "requests": 10,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1169,7 +1220,8 @@
     "prompt_tokens": 103524,
     "completion_tokens": 29785,
     "total_tokens": 133309,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1192,7 +1244,8 @@
     "prompt_tokens": 31708,
     "completion_tokens": 3507,
     "total_tokens": 35215,
-    "requests": 6
+    "requests": 6,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1215,7 +1268,8 @@
     "prompt_tokens": 37722,
     "completion_tokens": 9781,
     "total_tokens": 47503,
-    "requests": 7
+    "requests": 7,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1238,7 +1292,8 @@
     "prompt_tokens": 47897,
     "completion_tokens": 10885,
     "total_tokens": 58782,
-    "requests": 9
+    "requests": 9,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1261,7 +1316,8 @@
     "prompt_tokens": 52968,
     "completion_tokens": 12606,
     "total_tokens": 65574,
-    "requests": 10
+    "requests": 10,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1284,7 +1340,8 @@
     "prompt_tokens": 49231,
     "completion_tokens": 22470,
     "total_tokens": 71701,
-    "requests": 9
+    "requests": 9,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1307,7 +1364,8 @@
     "prompt_tokens": 39673,
     "completion_tokens": 9518,
     "total_tokens": 49191,
-    "requests": 7
+    "requests": 7,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1330,7 +1388,8 @@
     "prompt_tokens": 49918,
     "completion_tokens": 8564,
     "total_tokens": 58482,
-    "requests": 9
+    "requests": 9,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1353,7 +1412,8 @@
     "prompt_tokens": 35451,
     "completion_tokens": 4906,
     "total_tokens": 40357,
-    "requests": 7
+    "requests": 7,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1376,7 +1436,8 @@
     "prompt_tokens": 36760,
     "completion_tokens": 3472,
     "total_tokens": 40232,
-    "requests": 7
+    "requests": 7,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1399,7 +1460,8 @@
     "prompt_tokens": 44836,
     "completion_tokens": 6846,
     "total_tokens": 51682,
-    "requests": 9
+    "requests": 9,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1422,7 +1484,8 @@
     "prompt_tokens": 56210,
     "completion_tokens": 13252,
     "total_tokens": 69462,
-    "requests": 10
+    "requests": 10,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1445,7 +1508,8 @@
     "prompt_tokens": 100887,
     "completion_tokens": 19984,
     "total_tokens": 120871,
-    "requests": 18
+    "requests": 18,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1468,7 +1532,8 @@
     "prompt_tokens": 18289,
     "completion_tokens": 1626,
     "total_tokens": 19915,
-    "requests": 4
+    "requests": 4,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1491,7 +1556,8 @@
     "prompt_tokens": 50042,
     "completion_tokens": 6486,
     "total_tokens": 56528,
-    "requests": 10
+    "requests": 10,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1514,7 +1580,8 @@
     "prompt_tokens": 124071,
     "completion_tokens": 26656,
     "total_tokens": 150727,
-    "requests": 20
+    "requests": 20,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1537,7 +1604,8 @@
     "prompt_tokens": 37548,
     "completion_tokens": 6553,
     "total_tokens": 44101,
-    "requests": 7
+    "requests": 7,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1560,7 +1628,8 @@
     "prompt_tokens": 88506,
     "completion_tokens": 21891,
     "total_tokens": 110397,
-    "requests": 16
+    "requests": 16,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1583,7 +1652,8 @@
     "prompt_tokens": 104192,
     "completion_tokens": 26188,
     "total_tokens": 130380,
-    "requests": 19
+    "requests": 19,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1606,7 +1676,8 @@
     "prompt_tokens": 104019,
     "completion_tokens": 22595,
     "total_tokens": 126614,
-    "requests": 19
+    "requests": 19,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1629,7 +1700,8 @@
     "prompt_tokens": 115488,
     "completion_tokens": 28586,
     "total_tokens": 144074,
-    "requests": 20
+    "requests": 20,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1652,7 +1724,8 @@
     "prompt_tokens": 80615,
     "completion_tokens": 17959,
     "total_tokens": 98574,
-    "requests": 14
+    "requests": 14,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1675,7 +1748,8 @@
     "prompt_tokens": 114818,
     "completion_tokens": 28625,
     "total_tokens": 143443,
-    "requests": 20
+    "requests": 20,
+    "provider_model": "muse-code/muse-wonder-1.0"
   },
   {
     "model": "muse-code/muse-wonder-1.0",
@@ -1698,6 +1772,7 @@
     "prompt_tokens": 59838,
     "completion_tokens": 13296,
     "total_tokens": 73134,
-    "requests": 10
+    "requests": 10,
+    "provider_model": "muse-code/muse-wonder-1.0"
   }
 ]

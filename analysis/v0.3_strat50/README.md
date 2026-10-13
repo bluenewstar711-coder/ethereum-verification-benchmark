@@ -109,32 +109,30 @@ explicit version/commit selection and should never silently fall back from v0.3.
 
 ## Multi-Model Campaign Results (`p4_normal`, `reasoning_effort=low`)
 
-Seven complete single-route 50-task cohorts, one complete split-route 50-task cohort (`muse-spark-1.3`), and one quota-blocked cohort (`kimi/k3-256k`) were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"`. Across all evaluated models, **25 / 50 tasks (50.0%)** were solved by at least one model.
+Eight complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"`. Across all evaluated models, **29 / 50 tasks (58.0%)** were solved by at least one model.
 
-### Complete Single-Route Cohorts (50/50 valid verifier verdicts, 0 `INFRA_INVALID`)
+### Complete Cohorts (50/50 valid verifier verdicts, 0 `INFRA_INVALID`)
 
 | Rank | Model | Solved | Valid Verdicts | Solve Rate | Total Tokens | Total Requests | Cum. Time (s) | Notes |
 |---:|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | **`anthropic/claude-opus-5-5`** | **23** | 50/50 | **46.0%** | 4,666,790 | 502 | 9,835.3 | Evaluated on harness commit `a05b165` (fixes asymmetric 0-vs-2 space proof indentation and preserves `read_file`/attempt history/repetition warnings across repair resets; pre-fix baseline was `8/50 = 16.0%`). |
-| 2 | **`openai/gpt-6.1-sol`** | **20** | 50/50 | **40.0%** | 2,180,066 | 560 | 24,340.0 | Native provider route |
-| 2 (tie) | **`google/gemini-4-argon-eap`** | **20** | 50/50 | **40.0%** | 2,918,787 | 480 | 16,274.9 | Native provider route |
-| 4 | **`muse-code/muse-wonder-1.0`** | **18** | 50/50 | **36.0%** | 3,625,999 | 531 | 10,883.9 | Muse Code subscription route (`muse_code_subscription`) |
-| 5 | **`openai/gpt-6-luna`** | **10** | 50/50 | **20.0%** | 2,150,310 | 596 | 17,743.4 | Native provider route |
-| 5 (tie) | **`zai/glm-5.3`** | **10** | 50/50 | **20.0%** | 3,741,342 | 702 | 16,994.3 | Native provider route |
-| 7 | **`xai/grok-4.7`** | **8** | 50/50 | **16.0%** | 2,792,065 | 443 | 10,495.9 | Native provider route |
+| 1 | **`anthropic/claude-opus-5-5`** | **27** | 50/50 | **54.0%** | 4,666,790 | 502 | 9,835.3 | Evaluated on fixed harness (`a05b165` + verifier skeleton theorem resolution; pre-fix baseline was `8/50 = 16.0%`). |
+| 2 | **`google/gemini-4-argon-eap`** | **24** | 50/50 | **48.0%** | 2,918,787 | 480 | 16,274.9 | Native provider route (re-verified with skeleton theorem resolution). |
+| 3 | **`openai/gpt-6.1-sol`** | **22** | 50/50 | **44.0%** | 2,180,066 | 560 | 24,340.0 | Native provider route (re-verified with skeleton theorem resolution). |
+| 4 | **`muse-code/muse-wonder-1.0`** | **19** | 50/50 | **38.0%** | 3,625,999 | 531 | 10,883.9 | Muse Code subscription route (`muse_code_subscription`). |
+| 5 | **`openai/gpt-6-luna`** | **12** | 50/50 | **24.0%** | 2,150,310 | 596 | 17,743.4 | Native provider route. |
+| 5 (tie) | **`zai/glm-5.3`** | **12** | 50/50 | **24.0%** | 3,741,342 | 702 | 16,994.3 | Native provider route. |
+| 7 | **`muse-spark-1.3`** | **11** | 50/50 | **22.0%** | 4,333,453 | 690 | 19,451.3 | Unified 50/50 cohort across 35 preserved `muse/muse-spark-1.3` tasks (9 solved) and 15 `muse-code/muse-spark-1.3` subscription tasks (2 solved). |
+| 8 | **`xai/grok-4.7`** | **9** | 50/50 | **18.0%** | 2,792,065 | 443 | 10,495.9 | Native provider route. |
 
-### Split-Route / Quota-Blocked Cohorts
+### Quota-Blocked Cohorts
 
 | Model / Route | Status | Valid Verdicts | Solved | Genuine Fail | Solve Rate (Valid) | Solve Rate (/50) | Total Tokens | Notes |
 |---|---|---:|---:|---:|---:|---:|---:|---|
-| `muse/muse-spark-1.3` + `muse-code/muse-spark-1.3` *(combined non-overlapping 50)* | `completed (35 paid + 15 subscription)` | **50/50** | **10** | 40 | **20.00%** | **20.00%** | 4,333,453 | Combined non-overlapping coverage across the 35 preserved `muse/muse-spark-1.3` tasks (8 solved) and the 15 remaining `muse-code/muse-spark-1.3` subscription tasks (2 solved). |
-| `muse/muse-spark-1.3` *(prior paid route)* | `stopped_paid_route_disabled` | 35/50 | **8** | 27 | 22.86% | 16.00% | 3,043,546 | Paid Meta API route stopped at 35/50 per user instruction; completed verdicts preserved without relabelling. |
-| `muse-code/muse-spark-1.3` *(subscription route)* | `completed (15/15 subscription tasks)` | 15/15 | **2** | 13 | 13.33% | 4.00% | 1,289,907 | Muse Code subscription route for the remaining 15 unfinished tasks (`uniswap_v2/pair_fee_adjusted_swap/swap_sets_reserve1` and `wildcat/borrow_liquidity_safety/positive_borrow_preserves_required_liquidity` solved). |
 | `kimi/k3-256k` | `stopped_quota_exhausted` | 0/50 | **0** | 0 | 0.00% | 0.00% | 0 | Blocked by upstream Kimi 7-day weekly quota limit (`HTTP 403/429`). |
 
 ### Committed Campaign Artifacts
 
-- [`leaderboard.json`](./leaderboard.json) — machine-readable v0.3 STRAT-50 leaderboard, solved task lists per model, and union of solved tasks (`25/50`).
+- [`leaderboard.json`](./leaderboard.json) — machine-readable v0.3 STRAT-50 leaderboard, solved task lists per model, and union of solved tasks (`29/50`).
 - [`summary.json`](./summary.json) — per-model aggregate metrics and lane status.
-- [`results.json`](./results.json) — deduplicated per-task outcomes across evaluated models.
-- [`results_muse_code_subscription.json`](./results_muse_code_subscription.json) — separately labelled subscription route records for `muse-code/muse-spark-1.3` and `muse-code/muse-wonder-1.0`.
+- [`results.json`](./results.json) — deduplicated per-task outcomes across evaluated models (with per-task `provider_model` and `route_label` provenance).
+- [`results_muse_code_subscription.json`](./results_muse_code_subscription.json) — subscription route records for `muse-code/muse-spark-1.3` and `muse-code/muse-wonder-1.0`.
