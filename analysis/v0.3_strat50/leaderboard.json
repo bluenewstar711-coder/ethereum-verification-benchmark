@@ -7,7 +7,7 @@
   "environment_id": "sha256:c2b6593676b790a2ce3e0ba258b70438e286b809ff26811fe4099ff6d8dd897a",
   "harness_id": "sha256:98bbe897aa65ec83d32d577a183cea1a21ba6122851048d4c591f3f55c10c729",
   "panel_sha256": "sha256:6921cc27d522ecbfd0798e9bca9251526f10923855cc28dde4b22507f92eaf25",
-  "updated_at": "2026-10-10T11:42:59Z",
+  "updated_at": "2026-10-13T07:18:29Z",
   "scope": "STRAT-50 p4_normal (high budget) with reasoning_effort=low",
   "effort": {
     "profile": "p4_normal",
@@ -366,24 +366,27 @@
       "panel": "STRAT-50",
       "model": "muse-code/muse-spark-1.3",
       "route_label": "muse_code_subscription",
-      "lane_state": "stopped_quota_exhausted (Subscription quota exhausted; resets at 2026-10-10T14:47:14Z)",
+      "lane_state": "completed (15/15 subscription tasks)",
       "profile": "p4_normal",
       "reasoning_effort": "low",
       "max_attempts": 16,
       "max_tool_calls": 120,
       "max_turns": 50,
-      "tasks_evaluated": 1,
-      "valid_verdicts": 1,
-      "solved": 0,
-      "genuine_fail": 1,
-      "infra_invalid": 4,
-      "skipped": 49,
-      "solve_rate_on_valid": 0.0,
-      "solve_rate_on_50": 0.0,
-      "total_tokens": 61777,
-      "total_requests": 11,
-      "cum_elapsed_seconds": 2013.8,
-      "solved_tasks": []
+      "tasks_evaluated": 15,
+      "valid_verdicts": 15,
+      "solved": 2,
+      "genuine_fail": 13,
+      "infra_invalid": 0,
+      "skipped": 35,
+      "solve_rate_on_valid": 0.1333,
+      "solve_rate_on_50": 0.04,
+      "total_tokens": 1289907,
+      "total_requests": 210,
+      "cum_elapsed_seconds": 3618.1,
+      "solved_tasks": [
+        "uniswap_v2/pair_fee_adjusted_swap/swap_sets_reserve1",
+        "wildcat/borrow_liquidity_safety/positive_borrow_preserves_required_liquidity"
+      ]
     },
     {
       "panel": "STRAT-50",
@@ -411,10 +414,10 @@
   ],
   "muse_routing_policy": "Paid muse/muse-spark-1.3 stopped at 35/50 (preserved); remaining 15 unfinished tasks run on subscription muse-code/muse-spark-1.3",
   "muse_combined_progress": {
-    "valid_completed": 36,
-    "solved": 8,
-    "pass_rate_on_50_pct": 16.0
+    "valid_completed": 50,
+    "solved": 10,
+    "pass_rate_on_50_pct": 20.0
   },
-  "dedup_row_count": 346,
-  "raw_row_count": 381
+  "dedup_row_count": 356,
+  "raw_row_count": 396
 }

@@ -122,12 +122,13 @@ Six complete 50-task cohorts and three partial/quota-blocked cohorts were evalua
 | 5 | **`xai/grok-4.7`** | **8** | 50/50 | **16.0%** | 2,792,065 | 443 | 10,495.9 |
 | 5 (tie) | **`anthropic/claude-opus-5-5`** | **8** | 50/50 | **16.0%** | 3,080,091 | 377 | 8,054.0 |
 
-### Partial / Quota-Blocked Cohorts
+### Split-Route / Quota-Blocked Cohorts
 
 | Model / Route | Status | Valid Verdicts | Solved | Genuine Fail | Solve Rate (Valid) | Solve Rate (/50) | Total Tokens | Notes |
 |---|---|---:|---:|---:|---:|---:|---:|---|
-| `muse/muse-spark-1.3` | `stopped_paid_route_disabled` | 35/50 | **8** | 27 | 22.86% | 16.00% | 3,043,546 | Paid Meta API route stopped at 35/50 per user instruction; completed verdicts preserved without relabelling. |
-| `muse-code/muse-spark-1.3` | `stopped_quota_exhausted` | 1/15 | **0** | 1 | 0.00% | 0.00% | 61,777 | Muse Code subscription route for remaining 15 tasks; hit upstream subscription quota window (`resets_at: 2026-10-10T14:47:14Z`), no paid fallback. |
+| `muse/muse-spark-1.3` + `muse-code/muse-spark-1.3` *(combined non-overlapping 50)* | `completed (35 paid + 15 subscription)` | **50/50** | **10** | 40 | **20.00%** | **20.00%** | 4,333,453 | Combined non-overlapping coverage across the 35 preserved `muse/muse-spark-1.3` tasks (8 solved) and the 15 remaining `muse-code/muse-spark-1.3` subscription tasks (2 solved). |
+| `muse/muse-spark-1.3` *(prior paid route)* | `stopped_paid_route_disabled` | 35/50 | **8** | 27 | 22.86% | 16.00% | 3,043,546 | Paid Meta API route stopped at 35/50 per user instruction; completed verdicts preserved without relabelling. |
+| `muse-code/muse-spark-1.3` *(subscription route)* | `completed (15/15 subscription tasks)` | 15/15 | **2** | 13 | 13.33% | 4.00% | 1,289,907 | Muse Code subscription route for the remaining 15 unfinished tasks (`uniswap_v2/pair_fee_adjusted_swap/swap_sets_reserve1` and `wildcat/borrow_liquidity_safety/positive_borrow_preserves_required_liquidity` solved). |
 | `kimi/k3-256k` | `stopped_quota_exhausted` | 0/50 | **0** | 0 | 0.00% | 0.00% | 0 | Blocked by upstream Kimi 7-day weekly quota limit (`HTTP 403/429`). |
 
 ### Committed Campaign Artifacts
