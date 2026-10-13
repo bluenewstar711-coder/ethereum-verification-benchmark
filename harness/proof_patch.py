@@ -64,6 +64,19 @@ def _indent_proof_body(text: str) -> str:
         lines.pop()
     if not lines:
         return ""
+    non_empty = [line for line in lines if line.strip()]
+    if len(non_empty) >= 2:
+        first_indent = len(non_empty[0]) - len(non_empty[0].lstrip())
+        rest_min_indent = min(len(line) - len(line.lstrip()) for line in non_empty[1:])
+        first_stripped = non_empty[0].strip()
+        second_stripped = non_empty[1].lstrip()
+        is_block_opener = (
+            first_stripped.startswith(("calc ", "calc\t", "match ", "first", "repeat", "all_goals", "any_goals", "focus"))
+            or first_stripped.endswith(("by", "with", "do", "where", "=>", "in", "then", "else", ":", ":=", "(", "[", "{", ",", "←", "->", "→"))
+            or second_stripped.startswith(("_", "|", "case "))
+        )
+        if first_indent == 0 and rest_min_indent == 2 and not is_block_opener:
+            lines[0] = "  " + lines[0]
     # Preserve the proof's relative indentation exactly; only normalize the
     # common left margin so the body sits two spaces under `:= by`.
     min_indent = min(len(line) - len(line.lstrip()) for line in lines if line.strip())

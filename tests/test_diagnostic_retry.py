@@ -301,6 +301,81 @@ class AttemptLoopRepairSwapTests(unittest.TestCase):
             self.assertGreaterEqual(len(captured_messages), 2)
             self.assertTrue(any(m.get("role") == "tool" for m in captured_messages[1]))
 
+    def test_repair_swap_preserves_read_files_prior_attempts_and_repetition_warning(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            workspace = Path(tmp)
+            proof_rel = "Benchmark/Generated/Sample.lean"
+            spec_rel = "Public/Spec.lean"
+            proof_path = workspace / proof_rel
+            spec_path = workspace / spec_rel
+            proof_path.parent.mkdir(parents=True, exist_ok=True)
+            spec_path.parent.mkdir(parents=True, exist_ok=True)
+            proof_path.write_text(ORIGINAL, encoding="utf-8")
+            spec_path.write_text("def helperSpec : Nat := 42\n", encoding="utf-8")
+
+            captured_messages: list[list[dict[str, object]]] = []
+            calls = [
+                ("read_file", {"path": spec_rel}),
+                ("check_proof", {"proof": "simp"}),
+                ("check_proof", {"proof": "simp"}),
+                ("check_proof", {"proof": "trivial"}),
+            ]
+
+            def fake_run(workspace_arg: Path, module: str, file_rel: str) -> tuple[int, str]:
+                text = (workspace_arg / file_rel).read_text(encoding="utf-8")
+                if "trivial" in text:
+                    return 0, ""
+                return 1, "Benchmark/Generated/Sample.lean:2:2: error: unsolved goals\n⊢ True"
+
+            def fake_chat_completion(messages: list[dict[str, object]], **kwargs: object) -> dict[str, object]:
+                idx = len(captured_messages)
+                captured_messages.append([dict(m) for m in messages])
+                tool_name, tool_args = calls[min(idx, len(calls) - 1)]
+                return {
+                    "choices": [
+                        {
+                            "message": {
+                                "role": "assistant",
+                                "content": None,
+                                "tool_calls": [
+                                    {
+                                        "id": f"call-{idx + 1}",
+                                        "function": {
+                                            "name": tool_name,
+                                            "arguments": json.dumps(tool_args),
+                                        },
+                                    }
+                                ],
+                            }
+                        }
+                    ]
+                }
+
+            with (
+                mock.patch.object(lean_tools, "chat_completion", fake_chat_completion),
+                mock.patch.object(lean_tools, "_run_lean_module", fake_run),
+            ):
+                result = lean_tools._attempt_task_fair(
+                    self._task(proof_rel),
+                    workspace,
+                    base_url="http://provider.test/v1",
+                    max_attempts=4,
+                    max_tool_calls=6,
+                    attempts_dir=workspace / "attempts",
+                    tool_log_path=workspace / "tool-calls.jsonl",
+                    conversation_log_path=workspace / "conversation.jsonl",
+                    draft_log_path=workspace / "draft.jsonl",
+                )
+
+            self.assertEqual(result["status"], "lean_passed")
+            # Call 0: read_file; Call 1: 1st check_proof("simp"); Call 2: 2nd check_proof("simp"); Call 3: check_proof("trivial")
+            self.assertEqual(len(captured_messages), 4)
+            after_second_fail = str(captured_messages[3][1]["content"])
+            self.assertIn("helperSpec", after_second_fail)
+            self.assertIn("Earlier failed attempts in this session", after_second_fail)
+            self.assertIn("Attempt 1 (`simp`)", after_second_fail)
+            self.assertIn("You repeated the same unproductive action.", after_second_fail)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -669,6 +669,9 @@ def _repair_prompt_user_content(
     candidate: str,
     attempt: dict[str, Any],
     minimal_hint: bool,
+    prior_attempts: list[dict[str, Any]] | None = None,
+    read_files: dict[str, str] | None = None,
+    repetition_warning: str | None = None,
 ) -> str:
     diagnostics = attempt.get("diagnostics") if isinstance(attempt.get("diagnostics"), dict) else {}
     first_error = str(diagnostics.get("first_error") or attempt.get("failure_kind") or "").strip()
@@ -694,6 +697,17 @@ def _repair_prompt_user_content(
     if isinstance(spec_files, list) and spec_files:
         lines.append("Specification files: " + ", ".join(str(item) for item in spec_files))
     lines.append(f"Editable file: {editable}")
+    if read_files:
+        ref_lines: list[str] = ["", "Reference files already read in this session:"]
+        char_budget = 3000
+        for rpath, rcontent in read_files.items():
+            snippet = rcontent.strip()[: min(1500, char_budget)]
+            if snippet:
+                ref_lines.append(f"--- {rpath} ---\n{snippet}")
+                char_budget -= len(snippet)
+                if char_budget <= 0:
+                    break
+        lines.extend(ref_lines)
     lines += [
         "",
         "Current proof (edit this; keep the theorem statement byte-identical, only change the body after := by):",
@@ -712,8 +726,25 @@ def _repair_prompt_user_content(
         lines += ["Local hypotheses:", "\n".join(str(item) for item in hypotheses[:20]), ""]
     if hint:
         lines += ["Fix hint:", hint, ""]
+    stuck = str(attempt.get("stuck") or "").strip()
+    if stuck:
+        lines += ["Stuck warning:", stuck, ""]
     if minimal_hint and _minimal_proof_hint_applies(attempt):
         lines += [MINIMAL_PROOF_HINT, ""]
+    if prior_attempts:
+        hist_lines: list[str] = ["Earlier failed attempts in this session (do not repeat them):"]
+        for idx, prev in enumerate(prior_attempts[-4:], start=max(1, len(prior_attempts) - 3)):
+            if isinstance(prev, dict):
+                p_diag = prev.get("diagnostics") if isinstance(prev.get("diagnostics"), dict) else {}
+                p_err = str(p_diag.get("first_error") or prev.get("failure_kind") or prev.get("status") or "failed").strip()
+                p_proof = " ".join(str(prev.get("submitted_proof") or "").split())[:120]
+                if p_proof:
+                    hist_lines.append(f"- Attempt {idx} (`{p_proof}`): {p_err[:160]}")
+                else:
+                    hist_lines.append(f"- Attempt {idx}: {p_err[:180]}")
+        lines += hist_lines + [""]
+    if repetition_warning:
+        lines += [repetition_warning, ""]
     lines.append("Submit the corrected proof with a single check_proof call.")
     return "\n".join(lines).rstrip() + "\n"
 
@@ -726,6 +757,9 @@ def _diagnostic_repair_messages(
     candidate: str,
     attempt: dict[str, Any],
     minimal_hint: bool = MINIMAL_PROOF_HINT_ENABLED,
+    prior_attempts: list[dict[str, Any]] | None = None,
+    read_files: dict[str, str] | None = None,
+    repetition_warning: str | None = None,
 ) -> list[dict[str, Any]]:
     """Compact [system, user] messages that focus the model on repairing the
     last failed proof, dropping the accumulated group transcript."""
@@ -739,6 +773,9 @@ def _diagnostic_repair_messages(
                 candidate=candidate,
                 attempt=attempt,
                 minimal_hint=minimal_hint,
+                prior_attempts=prior_attempts,
+                read_files=read_files,
+                repetition_warning=repetition_warning,
             ),
         },
     ]
@@ -2170,6 +2207,7 @@ def _execute_fair_tool(
                 "duration_seconds": round(time.time() - lean_start, 3),
                 "response_usage": None,
                 "prover_derived": prover_derived,
+                "submitted_proof": proof,
             }
             if code != 0:
                 hint = _hint_for_failure(failure_kind, output)
@@ -2468,6 +2506,7 @@ def _attempt_task_fair(
         {"role": "user", "content": user_prompt},
     ]
     pending_repetition_warning: str | None = None
+    read_files_cache: dict[str, str] = {}
 
     def set_compact_user_context(content: str) -> None:
         nonlocal pending_repetition_warning
@@ -3003,6 +3042,11 @@ def _attempt_task_fair(
                 ):
                     mcp_session.mark_workspace_files_changed()
             _accumulate_usage(result)
+            if name == "read_file" and isinstance(result, dict) and result.get("ok") is True:
+                rpath = str(result.get("path") or args.get("path") or "").strip()
+                rcontent = result.get("content")
+                if rpath and isinstance(rcontent, str):
+                    read_files_cache[rpath] = rcontent
             tool_calls_executed += 1
             if name not in {"check_proof", "try_tactics", "tactic_sandbox", "show_goal"}:
                 non_proof_tool_calls += 1
@@ -3017,6 +3061,7 @@ def _attempt_task_fair(
                     "duration_seconds": round(time.time() - tool_start, 3),
                 },
             )
+            active_repetition_warning = pending_repetition_warning
             if text_protocol:
                 content = f"Tool result for {name}: {_tool_result_content(result)}"
                 if native_tools:
@@ -3124,6 +3169,9 @@ def _attempt_task_fair(
                         editable=editable,
                         candidate=current_candidate,
                         attempt=failed_attempt,
+                        prior_attempts=attempts[:-1],
+                        read_files=read_files_cache,
+                        repetition_warning=active_repetition_warning,
                     )
                     responses_state.reset("diagnostic_repair")
                     repaired = True

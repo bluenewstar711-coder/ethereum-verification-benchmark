@@ -80,6 +80,14 @@ end Sample
             "theorem sample : True := by\n  try simp only [grind_norm] at *\n  try unfold sample\n  simp\n    · trivial",
         )
 
+    def test_asymmetric_zero_then_two_space_multiline_tactic_body_normalizes_margin(self) -> None:
+        submitted = "unfold sample\n  intro h\n  simp\n    · trivial"
+        candidate = _patch_proof_body(ORIGINAL, submitted)
+        self.assertEqual(
+            candidate.rstrip(),
+            "theorem sample : True := by\n  unfold sample\n  intro h\n  simp\n    · trivial",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
