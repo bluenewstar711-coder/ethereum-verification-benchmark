@@ -1,6 +1,6 @@
 {
   "benchmark": "ethereum-verification-benchmark",
-  "latest_version": "0.1",
+  "latest_version": "0.3",
   "schema_version": 1,
   "versions": [
     {
@@ -11,6 +11,24 @@
       "summary_url": "results/summaries/v0.1.json",
       "tag": "benchmark-v0.1",
       "task_count": 135
+    },
+    {
+      "benchmark_version": "0.2",
+      "label": "v0.2",
+      "leaderboard_url": "results/leaderboards/v0.2.json",
+      "manifest_url": "results/manifests/v0.2.json",
+      "summary_url": "results/summaries/v0.2.json",
+      "tag": "benchmark-v0.2",
+      "task_count": 50
+    },
+    {
+      "benchmark_version": "0.3",
+      "label": "v0.3",
+      "leaderboard_url": "results/leaderboards/v0.3.json",
+      "manifest_url": "results/manifests/v0.3.json",
+      "summary_url": "results/summaries/v0.3.json",
+      "tag": "benchmark-v0.3",
+      "task_count": 50
     }
   ]
 }

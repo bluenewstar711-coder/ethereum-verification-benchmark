@@ -1,0 +1,3790 @@
+{
+  "benchmark": "ethereum-verification-benchmark",
+  "benchmark_manifest": "benchmark-versions/v0.2.json",
+  "benchmark_version": "0.2",
+  "full_suite_task_count": 240,
+  "models": [
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-core-strat50.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-core-strat50.tar.zst",
+        "byte_size": 4155299,
+        "release_tag": "v0.2",
+        "sha256": "8fb0a35706dd66abf821bd6de9b8f52b75176dc5b5c49e23109efc8517894c24"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "gpt-5.6-sol",
+      "failed": 33,
+      "model_id": "gpt-5.6-sol",
+      "passed": 17,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 1461614
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-kimi-k3-chat.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-kimi-k3-chat.tar.zst",
+        "byte_size": 1218288,
+        "release_tag": "v0.2",
+        "sha256": "838f0d38c2ca99ed1b6c5ec28f967a05455cfc29b5cc3b20425c90045a8c2567"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "k3",
+      "failed": 36,
+      "model_id": "kimi/k3",
+      "passed": 14,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 1595122
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-core-strat50.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-core-strat50.tar.zst",
+        "byte_size": 4155299,
+        "release_tag": "v0.2",
+        "sha256": "8fb0a35706dd66abf821bd6de9b8f52b75176dc5b5c49e23109efc8517894c24"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "gpt-5.6-terra",
+      "failed": 40,
+      "model_id": "gpt-5.6-terra",
+      "passed": 10,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 1362190
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-muse-spark-1-2-responses.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-muse-spark-1-2-responses.tar.zst",
+        "byte_size": 498684,
+        "release_tag": "v0.2",
+        "sha256": "e4574cfcd4e054e230c0199143df924deb74510546035bd181bb3cf92aa9ea57"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "muse-spark-1.2",
+      "failed": 40,
+      "model_id": "muse-spark-1.2",
+      "passed": 10,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 1909241
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-core-strat50.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-core-strat50.tar.zst",
+        "byte_size": 4155299,
+        "release_tag": "v0.2",
+        "sha256": "8fb0a35706dd66abf821bd6de9b8f52b75176dc5b5c49e23109efc8517894c24"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "gpt-5.6-luna",
+      "failed": 41,
+      "model_id": "gpt-5.6-luna",
+      "passed": 9,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 1013748
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-claude-opus-5-chat.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-claude-opus-5-chat.tar.zst",
+        "byte_size": 1346843,
+        "release_tag": "v0.2",
+        "sha256": "b4b8fe57800749c74804c2e7edc42c9f083036df5db3b34fb65a3c6c5c1ac83a"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "claude-opus-5",
+      "failed": 43,
+      "model_id": "anthropic/claude-opus-5",
+      "passed": 7,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 3507418
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-glm-5-3-chat.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-glm-5-3-chat.tar.zst",
+        "byte_size": 593483,
+        "release_tag": "v0.2",
+        "sha256": "c05a4549f290186ccbff8590faf86b26404d538d2c7238f805b23ea11c570fee"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "glm-5.3",
+      "failed": 43,
+      "model_id": "zai/glm-5.3",
+      "passed": 7,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 1965833
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-core-strat50.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-core-strat50.tar.zst",
+        "byte_size": 4155299,
+        "release_tag": "v0.2",
+        "sha256": "8fb0a35706dd66abf821bd6de9b8f52b75176dc5b5c49e23109efc8517894c24"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "MiniMax-M3",
+      "failed": 43,
+      "model_id": "minimax/MiniMax-M3",
+      "passed": 7,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 2242130
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
+        "asset_name": "benchmark-v0.2-grok-4-6-chat.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.2/benchmark-v0.2-grok-4-6-chat.tar.zst",
+        "byte_size": 475079,
+        "release_tag": "v0.2",
+        "sha256": "3a4a8bdeb9fcc51e51fc5293ba5392f3a5b6c636592118182ab5c1005d755f87"
+      },
+      "benchmark_version": "0.2",
+      "caveats": [],
+      "display_name": "grok-4.6",
+      "failed": 48,
+      "model_id": "xai/grok-4.6",
+      "passed": 2,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 1279089
+          }
+        },
+        {
+          "passed": true,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        {
+          "passed": false,
+          "usage": {
+            "completion_tokens": 0,
+            "prompt_tokens": 0,
+            "total_tokens": 0
+          }
+        }
+      ],
+      "valid_count": 50
+    }
+  ],
+  "panel": "STRAT-50",
+  "task_count": 50
+}

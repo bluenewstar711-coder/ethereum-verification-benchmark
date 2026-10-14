@@ -53,7 +53,7 @@ Committed result data lives in:
 - [results/manifests/](./results/manifests/)
 - [results/summaries/](./results/summaries/)
 
-Version `0.3` is the current benchmark environment: 263 frozen tasks on Lean 4.31. New comparable model campaigns should use the reproducible [v0.3 STRAT-50 panel](./analysis/v0.3_strat50/README.md). Version `0.1` remains the older public-dashboard baseline, while v0.2/Lean 4.24 artifacts remain frozen for historical reproduction only. Results from different benchmark versions or inference protocols are separate cohorts and must not be combined.
+Version `0.3` is the current benchmark environment and published leaderboard baseline: 263 frozen tasks on Lean 4.31 evaluated via the reproducible [v0.3 STRAT-50 panel](./analysis/v0.3_strat50/README.md). Historical `v0.1` and `v0.2` (Lean 4.24) artifacts remain frozen for reproduction. Results from different benchmark versions or inference protocols are separate cohorts and must not be combined.
 
 ## Quick Start
 

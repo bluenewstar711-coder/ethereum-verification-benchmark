@@ -86,6 +86,104 @@ PUBLIC_MODEL_ALIASES: dict[str, dict[str, str]] = {
         "model_name": "mimo-v2.5",
         "display_name": "mimo-v2.5",
     },
+    "gpt-5.6-sol": {
+        "model_provider_id": "openai",
+        "model_name": "gpt-5.6-sol",
+        "display_name": "gpt-5.6-sol",
+        "inference_provider_id": "openai",
+        "inference_model_id": "gpt-5.6-sol",
+    },
+    "gpt-5.6-terra": {
+        "model_provider_id": "openai",
+        "model_name": "gpt-5.6-terra",
+        "display_name": "gpt-5.6-terra",
+        "inference_provider_id": "openai",
+        "inference_model_id": "gpt-5.6-terra",
+    },
+    "gpt-5.6-luna": {
+        "model_provider_id": "openai",
+        "model_name": "gpt-5.6-luna",
+        "display_name": "gpt-5.6-luna",
+        "inference_provider_id": "openai",
+        "inference_model_id": "gpt-5.6-luna",
+    },
+    "kimi/k3": {
+        "model_provider_id": "kimi",
+        "model_name": "kimi-k3",
+        "display_name": "kimi-k3",
+        "inference_provider_id": "kimi",
+        "inference_model_id": "kimi/k3",
+    },
+    "muse-spark-1.2": {
+        "model_provider_id": "muse",
+        "model_name": "muse-spark-1.2",
+        "display_name": "muse-spark-1.2",
+        "inference_provider_id": "muse",
+        "inference_model_id": "muse-spark-1.2",
+    },
+    "minimax/MiniMax-M3": {
+        "model_provider_id": "minimax",
+        "model_name": "minimax-m3",
+        "display_name": "minimax-m3",
+        "inference_provider_id": "minimax",
+        "inference_model_id": "minimax/MiniMax-M3",
+    },
+    "anthropic/claude-opus-5-5": {
+        "model_provider_id": "anthropic",
+        "model_name": "claude-opus-5.5",
+        "display_name": "claude-opus-5.5",
+        "inference_provider_id": "anthropic",
+        "inference_model_id": "anthropic/claude-opus-5-5",
+    },
+    "google/gemini-4-argon-eap": {
+        "model_provider_id": "google",
+        "model_name": "gemini-4-argon-eap",
+        "display_name": "gemini-4-argon-eap",
+        "inference_provider_id": "google",
+        "inference_model_id": "google/gemini-4-argon-eap",
+    },
+    "openai/gpt-6.1-sol": {
+        "model_provider_id": "openai",
+        "model_name": "gpt-6.1-sol",
+        "display_name": "gpt-6.1-sol",
+        "inference_provider_id": "openai",
+        "inference_model_id": "openai/gpt-6.1-sol",
+    },
+    "muse-code/muse-wonder-1.0": {
+        "model_provider_id": "muse",
+        "model_name": "muse-wonder-1.0",
+        "display_name": "muse-wonder-1.0",
+        "inference_provider_id": "muse-code",
+        "inference_model_id": "muse-code/muse-wonder-1.0",
+    },
+    "openai/gpt-6-luna": {
+        "model_provider_id": "openai",
+        "model_name": "gpt-6-luna",
+        "display_name": "gpt-6-luna",
+        "inference_provider_id": "openai",
+        "inference_model_id": "openai/gpt-6-luna",
+    },
+    "zai/glm-5.3": {
+        "model_provider_id": "zai",
+        "model_name": "glm-5.3",
+        "display_name": "glm-5.3",
+        "inference_provider_id": "zai",
+        "inference_model_id": "zai/glm-5.3",
+    },
+    "muse-spark-1.3": {
+        "model_provider_id": "muse",
+        "model_name": "muse-spark-1.3",
+        "display_name": "muse-spark-1.3",
+        "inference_provider_id": "muse",
+        "inference_model_id": "muse-spark-1.3",
+    },
+    "xai/grok-4.7": {
+        "model_provider_id": "xai",
+        "model_name": "grok-4.7",
+        "display_name": "grok-4.7",
+        "inference_provider_id": "xai",
+        "inference_model_id": "xai/grok-4.7",
+    },
 }
 
 
@@ -270,11 +368,12 @@ def leaderboard(version: dict[str, Any], summaries: list[dict[str, Any]]) -> str
 
 def aggregate(version: dict[str, Any], manifest: dict[str, Any]) -> dict[str, Any]:
     summaries = [model_summary(model) for model in manifest.get("models", [])]
+    task_count = int(manifest.get("task_count") or version["task_count"])
     return {
         "schema_version": 1,
         "benchmark": version["benchmark"],
         "benchmark_version": version["benchmark_version"],
-        "task_count": version["task_count"],
+        "task_count": task_count,
         "task_set_id": version["task_set_id"],
         "harness_id": version["harness_id"],
         "environment_id": version["environment_id"],
