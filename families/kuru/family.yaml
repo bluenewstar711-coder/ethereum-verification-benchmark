@@ -1,0 +1,15 @@
+manifest_kind: family
+schema_version: 1
+family_id: kuru
+display_name: Kuru
+split: active
+status: active
+description: >
+  Source-shaped model and complete eight-group proof of the ordinary withdrawal policy and
+  authorized exception.
+implementation_ids:
+  - v2
+case_ids:
+  - kuru/withdrawal_limit
+source_languages:
+  - solidity

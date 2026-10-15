@@ -1,0 +1,64 @@
+manifest_kind: case
+project: kuru
+case_id: withdrawal_limit
+schema_version: 1
+split: active
+family_id: kuru
+implementation_id: v2
+stage: proof_complete
+translation_status: translated
+spec_status: frozen
+proof_status: complete
+upstream_repo: null
+upstream_commit: 52d8e49aff11c52654955c8591a032172a40c79e
+original_contract_path: src/account/AccountCore.sol
+source_ref: model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean
+lean_target: Benchmark.Cases.Kuru.WithdrawalLimit.Compile
+spec_target: Benchmark.Cases.Kuru.WithdrawalLimit.Specs
+proof_target: Benchmark.Cases.Kuru.WithdrawalLimit.Proofs
+selected_functions:
+  - WithdrawalWindowLib.current
+  - WithdrawalWindowLib.write
+  - WithdrawalWindowLib.referenceAt
+  - WithdrawalLimiter.initialize
+  - WithdrawalLimiter.recordDeposit
+  - WithdrawalLimiter.recordWithdrawal
+  - WithdrawalLimiter.checkApprovedWithdrawal
+  - WithdrawalLimiter.setDripConfig
+  - WithdrawalLimiter.setPriceSource
+  - AccountCore.deposit (both overloads)
+  - AccountCore.withdraw
+  - AccountCore.fulfillApprovedWithdrawal
+  - AccountCore.invalidateApprovedWithdrawalNonce
+  - AccountCore.setWithdrawalAuthority
+  - AccountCore._transferAsset
+  - AccountCore.receive
+  - AccountCore._registerAccount
+  - AccountCore._ensureRootAccount
+  - AccountCore._createSubaccount (successful retained-effects projection)
+  - AccountCore.setFeeCollector
+  - WithdrawalLimiter.previewWithdrawal
+source_language: solidity
+verity_version: 85e0262baca2656ba2444ddfc2ed1d596544cd7b
+lean_toolchain: leanprover/lean4:v4.31.0
+abstraction_level: protocol_slice
+abstraction_tags:
+  - verity_types_semantic_model_no_codegen
+  - explicit_static_signature_acceptance
+  - full_precision_math_library_manual_refinement
+  - external_token_balance_observations
+  - non_custody_writer_frame
+  - unchanged_implementation_trace
+abstraction_notes: >
+  Source-shaped executable multi-contract semantic model using Verity Address/UIntN and invariant
+  APIs. All eight complete specification groups and PolicyBundle have machine-checked reference
+  proofs. Root/child allocation and list writers are concrete; non-custody arithmetic and creation
+  authorization use explicit projections. The ordinary batch theorem requires a successful initial
+  capacity observation. Source/helper/storage/external correspondence is manually reviewed; no
+  Solidity compiler or bytecode refinement is claimed. Original Solidity is not distributed.
+unsupported_feature_codes: []
+notes: >
+  Eight runnable whole-group proof tasks with complete reference solutions in Proofs.lean;
+  generated tasks intentionally end in exact ?_. See README.md for reproduction, proof coverage
+  and scope. The complete global benchmark build and whole Solidity suite were not established
+  green by this case.

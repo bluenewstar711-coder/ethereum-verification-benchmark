@@ -1,0 +1,17 @@
+manifest_kind: implementation
+schema_version: 1
+family_id: kuru
+implementation_id: v2
+display_name: Kuru V2 withdrawal-policy semantic model
+split: active
+status: translated
+upstream_repo: null
+upstream_commit: 52d8e49aff11c52654955c8591a032172a40c79e
+source_language: solidity
+source_artifact_path: Benchmark/Cases/Kuru/WithdrawalLimit
+case_ids:
+  - kuru/withdrawal_limit
+notes: >
+  Original Solidity is not distributed. This implementation publishes the executable Lean semantic
+  model and exact proofs; original source identity is pinned but no private repository URL or
+  source access is required to reproduce the Lean result.
