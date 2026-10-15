@@ -42,7 +42,7 @@ Benchmark.Cases.Kuru.WithdrawalLimit.policy_bundle : PolicyBundle
 | `approved_authority_and_replay` | Authority and signed-instruction checkpoints, pre-transfer nonce consumption and callback-compatible replay exclusion. |
 | `payout_coverage_and_atomicity` | Both gross payout paths, persistent reentrancy guard, allowed callbacks, non-payout frames and rollback. |
 
-`History.lean`, `Limiter.lean`, `Contract.lean` and `Specs.lean` define the model and specifications. The six `*Proofs.lean` modules contain the complete reference proofs. `Compile.lean` is only the model/specification elaboration target, not a Solidity or Yul compiler result. `Regression.lean` contains supplemental finite model checks.
+The Lean case is split by role. `Contract.lean` with `Contract/Limiter.lean` and `Contract/History.lean` is the model. `Specs.lean` is the specification. `Proofs.lean` and the five `Proofs/*Proofs.lean` modules are the complete reference proofs. `Tests/Regression.lean` contains supplemental finite model checks. `Compile.lean` is only the model/specification elaboration target, not a Solidity or Yul compiler result.
 
 The eight generated task files deliberately end in `exact ?_`: they are agent-facing whole-group challenges, not the reference solutions. They are outside the reference proof import graph. `proof_status: complete` identifies the available complete reference proofs, not solved generated placeholders.
 

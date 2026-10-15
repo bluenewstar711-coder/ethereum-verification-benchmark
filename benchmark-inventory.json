@@ -9942,8 +9942,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -9955,7 +9955,7 @@
       "abstraction_level": "protocol_slice",
       "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.CoreProofs",
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -9987,8 +9987,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -10000,7 +10000,7 @@
       "abstraction_level": "protocol_slice",
       "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.ArithmeticProofs",
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -10032,8 +10032,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -10077,8 +10077,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -10090,7 +10090,7 @@
       "abstraction_level": "protocol_slice",
       "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.WriterProofs",
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -10122,8 +10122,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -10135,7 +10135,7 @@
       "abstraction_level": "protocol_slice",
       "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.WriterProofs",
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -10167,8 +10167,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -10180,7 +10180,7 @@
       "abstraction_level": "protocol_slice",
       "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.CoreProofs",
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -10212,8 +10212,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -10225,7 +10225,7 @@
       "abstraction_level": "protocol_slice",
       "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.WriterProofs",
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -10257,8 +10257,8 @@
       "translation_status": "translated",
       "proof_status": "complete",
       "implementation_files": [
-        "Benchmark/Cases/Kuru/WithdrawalLimit/History.lean",
-        "Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
         "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
       ],
       "specification_files": [
@@ -10270,7 +10270,7 @@
       "abstraction_level": "protocol_slice",
       "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.ArithmeticProofs",
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -19341,5 +19341,5 @@
     }
   ],
   "backlog_tasks": [],
-  "generated_at": "2026-10-15T10:30:38.197517+00:00"
+  "generated_at": "2026-10-15T18:14:40.774685+00:00"
 }

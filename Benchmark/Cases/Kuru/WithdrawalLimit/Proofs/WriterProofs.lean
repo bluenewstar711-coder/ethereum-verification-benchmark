@@ -1,4 +1,4 @@
-import Benchmark.Cases.Kuru.WithdrawalLimit.LimiterProofs
+import Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.LimiterProofs
 
 namespace Benchmark.Cases.Kuru.WithdrawalLimit
 open LimiterProofs

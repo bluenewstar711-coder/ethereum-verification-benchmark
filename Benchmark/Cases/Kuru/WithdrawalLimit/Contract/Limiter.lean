@@ -22,7 +22,7 @@ Simplifications/refinement boundaries:
   rely/guarantee primitives, NOT a `verity_contract` DSL/Yul compilation target.
   No framework incapability is claimed: a DSL bridge would be a separate artifact.
 -/
-import Benchmark.Cases.Kuru.WithdrawalLimit.History
+import Benchmark.Cases.Kuru.WithdrawalLimit.Contract.History
 import Verity.Core.Address
 
 namespace Benchmark.Cases.Kuru.WithdrawalLimit

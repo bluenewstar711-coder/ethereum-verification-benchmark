@@ -1,6 +1,6 @@
-import Benchmark.Cases.Kuru.WithdrawalLimit.HistoryProofs
-import Benchmark.Cases.Kuru.WithdrawalLimit.ArithmeticProofs
-import Benchmark.Cases.Kuru.WithdrawalLimit.CoreProofs
+import Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.HistoryProofs
+import Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs
+import Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs
 
 namespace Benchmark.Cases.Kuru.WithdrawalLimit
 namespace LimiterProofs

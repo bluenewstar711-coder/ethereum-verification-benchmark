@@ -1704,27 +1704,27 @@ This report is generated from the benchmark manifests.
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.approved_authority_and_replay`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ApprovedAuthorityAndReplay.lean`
-- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.CoreProofs`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs`
 
 ### `kuru/withdrawal_limit/drip_and_configuration`
 - Track / property class / proof family: `proof-only` / `DripAndConfiguration` / `protocol_transition_correctness`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.drip_and_configuration`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/DripAndConfiguration.lean`
-- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.ArithmeticProofs`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs`
 
 ### `kuru/withdrawal_limit/exact_history_correspondence`
 - Track / property class / proof family: `proof-only` / `ExactHistoryCorrespondence` / `protocol_transition_correctness`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.exact_history_correspondence`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ExactHistoryCorrespondence.lean`
 - Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs`
@@ -1734,50 +1734,50 @@ This report is generated from the benchmark manifests.
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.initialization_and_writer_closure`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/InitializationAndWriterClosure.lean`
-- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.WriterProofs`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs`
 
 ### `kuru/withdrawal_limit/ordinary_and_global_no_reuse`
 - Track / property class / proof family: `proof-only` / `OrdinaryAndGlobalNoReuse` / `protocol_transition_correctness`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.ordinary_and_global_no_reuse`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/OrdinaryAndGlobalNoReuse.lean`
-- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.WriterProofs`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs`
 
 ### `kuru/withdrawal_limit/payout_coverage_and_atomicity`
 - Track / property class / proof family: `proof-only` / `PayoutCoverageAndAtomicity` / `protocol_transition_correctness`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.payout_coverage_and_atomicity`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/PayoutCoverageAndAtomicity.lean`
-- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.CoreProofs`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs`
 
 ### `kuru/withdrawal_limit/transaction_and_snapshots`
 - Track / property class / proof family: `proof-only` / `TransactionAndSnapshots` / `protocol_transition_correctness`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.transaction_and_snapshots`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/TransactionAndSnapshots.lean`
-- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.WriterProofs`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs`
 
 ### `kuru/withdrawal_limit/valuation_and_widths`
 - Track / property class / proof family: `proof-only` / `ValuationAndWidths` / `protocol_transition_correctness`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
 - Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.valuation_and_widths`
 - Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
-- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
 - Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
 - Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ValuationAndWidths.lean`
-- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.ArithmeticProofs`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs`
 
 ### `kyberswap/partial_fill_price_floor/check_return_amount_partial_fill_price_floor`
 - Track / property class / proof family: `proof-only` / `price_floor` / `functional_correctness`

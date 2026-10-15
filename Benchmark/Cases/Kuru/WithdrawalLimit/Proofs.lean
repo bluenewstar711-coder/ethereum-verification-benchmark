@@ -3,7 +3,7 @@ Kuru V2 complete withdrawal-policy reference proof bundle.
 All eight complete specification groups are proved on the source-shaped Lean
 model. Solidity correspondence is manually reviewed, not mechanized refinement.
 -/
-import Benchmark.Cases.Kuru.WithdrawalLimit.WriterProofs
+import Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs
 
 namespace Benchmark.Cases.Kuru.WithdrawalLimit
 

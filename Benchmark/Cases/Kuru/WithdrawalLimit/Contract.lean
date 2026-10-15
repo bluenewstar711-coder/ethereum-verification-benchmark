@@ -45,7 +45,7 @@ Simplifications and boundaries (not undisclosed axioms):
    checks all executable definitions/specifications; it must not be described as
    a Solidity-to-Verity compiler proof. DSL integration is not yet implemented.
 -/
-import Benchmark.Cases.Kuru.WithdrawalLimit.Limiter
+import Benchmark.Cases.Kuru.WithdrawalLimit.Contract.Limiter
 
 namespace Benchmark.Cases.Kuru.WithdrawalLimit
 

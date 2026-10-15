@@ -17,8 +17,8 @@ translation_status: translated
 proof_status: complete
 evaluation_engine: lean_proof_generation
 implementation_files:
-  - Benchmark/Cases/Kuru/WithdrawalLimit/History.lean
-  - Benchmark/Cases/Kuru/WithdrawalLimit/Limiter.lean
+  - Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean
+  - Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean
   - Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean
 specification_files:
   - Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean
