@@ -1,0 +1,7 @@
+# Collapse machine-generated files and harness plumbing in GitHub diffs, so a
+# case PR shows the Lean model, specification and proofs first.
+Benchmark/Generated/** linguist-generated=true
+cases/**/verity/*.lean linguist-generated=true
+REPORT.md linguist-generated=true
+benchmark-inventory.json linguist-generated=true
+docs/evaluated-surface.md linguist-generated=true

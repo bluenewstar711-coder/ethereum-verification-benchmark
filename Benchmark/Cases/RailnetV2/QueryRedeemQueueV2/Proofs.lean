@@ -1,4 +1,4 @@
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.SourceInvariant
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.SourceInvariantProofs
 
 namespace Benchmark.Cases.RailnetV2.QueryRedeemQueueV2
 

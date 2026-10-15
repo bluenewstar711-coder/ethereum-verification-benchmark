@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.AllowanceTrace
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.AllowanceTraceProofs
 
 namespace Benchmark.Cases.KPK.SharesSettlementAccounting
 open Verity

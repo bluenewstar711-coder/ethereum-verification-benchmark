@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.TraceCertificates
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.TraceCertificatesProofs
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity

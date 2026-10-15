@@ -10,7 +10,7 @@ This case proves an executable symbolic root-ledger model, not deployed Solidity
 
 The executable entries are allocateChains, allocate, burn, rebalanceChain0, processDeallocation, emergencyDeallocate, parkOnChain0 and clearToken, plus a callback-inclusive nonwriter projection. Arbitrary finite loops and successful authenticated returns are covered. Concrete set insertion, removal, swap-and-pop, clear and full-width field frames are checked.
 
-Proofs.lean, AssignmentProofs.lean and SetProofs.lean contain checked reference proofs. Dependency printing reports standard Lean foundations (propext, Classical.choice, Quot.sound) only, no case-local domain axiom or sorryAx. The generated task ends in `exact ?_` intentionally and is not the reference proof. Compile.lean elaborates the executable surface; it does not emit Yul.
+Proofs.lean, Proofs/AssignmentProofs.lean and Proofs/SetProofs.lean contain checked reference proofs. Dependency printing reports standard Lean foundations (propext, Classical.choice, Quot.sound) only, no case-local domain axiom or sorryAx. The generated task ends in `exact ?_` intentionally and is not the reference proof. Compile.lean elaborates the executable surface; it does not emit Yul.
 
 ## Reproduce
 
@@ -18,7 +18,7 @@ From the repository root, with the pinned lean-toolchain and lake-manifest.json:
 
 ```sh
 LEAN_NUM_THREADS=1 timeout 170 lake build Benchmark.Cases.Dromos.AllocationConservation.Proofs
-LEAN_NUM_THREADS=1 timeout 170 lake env lean -M 3000 -j1 Benchmark/Cases/Dromos/AllocationConservation/Regression.lean
+LEAN_NUM_THREADS=1 timeout 170 lake env lean -M 3000 -j1 Benchmark/Cases/Dromos/AllocationConservation/Tests/Regression.lean
 python scripts/validate_manifests.py
 ```
 

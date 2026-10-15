@@ -1,4 +1,4 @@
-import Benchmark.Cases.Dromos.AllocationConservation.AssignmentProofs
+import Benchmark.Cases.Dromos.AllocationConservation.Proofs.AssignmentProofs
 
 /-! Operational preservation and Reachable closure for the Dromos Labs team's
 selected allocation invariant. Concrete assignment/EnumerableSet refinement is

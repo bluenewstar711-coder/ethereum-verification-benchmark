@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.HandlerFrames
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.HandlerFramesProofs
 
 namespace Benchmark.Cases.KPK.SharesSettlementAccounting
 open Verity

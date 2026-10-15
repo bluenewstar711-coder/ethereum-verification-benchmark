@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.WorldReplay
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.WorldReplayProofs
 
 namespace Benchmark.Cases.KPK.SharesSettlementAccounting
 open Verity

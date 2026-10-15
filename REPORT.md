@@ -4,11 +4,11 @@ This report is generated from the benchmark manifests.
 
 ## Summary
 
-- Families: 51
-- Implementations: 52
-- Active cases: 51
-- Buildable active cases: 51
-- Active tasks: 310
+- Families: 52
+- Implementations: 53
+- Active cases: 52
+- Buildable active cases: 52
+- Active tasks: 311
 - Backlog cases: 1
 
 ## Buildable active cases
@@ -102,6 +102,16 @@ This report is generated from the benchmark manifests.
 - Selected functions: `_onSwapFeeReceived`, `processFees`, `_convertForwardBudget`, `_compoundLiquidity`, `_settleMarketForwards`, `releaseClosedMarketCredit`
 - Upstream source artifact: `src/supported/grid-full-range/FullRangeFeeRehype.sol`
 - Notes: FullRangeFeeRehype fee conservation: routed fee credit cannot disappear or be consumed twice; unspent or failed-leg value remains in carry.
+
+### `dromos/allocation_conservation`
+- Family / implementation: `dromos` / `metadex03`
+- Stage: `proof_complete`
+- Status dimensions: translation=`translated`, spec=`frozen`, proof=`complete`
+- Lean target: `Benchmark.Cases.Dromos.AllocationConservation.Compile`
+- Source ref: `https://github.com/dromos-labs/metadex-public@0058bd9b1d49b0fb0a6d130dd51886b2c64e3d99:V3/src/voter/Voter.sol`
+- Selected functions: `allocateChains`, `allocate`, `burn`, `rebalanceChain0`, `processDeallocation`, `emergencyDeallocate`, `parkOnChain0`, `clearToken`
+- Upstream source artifact: `V3/src/voter/Voter.sol`
+- Notes: Source-derived model is modified for formal evaluation only; source license and notices retained in this directory. Targeted gates pass and transaction conservation has no case-local domain axiom. Independent scoped proof re-review passed; downstream article/public-claim gates remain separate. Full baseline build was bounded and not completed; it is not reported green.
 
 ### `enzyme/onyx_fee_handler`
 - Family / implementation: `enzyme` / `onyx_fee_handler`
@@ -1069,6 +1079,16 @@ This report is generated from the benchmark manifests.
 - Editable proof file: `Benchmark/Generated/Doppler/MulticurveFeeConservation/Tasks/SettleMarketForwardsPreservesAccounting.lean`
 - Hidden reference solution: `Benchmark.Cases.Doppler.MulticurveFeeConservation.Proofs`
 
+### `dromos/allocation_conservation/transaction_conservation`
+- Track / property class / proof family: `proof-only` / `accounting_conservation` / `state_preservation_local_effects`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Dromos.AllocationConservation.transaction_conservation`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Dromos/AllocationConservation/Contract.lean`, `cases/dromos/allocation_conservation/verity/Contract.lean`
+- Specification files: `Benchmark/Cases/Dromos/AllocationConservation/Specs.lean`, `cases/dromos/allocation_conservation/verity/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Dromos/AllocationConservation/Tasks/TransactionConservation.lean`
+- Hidden reference solution: `Benchmark.Cases.Dromos.AllocationConservation.Proofs`
+
 ### `enzyme/onyx_fee_handler/settle_dynamic_fees_exact_accounting`
 - Track / property class / proof family: `proof-only` / `cross_contract_fee_accounting` / `state_preservation_local_effects`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
@@ -1647,7 +1667,7 @@ This report is generated from the benchmark manifests.
 - Implementation files: `cases/kpk/shares_settlement_accounting/verity/Contract.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Contract.lean`
 - Specification files: `cases/kpk/shares_settlement_accounting/verity/Specs.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Specs.lean`
 - Editable proof file: `Benchmark/Generated/KPK/SharesSettlementAccounting/Tasks/MintFloorBounds.lean`
-- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.ConversionBounds`
+- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.ConversionBoundsProofs`
 
 ### `kpk/shares_settlement_accounting/out_floor_bounds`
 - Track / property class / proof family: `proof-only` / `rounding_bound` / `functional_correctness`
@@ -1657,7 +1677,7 @@ This report is generated from the benchmark manifests.
 - Implementation files: `cases/kpk/shares_settlement_accounting/verity/Contract.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Contract.lean`
 - Specification files: `cases/kpk/shares_settlement_accounting/verity/Specs.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Specs.lean`
 - Editable proof file: `Benchmark/Generated/KPK/SharesSettlementAccounting/Tasks/OutFloorBounds.lean`
-- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.ConversionBounds`
+- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.ConversionBoundsProofs`
 
 ### `kpk/shares_settlement_accounting/settlement_accounting`
 - Track / property class / proof family: `proof-only` / `settlement_accounting_integrity` / `functional_correctness`
