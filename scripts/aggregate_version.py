@@ -149,6 +149,13 @@ PUBLIC_MODEL_ALIASES: dict[str, dict[str, str]] = {
         "inference_provider_id": "openai",
         "inference_model_id": "openai/gpt-6.1-sol",
     },
+    "openai/gpt-6-astra": {
+        "model_provider_id": "openai",
+        "model_name": "gpt-6-astra",
+        "display_name": "gpt-6-astra",
+        "inference_provider_id": "openai",
+        "inference_model_id": "openai/gpt-6-astra",
+    },
     "muse-code/muse-wonder-1.0": {
         "model_provider_id": "muse",
         "model_name": "muse-wonder-1.0",

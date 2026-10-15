@@ -3886,6 +3886,976 @@
     },
     {
       "archive": {
+        "asset_name": "benchmark-v0.3-gpt-6-astra.tar.zst",
+        "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.3/benchmark-v0.3-gpt-6-astra.tar.zst",
+        "byte_size": 367166,
+        "release_tag": "v0.3",
+        "sha256": "ddc8e24221080e65c55e86c620108dbdcb70100884bf72f85d573d47e4dab807"
+      },
+      "benchmark_version": "0.3",
+      "caveats": [],
+      "display_name": "gpt-6-astra",
+      "failed": 27,
+      "model_id": "openai/gpt-6-astra",
+      "passed": 23,
+      "status": "complete",
+      "task_count": 50,
+      "task_results": [
+        {
+          "artifact_id": "20261014T114033-default-fair-openai-gpt-6-astra-1inch__xycswap_curve_safety__quote_exact_in_curve_safety",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:ace7d71eee739c6b71bb2e6043cba26f252ba0e8474d66ad0de3bc4441958426",
+          "reusable": true,
+          "run_id": "20261014T114033-default-fair-openai-gpt-6-astra-1inch__xycswap_curve_safety__quote_exact_in_curve_safety",
+          "task_fingerprint": "sha256:d56f501bc3d74020dae30e196954bdd922ff0ae1dab4fdb24647d9c0f32a9b30",
+          "task_interface_id": "sha256:d3fd8dcbc8935b74dbccfd9a52050819819dafb4f5d678a0f0270f313702cbfb",
+          "task_ref": "1inch/xycswap_curve_safety/quote_exact_in_curve_safety",
+          "usage": {
+            "completion_tokens": 2309,
+            "prompt_tokens": 30797,
+            "requests": 8,
+            "total_tokens": 33106
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T114033-default-fair-openai-gpt-6-astra-alchemix__earmark_conservation__earmark_preserves_invariant",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:cfba303df736b1416b614352200bb3d02fc8f90a4369e802448fd7c440eb06e4",
+          "reusable": true,
+          "run_id": "20261014T114033-default-fair-openai-gpt-6-astra-alchemix__earmark_conservation__earmark_preserves_invariant",
+          "task_fingerprint": "sha256:e759790951d9041e45d66e8f318e7cc9d4dc7dd8157232b3923c92369a32f6af",
+          "task_interface_id": "sha256:426a13e92a10bae2350fb254ffc22a9aa3102001ccb24cc375ed7c3bf5676c09",
+          "task_ref": "alchemix/earmark_conservation/earmark_preserves_invariant",
+          "usage": {
+            "completion_tokens": 417,
+            "prompt_tokens": 22335,
+            "requests": 5,
+            "total_tokens": 22752
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T114033-default-fair-openai-gpt-6-astra-aragon_osx__execute_authorization__grant_execute_condition_rejects_wildcard_target",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:a3bd354e7aa33de637d1e9860d624b0ae35e8e656cd38a15bb15982fe66574fd",
+          "reusable": true,
+          "run_id": "20261014T114033-default-fair-openai-gpt-6-astra-aragon_osx__execute_authorization__grant_execute_condition_rejects_wildcard_target",
+          "task_fingerprint": "sha256:148f72fda10232340d4d35bfc7de1751dce42871d2cce2ee71c0d74cf40d2c98",
+          "task_interface_id": "sha256:d03386ae11c2f5f5f75fd75b81fc961749ca690229d3c13be4ed25a4c802012b",
+          "task_ref": "aragon_osx/execute_authorization/grant_execute_condition_rejects_wildcard_target",
+          "usage": {
+            "completion_tokens": 2435,
+            "prompt_tokens": 43754,
+            "requests": 11,
+            "total_tokens": 46189
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T114301-default-fair-openai-gpt-6-astra-aragon_osx__execute_authorization__grant_root_condition_rejects_wildcard_caller",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:fba495778c6a9b9efdd9508e0dbca0585d5d8c54fa0eddae9984ead1b89d84b7",
+          "reusable": true,
+          "run_id": "20261014T114301-default-fair-openai-gpt-6-astra-aragon_osx__execute_authorization__grant_root_condition_rejects_wildcard_caller",
+          "task_fingerprint": "sha256:af98ad1113c0e472dd28cad0d67aa99835963998da78a55bcf2819e29855b12a",
+          "task_interface_id": "sha256:8aed4a29cdd731d82486ab702b919e2b77143a6a87f7ad0022f159866de03559",
+          "task_ref": "aragon_osx/execute_authorization/grant_root_condition_rejects_wildcard_caller",
+          "usage": {
+            "completion_tokens": 5368,
+            "prompt_tokens": 72541,
+            "requests": 19,
+            "total_tokens": 77909
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T120852-default-fair-openai-gpt-6-astra-balancer__reclamm_swap_rounding__on_swap_fixed_virtual_balances_product_non_decreasing",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:ac570be19577f9a4c20efeae2092a7432102453cf0580610f107e1da9bc24735",
+          "reusable": true,
+          "run_id": "20261014T120852-default-fair-openai-gpt-6-astra-balancer__reclamm_swap_rounding__on_swap_fixed_virtual_balances_product_non_decreasing",
+          "task_fingerprint": "sha256:8bccdcedf061df9ebd3c56699b1301e59dab2bf4dba52e595531b18a55a99abe",
+          "task_interface_id": "sha256:41a96e08b0df98d79b988f82afdf74b76417b074bf93c770febad2acb14959e2",
+          "task_ref": "balancer/reclamm_swap_rounding/on_swap_fixed_virtual_balances_product_non_decreasing",
+          "usage": {
+            "completion_tokens": 9043,
+            "prompt_tokens": 85615,
+            "requests": 19,
+            "total_tokens": 94658
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T115201-default-fair-openai-gpt-6-astra-cork__pool_solvency__solvency_preserved",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:95ae4509e02d25b28a51c8504cf2551a452ac1263766507aec16ba5ba9ac29c4",
+          "reusable": true,
+          "run_id": "20261014T115201-default-fair-openai-gpt-6-astra-cork__pool_solvency__solvency_preserved",
+          "task_fingerprint": "sha256:747d787769965a0a9dbeab3bc5129458482f61a7165ccde19a5cb803fdaef22d",
+          "task_interface_id": "sha256:40b45dfe486949f2d6c924509f7f0048b025db38b5b0a1b71225ee101fe7f0bd",
+          "task_ref": "cork/pool_solvency/solvency_preserved",
+          "usage": {
+            "completion_tokens": 8774,
+            "prompt_tokens": 76211,
+            "requests": 16,
+            "total_tokens": 84985
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T120707-default-fair-openai-gpt-6-astra-damn_vulnerable_defi__side_entrance__exploit_trace_drains_pool",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:f57b48c4ec85943679d17bdeb9ef3ee9cc8a502bf40cd918a546f4e3274f9b16",
+          "reusable": true,
+          "run_id": "20261014T120707-default-fair-openai-gpt-6-astra-damn_vulnerable_defi__side_entrance__exploit_trace_drains_pool",
+          "task_fingerprint": "sha256:a1baa3eae1f626c29cf70fd9001fcd8762621368c466a3cbeb91647019c51241",
+          "task_interface_id": "sha256:0d215f952b4eeb5b47e702c866fe6328d944454ab9653cee8f2b2a6c670bb0d9",
+          "task_ref": "damn_vulnerable_defi/side_entrance/exploit_trace_drains_pool",
+          "usage": {
+            "completion_tokens": 1525,
+            "prompt_tokens": 35840,
+            "requests": 9,
+            "total_tokens": 37365
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T121404-default-fair-openai-gpt-6-astra-enzyme__onyx_fee_handler__settle_dynamic_fees_exact_accounting",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:4c184fd677ae5c9ec9cf653308c497b4aacffc3054e6ad14435410fc1887868f",
+          "reusable": true,
+          "run_id": "20261014T121404-default-fair-openai-gpt-6-astra-enzyme__onyx_fee_handler__settle_dynamic_fees_exact_accounting",
+          "task_fingerprint": "sha256:f3177c37026d224b0a93c6fb0c7b93976e3b83c6b21dc7a991a43182752491e5",
+          "task_interface_id": "sha256:8707ce0aacd26794e7c8b185b94398d683b4e778e0c30181163fa45d1e078bfc",
+          "task_ref": "enzyme/onyx_fee_handler/settle_dynamic_fees_exact_accounting",
+          "usage": {
+            "completion_tokens": 7839,
+            "prompt_tokens": 85225,
+            "requests": 19,
+            "total_tokens": 93064
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T121415-default-fair-openai-gpt-6-astra-erc4337__entry_point_invariant__all_validated_on_success",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:313896610f398a58bf6b62766dfd4aab6782c3aa6e6134f34b973f424ec4b6e1",
+          "reusable": true,
+          "run_id": "20261014T121415-default-fair-openai-gpt-6-astra-erc4337__entry_point_invariant__all_validated_on_success",
+          "task_fingerprint": "sha256:83e7684ab773ab5211d15e90e5d8b32deef3a5e4bfb99bd89d196664394707dd",
+          "task_interface_id": "sha256:28ee6c74716bb55a80ba7cbf69b4949366c9723daff431a9586ef5889ac0ca0c",
+          "task_ref": "erc4337/entry_point_invariant/all_validated_on_success",
+          "usage": {
+            "completion_tokens": 513,
+            "prompt_tokens": 17593,
+            "requests": 5,
+            "total_tokens": 18106
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T121711-default-fair-openai-gpt-6-astra-erc4337__entry_point_invariant__execution_length_eq_validation_length",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:dad98998a33aed7f463eea721dfec0328727139ff60ec9eec9933c25f755327e",
+          "reusable": true,
+          "run_id": "20261014T121711-default-fair-openai-gpt-6-astra-erc4337__entry_point_invariant__execution_length_eq_validation_length",
+          "task_fingerprint": "sha256:dd5ff1029765dc0b4c34b96afeb9707c3899213a578bc7492fb25ed63aff517c",
+          "task_interface_id": "sha256:f01d087499dec53de6c1561ce61e55a1228df9dc436ad1042c17f9ac364efd0f",
+          "task_ref": "erc4337/entry_point_invariant/execution_length_eq_validation_length",
+          "usage": {
+            "completion_tokens": 128,
+            "prompt_tokens": 14092,
+            "requests": 4,
+            "total_tokens": 14220
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T121922-default-fair-openai-gpt-6-astra-erc4337__entry_point_invariant__no_beneficiary_payout_on_revert",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:087f54e8876a7a382d7afa1ec61b962d4d8361e3cd6bb0b27b5240de4cd84402",
+          "reusable": true,
+          "run_id": "20261014T121922-default-fair-openai-gpt-6-astra-erc4337__entry_point_invariant__no_beneficiary_payout_on_revert",
+          "task_fingerprint": "sha256:176394d858f2945b01f81bd89a507cc1f33c803af209a2e9097d633bfa3e6129",
+          "task_interface_id": "sha256:693d10fb4126902599d7b6bab8cc06455b12acfd3bc36f3677a7331ae6c45e69",
+          "task_ref": "erc4337/entry_point_invariant/no_beneficiary_payout_on_revert",
+          "usage": {
+            "completion_tokens": 1197,
+            "prompt_tokens": 30647,
+            "requests": 9,
+            "total_tokens": 31844
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T122443-default-fair-openai-gpt-6-astra-ethereum__deposit_contract_minimal__deposit_count",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:a52c9072758d90cd5bee68474e5dca71de626d49e302c141b0b1c9784b086d7f",
+          "reusable": true,
+          "run_id": "20261014T122443-default-fair-openai-gpt-6-astra-ethereum__deposit_contract_minimal__deposit_count",
+          "task_fingerprint": "sha256:68ba47bc1782f459b3584ab998356644524817cc19ddd4adbb25806da9fcfe99",
+          "task_interface_id": "sha256:98dc9db9254ff496efa91e9e9efd5e6e2ec03522b44844c4ea6732cd0c5f29a8",
+          "task_ref": "ethereum/deposit_contract_minimal/deposit_count",
+          "usage": {
+            "completion_tokens": 212,
+            "prompt_tokens": 14285,
+            "requests": 4,
+            "total_tokens": 14497
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T122717-default-fair-openai-gpt-6-astra-forgeyields__global_solvency__transfer_remote_preserves_global_solvency",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:ad483d9123dddb2c92f5a5e130f2f69e67b1bbc4eb5cde6f83b175fa9461db61",
+          "reusable": true,
+          "run_id": "20261014T122717-default-fair-openai-gpt-6-astra-forgeyields__global_solvency__transfer_remote_preserves_global_solvency",
+          "task_fingerprint": "sha256:f247bea589f47221716fd8926ff85c2959378c51c84ebcee975c9f3d8bd82535",
+          "task_interface_id": "sha256:1c7d2be69abe02950ed861a9caf15d5c8d58d11ec343ef682c76347fc7b66d33",
+          "task_ref": "forgeyields/global_solvency/transfer_remote_preserves_global_solvency",
+          "usage": {
+            "completion_tokens": 1652,
+            "prompt_tokens": 31645,
+            "requests": 8,
+            "total_tokens": 33297
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T122739-default-fair-openai-gpt-6-astra-hypernova__settled_payout_safety__valid_settled_payout_is_safe",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:be3034c26284768a3995a331619117beb522e95626dac37563dd96a6f9b4bfe3",
+          "reusable": true,
+          "run_id": "20261014T122739-default-fair-openai-gpt-6-astra-hypernova__settled_payout_safety__valid_settled_payout_is_safe",
+          "task_fingerprint": "sha256:12c97c61410bf8881e8e04c068de50b28a4793a2d3937b695c7e327a95a6862f",
+          "task_interface_id": "sha256:b6bbe48ef47b35ba4eb3ba6d53ea9f39a2e80d2bc931928bf7dfb59e6445575b",
+          "task_ref": "hypernova/settled_payout_safety/valid_settled_payout_is_safe",
+          "usage": {
+            "completion_tokens": 7815,
+            "prompt_tokens": 75421,
+            "requests": 19,
+            "total_tokens": 83236
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T123108-default-fair-openai-gpt-6-astra-ipor__plasma_vault_redeem_split__fee_payout_bounded_by_fee_free",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:c60cacf0963bab93b60a662c2a97651cc1508d94d1c939362fd42f7090e07e4c",
+          "reusable": true,
+          "run_id": "20261014T123108-default-fair-openai-gpt-6-astra-ipor__plasma_vault_redeem_split__fee_payout_bounded_by_fee_free",
+          "task_fingerprint": "sha256:d4b8ee89bab56f400f1047d2147cf4f85c211cd7b73411f6e36ae9ec0587f4ff",
+          "task_interface_id": "sha256:ab2a0acf171a90545926913562cdde367140fddeca269083a2660ab47c73476f",
+          "task_ref": "ipor/plasma_vault_redeem_split/fee_payout_bounded_by_fee_free",
+          "usage": {
+            "completion_tokens": 252,
+            "prompt_tokens": 17742,
+            "requests": 5,
+            "total_tokens": 17994
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T123343-default-fair-openai-gpt-6-astra-kleros__sortition_trees__draw_interval_matches_weights",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:668e19452b7fce15547e80e58980f9a2afdba968ad2aa820593e712633c03340",
+          "reusable": true,
+          "run_id": "20261014T123343-default-fair-openai-gpt-6-astra-kleros__sortition_trees__draw_interval_matches_weights",
+          "task_fingerprint": "sha256:7cf4c0de9a757662d6795d146a1d2e65d2cb3229841478de736d81bdee0b8d45",
+          "task_interface_id": "sha256:996ac228fedf4281254b7f00ef9652885f860df06248a63fc53ab115fcce4ec1",
+          "task_ref": "kleros/sortition_trees/draw_interval_matches_weights",
+          "usage": {
+            "completion_tokens": 314,
+            "prompt_tokens": 19016,
+            "requests": 5,
+            "total_tokens": 19330
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T123424-default-fair-openai-gpt-6-astra-kyberswap__partial_fill_price_floor__check_return_amount_partial_fill_price_floor",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:7f887ace1f8aa75357cb887cf924557f9a71d9f7c45bc0a9e4b543d7fcabbc1d",
+          "reusable": true,
+          "run_id": "20261014T123424-default-fair-openai-gpt-6-astra-kyberswap__partial_fill_price_floor__check_return_amount_partial_fill_price_floor",
+          "task_fingerprint": "sha256:6afce3f7f1e3f32f3c3234fcba03f3ea198677b146f3c28045f162fe4958394e",
+          "task_interface_id": "sha256:c8611d733f52eebdb744e298d131df02271b7ab366a0cdcc0ea69e0bd2c2b901",
+          "task_ref": "kyberswap/partial_fill_price_floor/check_return_amount_partial_fill_price_floor",
+          "usage": {
+            "completion_tokens": 516,
+            "prompt_tokens": 23473,
+            "requests": 6,
+            "total_tokens": 23989
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T123655-default-fair-openai-gpt-6-astra-lagoon__guardrails__exact_compliance",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:62ea483e2b99b1cce222be3d13308d373eaa3f83fdd8fadf3fffe17b9c9cf77c",
+          "reusable": true,
+          "run_id": "20261014T123655-default-fair-openai-gpt-6-astra-lagoon__guardrails__exact_compliance",
+          "task_fingerprint": "sha256:674e0dad3b7f5ce1cac5f1db4f3c753670bb2e320cea5977e0bc5c491b22d409",
+          "task_interface_id": "sha256:d374b2409366ce218f4b87f439ad64e1ef5369355fbd0d79be06e4024dc2b427",
+          "task_ref": "lagoon/guardrails/exact_compliance",
+          "usage": {
+            "completion_tokens": 825,
+            "prompt_tokens": 32095,
+            "requests": 9,
+            "total_tokens": 32920
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T123817-default-fair-openai-gpt-6-astra-lido__vaulthub_locked__shares_conversion_monotone",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:70a74c153e0aed67c511f7fb0d31f208587d8b7230379a057502a68ab13c70dc",
+          "reusable": true,
+          "run_id": "20261014T123817-default-fair-openai-gpt-6-astra-lido__vaulthub_locked__shares_conversion_monotone",
+          "task_fingerprint": "sha256:17f21fe664a8cf6d006c3d0c03191807eaf0289d5d0218b0f37be6b68e460910",
+          "task_interface_id": "sha256:f3c9b6a9c24e974aeb696e133dea809094fa3a4c3a2c3d76d6e931c9557f8977",
+          "task_ref": "lido/vaulthub_locked/shares_conversion_monotone",
+          "usage": {
+            "completion_tokens": 3969,
+            "prompt_tokens": 31823,
+            "requests": 8,
+            "total_tokens": 35792
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T124118-default-fair-openai-gpt-6-astra-lifi__swap_atomicity__min_output_required_for_commit",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:b6bba073b4d9168109aec7765e9148da17ec235e4c67cd467aaa884d1780434c",
+          "reusable": true,
+          "run_id": "20261014T124118-default-fair-openai-gpt-6-astra-lifi__swap_atomicity__min_output_required_for_commit",
+          "task_fingerprint": "sha256:af89218df7caa888f9cc5982f18e255832dcb98b3a37f9d5b330c5f6238d18c0",
+          "task_interface_id": "sha256:fb6d3a37b6cd10a353aa48e8e875f708cdf33c9fc3d1bf4e1e6f85fb9026c191",
+          "task_ref": "lifi/swap_atomicity/min_output_required_for_commit",
+          "usage": {
+            "completion_tokens": 916,
+            "prompt_tokens": 28448,
+            "requests": 8,
+            "total_tokens": 29364
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T124453-default-fair-openai-gpt-6-astra-nexus_mutual__ramm_price_band__sync_sets_buy_price",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:48b3310d016f05ce9f0979fa4bd0fdc345bd2ca52b5fc175f27c0b3872062df2",
+          "reusable": true,
+          "run_id": "20261014T124453-default-fair-openai-gpt-6-astra-nexus_mutual__ramm_price_band__sync_sets_buy_price",
+          "task_fingerprint": "sha256:80d131b6b0817b55d5b8935a05d5f77e32c76f1051c41a32fedcbc465cfe9cfa",
+          "task_interface_id": "sha256:b9b8b6a5ba42657c7bfe620a0ceaf18c355b71878e93a8c9c12b03a7c0911247",
+          "task_ref": "nexus_mutual/ramm_price_band/sync_sets_buy_price",
+          "usage": {
+            "completion_tokens": 172,
+            "prompt_tokens": 14608,
+            "requests": 4,
+            "total_tokens": 14780
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T124709-default-fair-openai-gpt-6-astra-onedelta__caller_address_integrity__direct_erc20_transfer_from_uses_outer_caller",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:17caa1afb8ed4610813c2778d6d0c1e18ee7a3dca719a52371865aa793e78800",
+          "reusable": true,
+          "run_id": "20261014T124709-default-fair-openai-gpt-6-astra-onedelta__caller_address_integrity__direct_erc20_transfer_from_uses_outer_caller",
+          "task_fingerprint": "sha256:dffa8e3996cc1963e2a22b7125c471a64d3fa8dea3c71789c66a3ecd996c9b30",
+          "task_interface_id": "sha256:0355fbfd24b5ecc9d206e6fb160499ca6e8e62e4ad49415a240a1e99dad5df96",
+          "task_ref": "onedelta/caller_address_integrity/direct_erc20_transfer_from_uses_outer_caller",
+          "usage": {
+            "completion_tokens": 284,
+            "prompt_tokens": 18748,
+            "requests": 5,
+            "total_tokens": 19032
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T124723-default-fair-openai-gpt-6-astra-onedelta__caller_address_integrity__transfers_permit2_transfer_from_uses_outer_caller",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:a2444ff9fe8fdb43669fafe53907f6e7b0aac1172115b8f69099b4d0d76f4308",
+          "reusable": true,
+          "run_id": "20261014T124723-default-fair-openai-gpt-6-astra-onedelta__caller_address_integrity__transfers_permit2_transfer_from_uses_outer_caller",
+          "task_fingerprint": "sha256:01a769a493936699b5051c87a22ccac21ccd51d8fa824c6a08d7ec87e7661443",
+          "task_interface_id": "sha256:7059530c0924ee37440c69af6e19798ba633248930813ace9524d52e0eca0932",
+          "task_ref": "onedelta/caller_address_integrity/transfers_permit2_transfer_from_uses_outer_caller",
+          "usage": {
+            "completion_tokens": 231,
+            "prompt_tokens": 18827,
+            "requests": 5,
+            "total_tokens": 19058
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T124849-default-fair-openai-gpt-6-astra-openzeppelin__erc4626_virtual_offset_deposit__positive_deposit_mints_positive_shares_under_rate_bound",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:233657a279448767b4ec75e6b303ac227f2bad2a8c683066c8b1cab721a919ad",
+          "reusable": true,
+          "run_id": "20261014T124849-default-fair-openai-gpt-6-astra-openzeppelin__erc4626_virtual_offset_deposit__positive_deposit_mints_positive_shares_under_rate_bound",
+          "task_fingerprint": "sha256:cd399f8f9af33f0fdcd6543510b077f8f3b54a49c525ab7697df9bc419ebc8f9",
+          "task_interface_id": "sha256:9ce1c01bbd22978189885b6f46891b9fcf9b787fb0bf3c109df92f9f356d1fb6",
+          "task_ref": "openzeppelin/erc4626_virtual_offset_deposit/positive_deposit_mints_positive_shares_under_rate_bound",
+          "usage": {
+            "completion_tokens": 4831,
+            "prompt_tokens": 45603,
+            "requests": 11,
+            "total_tokens": 50434
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T125015-default-fair-openai-gpt-6-astra-paladin_votes__stream_recovery_claim_usdc__both_matches_independent_claims",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:c1ede6808e37008f3627df7b8378db1952897e52807f33d83374d05efe6903b6",
+          "reusable": true,
+          "run_id": "20261014T125015-default-fair-openai-gpt-6-astra-paladin_votes__stream_recovery_claim_usdc__both_matches_independent_claims",
+          "task_fingerprint": "sha256:8ddb6beb323d3ae06d1579f1bb99b39b3719606bd4b6335688d70d20065d1a7a",
+          "task_interface_id": "sha256:3e6734598ba1397784615ee52bc42bc12f848bb608aff50b0f899e7bd53ae4ee",
+          "task_ref": "paladin_votes/stream_recovery_claim_usdc/both_matches_independent_claims",
+          "usage": {
+            "completion_tokens": 7820,
+            "prompt_tokens": 77695,
+            "requests": 19,
+            "total_tokens": 85515
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T125023-default-fair-openai-gpt-6-astra-paladin_votes__stream_recovery_claim_usdc__weth_claim_updates_round_claimed",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:59e1b72e83b82d82e070a4cb1abc5cd7f44cb309d71347a0ca165fddd2287360",
+          "reusable": true,
+          "run_id": "20261014T125023-default-fair-openai-gpt-6-astra-paladin_votes__stream_recovery_claim_usdc__weth_claim_updates_round_claimed",
+          "task_fingerprint": "sha256:d8ac6943b9be92e87848767b82aca9c59256c64c06ad581fd9000883e2573835",
+          "task_interface_id": "sha256:2d0dbea2791c06e5de4d6237440ee4253add4fcc312bdf3620ce74080cea4e08",
+          "task_ref": "paladin_votes/stream_recovery_claim_usdc/weth_claim_updates_round_claimed",
+          "usage": {
+            "completion_tokens": 388,
+            "prompt_tokens": 23380,
+            "requests": 6,
+            "total_tokens": 23768
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T125437-default-fair-openai-gpt-6-astra-pareto__redemption_backing__deposit_funds_preserves_closed_epoch_reserve_guard",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:722ef6e54061c64a62abd76b22d3b3dbd5c8e3cbddc228b6a3552983fa1ba07e",
+          "reusable": true,
+          "run_id": "20261014T125437-default-fair-openai-gpt-6-astra-pareto__redemption_backing__deposit_funds_preserves_closed_epoch_reserve_guard",
+          "task_fingerprint": "sha256:eddbba6072cbf0cfcffd0f11a12a4525b9ee029ffcb34ed3d8154e8bd799d18a",
+          "task_interface_id": "sha256:f7e01b75abb7e2a2bb7c4ae412acc5eef057f1d50ea92e88b843d2a8a9c5d6dc",
+          "task_ref": "pareto/redemption_backing/deposit_funds_preserves_closed_epoch_reserve_guard",
+          "usage": {
+            "completion_tokens": 5392,
+            "prompt_tokens": 69809,
+            "requests": 17,
+            "total_tokens": 75201
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T125651-default-fair-openai-gpt-6-astra-pendle__py_supply_pairing__redeem_py_pre_expiry_preserves_supply_pairing",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:011996dfca21bced3138ef42ae98735497100f80fdfed3da4de8c66edff108a9",
+          "reusable": true,
+          "run_id": "20261014T125651-default-fair-openai-gpt-6-astra-pendle__py_supply_pairing__redeem_py_pre_expiry_preserves_supply_pairing",
+          "task_fingerprint": "sha256:3fed573d3d415c560f1618d542db635a766967a35a78271d89bf18f3702842d4",
+          "task_interface_id": "sha256:3a24bff112346cb511b88f0e5e934ededdf98dc78ef8e47f4fbbbfd83e51f366",
+          "task_ref": "pendle/py_supply_pairing/redeem_py_pre_expiry_preserves_supply_pairing",
+          "usage": {
+            "completion_tokens": 3854,
+            "prompt_tokens": 47318,
+            "requests": 11,
+            "total_tokens": 51172
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T130653-default-fair-openai-gpt-6-astra-piku__fund_conservation__amount_paid_records_distribution",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:364f440101fea62bc5d87634f085278e59db7e70cf60575ea1abc05592218601",
+          "reusable": true,
+          "run_id": "20261014T130653-default-fair-openai-gpt-6-astra-piku__fund_conservation__amount_paid_records_distribution",
+          "task_fingerprint": "sha256:8c7966e981010f7571c45cd5d9c73851c750055ef51ee57f6691c730dbdd7719",
+          "task_interface_id": "sha256:c650f3eedebf43920081553f71620f578302f39bd206e9bb9de2c79bf653f0b6",
+          "task_ref": "piku/fund_conservation/amount_paid_records_distribution",
+          "usage": {
+            "completion_tokens": 513,
+            "prompt_tokens": 25838,
+            "requests": 7,
+            "total_tokens": 26351
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T131017-default-fair-openai-gpt-6-astra-polaris__bonding_curve__init_reserve_ratio_zero",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:8847ce0399ad763765c7f6e224c0e676c938e990cf3458b36d2d361db2a095bf",
+          "reusable": true,
+          "run_id": "20261014T131017-default-fair-openai-gpt-6-astra-polaris__bonding_curve__init_reserve_ratio_zero",
+          "task_fingerprint": "sha256:3ae238380c990faf6086856a106adb6f8d63ed67b4c656d65a72f576cca53aff",
+          "task_interface_id": "sha256:b61ab1781d07a2322384a44856e221c274b7a49e4d590dc86b7e55914584e9ac",
+          "task_ref": "polaris/bonding_curve/init_reserve_ratio_zero",
+          "usage": {
+            "completion_tokens": 7367,
+            "prompt_tokens": 76522,
+            "requests": 19,
+            "total_tokens": 83889
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T131258-default-fair-openai-gpt-6-astra-polygon__agglayer_bridge__claimAsset_valid_leaf_and_consumes_unique_nullifier",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:c140898c37aea5853aaeedc710b51ffc4e7a3bd8e9c67b87f5fea94c63bf60dd",
+          "reusable": true,
+          "run_id": "20261014T131258-default-fair-openai-gpt-6-astra-polygon__agglayer_bridge__claimAsset_valid_leaf_and_consumes_unique_nullifier",
+          "task_fingerprint": "sha256:b3e67e14232140064643adfac4882ca36a39135aee16161402ec9cd0abb8ac9d",
+          "task_interface_id": "sha256:af0de8dadde167ae7699068bbade117d43f3a5db584e1266f8a09b1f173807aa",
+          "task_ref": "polygon/agglayer_bridge/claimAsset_valid_leaf_and_consumes_unique_nullifier",
+          "usage": {
+            "completion_tokens": 7707,
+            "prompt_tokens": 79339,
+            "requests": 19,
+            "total_tokens": 87046
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T131538-default-fair-openai-gpt-6-astra-reserve__auction_price_band__price_upper_bound",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:3fcaafb0c6fd38ee89d6fdaf071927c649d984fd6b4c88b432e0fcce9e1e1597",
+          "reusable": true,
+          "run_id": "20261014T131538-default-fair-openai-gpt-6-astra-reserve__auction_price_band__price_upper_bound",
+          "task_fingerprint": "sha256:5f94fc4c95714e3a6ec16d4aa0f882f542a102ce93de7a53577c08cf844503f8",
+          "task_interface_id": "sha256:06e68e64a71b3f16ab47291a178da5cea812a4460630c69b2308a2175ca2afcb",
+          "task_ref": "reserve/auction_price_band/price_upper_bound",
+          "usage": {
+            "completion_tokens": 4979,
+            "prompt_tokens": 71851,
+            "requests": 19,
+            "total_tokens": 76830
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T132248-default-fair-openai-gpt-6-astra-rootstock__flyover_quote_lifecycle__refund_user_peg_out_conserves_quote_amount",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:fbc417174d6224e8dec27920bd357ceccee52f137396e80836741da5d3270b70",
+          "reusable": true,
+          "run_id": "20261014T132248-default-fair-openai-gpt-6-astra-rootstock__flyover_quote_lifecycle__refund_user_peg_out_conserves_quote_amount",
+          "task_fingerprint": "sha256:a2a26d15099cf9e721779216404b0bf4febcfd097d313b80cc3ef56ae39b1ae2",
+          "task_interface_id": "sha256:5fbe7ed3a892553ba8d8aeddfa5ae882c94802fa5610b20c2111eb8f59a2ce23",
+          "task_ref": "rootstock/flyover_quote_lifecycle/refund_user_peg_out_conserves_quote_amount",
+          "usage": {
+            "completion_tokens": 5553,
+            "prompt_tokens": 77442,
+            "requests": 19,
+            "total_tokens": 82995
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T132455-default-fair-openai-gpt-6-astra-safe__owner_manager_reach__remove_owner_acyclicity",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:dcc8f577e52b2e889fc408daf7f58e9c4d16eba7827903b8ab53021f4768a533",
+          "reusable": true,
+          "run_id": "20261014T132455-default-fair-openai-gpt-6-astra-safe__owner_manager_reach__remove_owner_acyclicity",
+          "task_fingerprint": "sha256:221a155df8600f37e53b8a34b3644cd526ff2ff3244a1657627dccf140850d87",
+          "task_interface_id": "sha256:70c6106caa25f7d988c4940f6aab4bca3c8dd29947e49e9bea844c79215cbe85",
+          "task_ref": "safe/owner_manager_reach/remove_owner_acyclicity",
+          "usage": {
+            "completion_tokens": 1916,
+            "prompt_tokens": 27616,
+            "requests": 7,
+            "total_tokens": 29532
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T132616-default-fair-openai-gpt-6-astra-safe__owner_manager_reach__setup_owners_in_list_reachable",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:9c4df15c04367a116930852a08561d83d71b48b26227e980d940f9de62ca2a08",
+          "reusable": true,
+          "run_id": "20261014T132616-default-fair-openai-gpt-6-astra-safe__owner_manager_reach__setup_owners_in_list_reachable",
+          "task_fingerprint": "sha256:ee4a9f672546eee5625926aed7d4b1825f71fe3dd7ee148b6753b318e2318754",
+          "task_interface_id": "sha256:67ce07c1850433bc6c09a84b3614c58d5de3765a52873ee7b739a2f8285ad31e",
+          "task_ref": "safe/owner_manager_reach/setup_owners_in_list_reachable",
+          "usage": {
+            "completion_tokens": 7086,
+            "prompt_tokens": 58423,
+            "requests": 13,
+            "total_tokens": 65509
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T132758-default-fair-openai-gpt-6-astra-starkware__starkgate_escrow__deposit_preserves_escrow_lower_bound",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:f4c563b35035710505056ed2d060817b5fb6ce1caad217510c79bb3199db3709",
+          "reusable": true,
+          "run_id": "20261014T132758-default-fair-openai-gpt-6-astra-starkware__starkgate_escrow__deposit_preserves_escrow_lower_bound",
+          "task_fingerprint": "sha256:0adf2cb49da5feeda5ce19cf602bd134049e6fa7f57d2c3f4bbb93e9491d865e",
+          "task_interface_id": "sha256:fba9de12dcc6551a91ef9dd881235daa31b261780468ef9c7eecb3dd990fab78",
+          "task_ref": "starkware/starkgate_escrow/deposit_preserves_escrow_lower_bound",
+          "usage": {
+            "completion_tokens": 2674,
+            "prompt_tokens": 51723,
+            "requests": 13,
+            "total_tokens": 54397
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T133230-default-fair-openai-gpt-6-astra-superfluid__realtime_balance_conservation__delete_non_app_preserves_future_modular_cfa_global_projection",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:c40218b1aaef3e2de9aab11de70befabac9950cb43258377506cc365a91adc1e",
+          "reusable": true,
+          "run_id": "20261014T133230-default-fair-openai-gpt-6-astra-superfluid__realtime_balance_conservation__delete_non_app_preserves_future_modular_cfa_global_projection",
+          "task_fingerprint": "sha256:398eef6a199b7f6024287799bdc49ba370d7e3f0552227b378cfd6661324642a",
+          "task_interface_id": "sha256:182e4397ab6d7e800d5c92ddbfa35be3f3fcaa0db06f6b22950dfa562f377725",
+          "task_ref": "superfluid/realtime_balance_conservation/delete_non_app_preserves_future_modular_cfa_global_projection",
+          "usage": {
+            "completion_tokens": 2038,
+            "prompt_tokens": 36787,
+            "requests": 10,
+            "total_tokens": 38825
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T142543-default-fair-openai-gpt-6-astra-superfluid__realtime_balance_conservation__update_non_app_preserves_pair_net_flow_rate",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:0a98f56c61d02259623fb80aaad7df34f0f87e6d1f659867eaa315df24d2d70d",
+          "reusable": true,
+          "run_id": "20261014T142543-default-fair-openai-gpt-6-astra-superfluid__realtime_balance_conservation__update_non_app_preserves_pair_net_flow_rate",
+          "task_fingerprint": "sha256:1bfbcfb2aa17fcb7be5bed730b567d03057d8df56bdad37ce7d8085172b62519",
+          "task_interface_id": "sha256:83bb89dde581edb998eb58d010fbadbffbe6468232ab87a5de2585db946e8ca4",
+          "task_ref": "superfluid/realtime_balance_conservation/update_non_app_preserves_pair_net_flow_rate",
+          "usage": {
+            "completion_tokens": 5712,
+            "prompt_tokens": 70220,
+            "requests": 19,
+            "total_tokens": 75932
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T133638-default-fair-openai-gpt-6-astra-t3tris__hwm_performance_fee__fee_claim_preserves_unclaimed_le_supply",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:a2595e02d3452b0b77a178239bb498b9700fbd607c74652b6ca0094c2c80b53a",
+          "reusable": true,
+          "run_id": "20261014T133638-default-fair-openai-gpt-6-astra-t3tris__hwm_performance_fee__fee_claim_preserves_unclaimed_le_supply",
+          "task_fingerprint": "sha256:b93f066a15fc79d754532cf9e49619a8b73f75b68ad7b169ff1ccb69a95c5ee7",
+          "task_interface_id": "sha256:72319266343439bad4ef9323eedb1f63544e3077da437002e33df5f5cb8854f2",
+          "task_ref": "t3tris/hwm_performance_fee/fee_claim_preserves_unclaimed_le_supply",
+          "usage": {
+            "completion_tokens": 1397,
+            "prompt_tokens": 29965,
+            "requests": 9,
+            "total_tokens": 31362
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T133735-default-fair-openai-gpt-6-astra-term_finance__term_auction_clearing__clearing_assignment_correct",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:95482f1e57dbc79a878ecaa66ea1e55bbfb6b6ab0b1e0b39a5281b1c7800866a",
+          "reusable": true,
+          "run_id": "20261014T133735-default-fair-openai-gpt-6-astra-term_finance__term_auction_clearing__clearing_assignment_correct",
+          "task_fingerprint": "sha256:9647d0b56654aa25e3f0dd5462561331fb2a79453a58382a5a5a15949bc1d34e",
+          "task_interface_id": "sha256:c58783ac7fd6e0114823057acf3dd932105a2ea0d28473cb8ed1517259affe28",
+          "task_ref": "term_finance/term_auction_clearing/clearing_assignment_correct",
+          "usage": {
+            "completion_tokens": 10493,
+            "prompt_tokens": 69479,
+            "requests": 16,
+            "total_tokens": 79972
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T134028-default-fair-openai-gpt-6-astra-termmax__order_v2_buy_xt_single_segment__swap_debt_token_to_xt_updates_virtual_xt_reserve",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:26c946f198750361ee67b8430ad40126f9ed02daed5c82fe21e90fc0496b8d48",
+          "reusable": true,
+          "run_id": "20261014T134028-default-fair-openai-gpt-6-astra-termmax__order_v2_buy_xt_single_segment__swap_debt_token_to_xt_updates_virtual_xt_reserve",
+          "task_fingerprint": "sha256:dd038d7d9686c1027ae2737432ef2c60e45614f96fb88de07b050dada929e412",
+          "task_interface_id": "sha256:dc61644d731eeff70596777e7361424ff7f5e25ffa740cb391bdaa7a8527b218",
+          "task_ref": "termmax/order_v2_buy_xt_single_segment/swap_debt_token_to_xt_updates_virtual_xt_reserve",
+          "usage": {
+            "completion_tokens": 7581,
+            "prompt_tokens": 84579,
+            "requests": 17,
+            "total_tokens": 92160
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T135153-default-fair-openai-gpt-6-astra-uniswap_v2__pair_fee_adjusted_swap__swap_sets_reserve1",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:90adb0cc04b624e9ee09155eed9e820b7d1940e1de13e804b64917eed17cc9e6",
+          "reusable": true,
+          "run_id": "20261014T135153-default-fair-openai-gpt-6-astra-uniswap_v2__pair_fee_adjusted_swap__swap_sets_reserve1",
+          "task_fingerprint": "sha256:a781e447e4c6eb83778cf3f7e158e8802119cb95046ff6c3e908611118a9f27d",
+          "task_interface_id": "sha256:a8d573789693fab74eba82827dd64329afc589502e8403c22b7a93eed70ae6eb",
+          "task_ref": "uniswap_v2/pair_fee_adjusted_swap/swap_sets_reserve1",
+          "usage": {
+            "completion_tokens": 2994,
+            "prompt_tokens": 46381,
+            "requests": 12,
+            "total_tokens": 49375
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T135525-default-fair-openai-gpt-6-astra-usual__dao_collateral__redeem_return_formula",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:0579bfd72e90fdbccbf0734f159e533f84cb7f39cd1b00c9f15a8dcf3f27297c",
+          "reusable": true,
+          "run_id": "20261014T135525-default-fair-openai-gpt-6-astra-usual__dao_collateral__redeem_return_formula",
+          "task_fingerprint": "sha256:d27a31f335e5c65bee2aa30fb43552f9540fb7a42741dbeda7a9c7aae89985b9",
+          "task_interface_id": "sha256:dc133e7dabdbb29a967dd10dfb85fb9b21ca71a61da7e9e49bbd658a54dfb301",
+          "task_ref": "usual/dao_collateral/redeem_return_formula",
+          "usage": {
+            "completion_tokens": 6147,
+            "prompt_tokens": 80101,
+            "requests": 19,
+            "total_tokens": 86248
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T140725-default-fair-openai-gpt-6-astra-wildcat__borrow_liquidity_safety__positive_borrow_preserves_required_liquidity",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:1d548e90aaa5e7ad2a0fc8d2550f0dd2c50b17293eb86ddde351759b448dbfd2",
+          "reusable": true,
+          "run_id": "20261014T140725-default-fair-openai-gpt-6-astra-wildcat__borrow_liquidity_safety__positive_borrow_preserves_required_liquidity",
+          "task_fingerprint": "sha256:5b91d39b7bdf590f783b018964d185c5762eeefe55c6a4a47bc6412e1b620334",
+          "task_interface_id": "sha256:7175eeda9db801ec8d8aefb8f53296cf6e4dbd74244894aefbd4301566385591",
+          "task_ref": "wildcat/borrow_liquidity_safety/positive_borrow_preserves_required_liquidity",
+          "usage": {
+            "completion_tokens": 577,
+            "prompt_tokens": 23814,
+            "requests": 6,
+            "total_tokens": 24391
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T140953-default-fair-openai-gpt-6-astra-yo_protocol__async_redemption_escrow__candidate_g_source_reachability",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:59176d22d1f71510f0b02e00b8c2665fe15d1ad773fa16b36c83ddef7d314ea9",
+          "reusable": true,
+          "run_id": "20261014T140953-default-fair-openai-gpt-6-astra-yo_protocol__async_redemption_escrow__candidate_g_source_reachability",
+          "task_fingerprint": "sha256:202f5b6345decc25e92096d28ccb991ef32bdd49ba338e0af57f3f8887a9e012",
+          "task_interface_id": "sha256:b58ee332be6c3a19ae9187e462253d7206e52545a57c00791750ea6669a643f2",
+          "task_ref": "yo_protocol/async_redemption_escrow/candidate_g_source_reachability",
+          "usage": {
+            "completion_tokens": 6270,
+            "prompt_tokens": 81953,
+            "requests": 19,
+            "total_tokens": 88223
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T141327-default-fair-openai-gpt-6-astra-yo_protocol__async_redemption_escrow__redeem_wrapper",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:f035a0c8669fdc366a23f955426c28fa8a80be064b41e41ccddf14f365e107d1",
+          "reusable": true,
+          "run_id": "20261014T141327-default-fair-openai-gpt-6-astra-yo_protocol__async_redemption_escrow__redeem_wrapper",
+          "task_fingerprint": "sha256:270d56c83ed8343aadd8c22a64541db0a5b3aefd39257c572d56f52f8d2af8ff",
+          "task_interface_id": "sha256:8293a8a8e1a96195e5ce40d23d2cfdc1e3eadb995d42c15d167f92e61b2f16d4",
+          "task_ref": "yo_protocol/async_redemption_escrow/redeem_wrapper",
+          "usage": {
+            "completion_tokens": 4903,
+            "prompt_tokens": 81995,
+            "requests": 19,
+            "total_tokens": 86898
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T142325-default-fair-openai-gpt-6-astra-zama__erc7984_confidential_token__transfer_insufficient",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:588e9dd2b4f3297078527077650f3b1ac8e7e73b8cc4aa99cd0ed9cd1e26b183",
+          "reusable": true,
+          "run_id": "20261014T142325-default-fair-openai-gpt-6-astra-zama__erc7984_confidential_token__transfer_insufficient",
+          "task_fingerprint": "sha256:79f7525f7b80e758ab46de60f86284d659ee9ff3eb382304a678253568c7c843",
+          "task_interface_id": "sha256:f9ce83747b66ebb7ce0c318a35a70ae54e7def2026afdb73c341d6a8d99756eb",
+          "task_ref": "zama/erc7984_confidential_token/transfer_insufficient",
+          "usage": {
+            "completion_tokens": 6533,
+            "prompt_tokens": 85351,
+            "requests": 19,
+            "total_tokens": 91884
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T142618-default-fair-openai-gpt-6-astra-zama__erc7984_confidential_token__transfer_sufficient",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:ae6dd4f4e30b079f2f22cbf45ee3f34ef8f48f643e6de826689b45a95428e5c8",
+          "reusable": true,
+          "run_id": "20261014T142618-default-fair-openai-gpt-6-astra-zama__erc7984_confidential_token__transfer_sufficient",
+          "task_fingerprint": "sha256:43221dc2c0213eaf6a52bd2457ad952b737fce25e8e5bd23ca51ed46dcbd7006",
+          "task_interface_id": "sha256:7470db1c398218111b6ecfbaecc7172f61c628058c1f810407379af7562bd1d9",
+          "task_ref": "zama/erc7984_confidential_token/transfer_sufficient",
+          "usage": {
+            "completion_tokens": 3761,
+            "prompt_tokens": 54314,
+            "requests": 13,
+            "total_tokens": 58075
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T143712-default-fair-openai-gpt-6-astra-zama_protocol_apps__erc7984_upgradeable_exact_source__uninitialized_sender_reverts_without_writes",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": true,
+          "result_key": "sha256:7e520500348797200985a262590b9db96254d6ecb6c8673a2de2c7e9711b1e86",
+          "reusable": true,
+          "run_id": "20261014T143712-default-fair-openai-gpt-6-astra-zama_protocol_apps__erc7984_upgradeable_exact_source__uninitialized_sender_reverts_without_writes",
+          "task_fingerprint": "sha256:a54faaf65674f21b02020eb3b15374a0bd8972ccca7d88b489f5739a89403272",
+          "task_interface_id": "sha256:3c3397303f1692c4435e9e92ff6cf1f4efab2403352882886f587ccbf9d3e407",
+          "task_ref": "zama_protocol_apps/erc7984_upgradeable_exact_source/uninitialized_sender_reverts_without_writes",
+          "usage": {
+            "completion_tokens": 1302,
+            "prompt_tokens": 23970,
+            "requests": 6,
+            "total_tokens": 25272
+          },
+          "verifier_output_present": true
+        },
+        {
+          "artifact_id": "20261014T143925-default-fair-openai-gpt-6-astra-zodiac__roles_decoder_faithfulness__roles_decoder_faithful",
+          "artifact_status": "ok",
+          "harness_status": "completed",
+          "passed": false,
+          "result_key": "sha256:597bc2c6ecb355b87e094e47666f64474624b0c5f9ed96ee4652fa54a16ebbe0",
+          "reusable": true,
+          "run_id": "20261014T143925-default-fair-openai-gpt-6-astra-zodiac__roles_decoder_faithfulness__roles_decoder_faithful",
+          "task_fingerprint": "sha256:638f95f7e5877ec6972bdd11f09e5bceee85adc81057386315ece581e4d1faca",
+          "task_interface_id": "sha256:f9f3ec01c342dd921bf1550b751f53695fd291d62b52e276ca264b5d41efca95",
+          "task_ref": "zodiac/roles_decoder_faithfulness/roles_decoder_faithful",
+          "usage": {
+            "completion_tokens": 11200,
+            "prompt_tokens": 80956,
+            "requests": 19,
+            "total_tokens": 92156
+          },
+          "verifier_output_present": true
+        }
+      ],
+      "valid_count": 50
+    },
+    {
+      "archive": {
         "asset_name": "benchmark-v0.3-gpt-6-luna.tar.zst",
         "asset_url": "https://github.com/lfglabs-dev/ethereum-verification-benchmark/releases/download/v0.3/benchmark-v0.3-gpt-6-luna.tar.zst",
         "byte_size": 321756,
