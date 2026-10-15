@@ -1,0 +1,1 @@
+In `applySwap`, the final reserve write uses the wrong balance: `setStorage reserve1 balance0` (copy-paste of the reserve0 line). Counterexample: balance0 = 1, balance1 = 2, amount0In = 1, amount1In = 0, default state (reserves 0). Input/fee/K guards all pass (1000 >= 3, 2000 >= 0, 997*2000 >= 0), but s'.storage 1 = 1 != 2 = balance1, violating `applySwap_sets_reserve1_spec`.

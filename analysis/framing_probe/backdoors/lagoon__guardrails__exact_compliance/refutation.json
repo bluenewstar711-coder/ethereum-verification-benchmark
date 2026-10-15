@@ -1,0 +1,1 @@
+{"helpers": "", "proof": "intro h\nhave hc := h 1 1 1 0 0\nunfold exactComplianceSpec at hc\nrw [if_pos (by decide)] at hc\nhave h1 : isCompliant 1 1 1 0 0 = false := by decide\nhave h2 : annualizedVariationInsideGuardrails 1 1 1 0 0 := by\n  unfold annualizedVariationInsideGuardrails\n  decide\nrw [h1] at hc\nexact absurd (hc.mpr h2) (by decide)"}
