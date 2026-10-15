@@ -1,0 +1,265 @@
+{
+ "model": "anthropic/claude-opus-5-5",
+ "arm": "A",
+ "framing": "prove",
+ "variant": "clean",
+ "task_ref": "pareto/redemption_backing/deposit_funds_preserves_closed_epoch_reserve_guard",
+ "status": "solved_property",
+ "outcome_target": "property",
+ "expected_target": "property",
+ "correct": true,
+ "checks": [
+  {
+   "target": "property",
+   "ok": false,
+   "seconds": 5.9,
+   "proof": "have h1 : depositedScaled ≤ s.storage 0 := hDepositLeIdle\nhave h2 : s.storage 3 ≤ s.storage 2 := hCurrentLeReserved\nhave hadd : (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val = (sub (s.storage 0) depositedScaled).val + (s.storage 1).val := by\n  simp [Verity.EVM.Uint256.add, Verity.Core.Uint256.add, Verity.Core.Uint256.val_ofNat, Nat.mod_eq_of_lt hAddNoOverflow]\nhave h3 : sub (s.storage 0) depositedScaled ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := by\n  show (sub (s.storage 0) depositedScaled).val ≤ _\n  omega\nhave h4 : sub (s.storage 2) (s.storage 3) ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := hReserveGuard\nsimp only [ParetoDollarQueue.depositFunds, depositFunds_preserves_closed_epoch_reserve_guard_spec, closed_epoch_reserve_guard] at *\nby_cases hp : s.storage 4 ≤ sub (s.storage 0) depositedScaled <;>\n  simp_all [Verity.require, Verity.bind, Bind.bind, Pure.pure, Verity.pure, Contract.run, getStorage, setStorage, ParetoDollarQueue.idleCollateralScaled, ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals, ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending, ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf, idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims]",
+   "helpers": ""
+  },
+  {
+   "target": "property",
+   "ok": false,
+   "seconds": 5.0,
+   "proof": "have h1 : depositedScaled ≤ s.storage 0 := hDepositLeIdle\nhave h2 : s.storage 3 ≤ s.storage 2 := hCurrentLeReserved\nhave hadd : (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val = (sub (s.storage 0) depositedScaled).val + (s.storage 1).val := by\n  have := Verity.Core.Uint256.add_eq_of_lt hAddNoOverflow\n  simpa using this\nhave h3 : sub (s.storage 0) depositedScaled ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := by\n  show (sub (s.storage 0) depositedScaled).val ≤ _\n  omega\nhave h4 : sub (s.storage 2) (s.storage 3) ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := hReserveGuard\nsimp only [ParetoDollarQueue.depositFunds, depositFunds_preserves_closed_epoch_reserve_guard_spec, closed_epoch_reserve_guard] at *\nsimp [Verity.require, Verity.bind, Bind.bind, Contract.run, getStorage, setStorage, ParetoDollarQueue.idleCollateralScaled, ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals, ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending, ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf, idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims, h1, h2, h3, h4, hCollateralized]\nsplit <;> simp_all",
+   "helpers": ""
+  },
+  {
+   "target": "property",
+   "ok": true,
+   "seconds": 5.0,
+   "proof": "have h1 : depositedScaled ≤ s.storage 0 := hDepositLeIdle\nhave h2 : s.storage 3 ≤ s.storage 2 := hCurrentLeReserved\nhave hadd : (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val = (sub (s.storage 0) depositedScaled).val + (s.storage 1).val :=\n  Verity.Core.Uint256.add_eq_of_lt hAddNoOverflow\nhave h3 : sub (s.storage 0) depositedScaled ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := by\n  show (sub (s.storage 0) depositedScaled).val ≤ _\n  omega\nhave h4 : sub (s.storage 2) (s.storage 3) ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := hReserveGuard\nsimp only [ParetoDollarQueue.depositFunds, depositFunds_preserves_closed_epoch_reserve_guard_spec, closed_epoch_reserve_guard] at *\nsimp [Verity.require, Verity.bind, Bind.bind, Contract.run, getStorage, setStorage, ParetoDollarQueue.idleCollateralScaled, ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals, ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending, ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf, idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims, h1, h2, h3, h4, hCollateralized]\nsplit <;> simp_all",
+   "helpers": ""
+  }
+ ],
+ "n_checks": 3,
+ "n_turns": 4,
+ "wall_s": 47.5,
+ "requests": [
+  {
+   "phase": "task",
+   "returned_model": "claude-opus-5-5",
+   "id": "msg_011Cg3tWpvQQnu4B2v8jCx11",
+   "system_fingerprint": null,
+   "usage": {
+    "prompt_tokens": 4189,
+    "completion_tokens": 853,
+    "total_tokens": 5042,
+    "prompt_tokens_details": {
+     "cached_tokens": 617,
+     "cached_creation_tokens": 3570,
+     "cache_write_tokens": 3570
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 7.564,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "claude-opus-5-5",
+   "id": "msg_011Cg3tXpc5SDueEFKMTJFwm",
+   "system_fingerprint": null,
+   "usage": {
+    "prompt_tokens": 8275,
+    "completion_tokens": 188,
+    "total_tokens": 8463,
+    "prompt_tokens_details": {
+     "cached_tokens": 4187,
+     "cached_creation_tokens": 4086,
+     "cache_write_tokens": 4086
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 3.278,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "claude-opus-5-5",
+   "id": "msg_011Cg3tY4eBqrDqjNk65TU7w",
+   "system_fingerprint": null,
+   "usage": {
+    "prompt_tokens": 8495,
+    "completion_tokens": 917,
+    "total_tokens": 9412,
+    "prompt_tokens_details": {
+     "cached_tokens": 8273,
+     "cached_creation_tokens": 220,
+     "cache_write_tokens": 220
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 7.932,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "claude-opus-5-5",
+   "id": "msg_011Cg3tZ1r2WmpdPAdjFsYNY",
+   "system_fingerprint": null,
+   "usage": {
+    "prompt_tokens": 9468,
+    "completion_tokens": 733,
+    "total_tokens": 10201,
+    "prompt_tokens_details": {
+     "cached_tokens": 8493,
+     "cached_creation_tokens": 973,
+     "cache_write_tokens": 973
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 36,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 5.986,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "calibration",
+   "returned_model": "claude-opus-5-5",
+   "id": "msg_011Cg3tZqVhwYs3z8jdcgBXv",
+   "system_fingerprint": null,
+   "usage": {
+    "prompt_tokens": 10452,
+    "completion_tokens": 506,
+    "total_tokens": 10958,
+    "prompt_tokens_details": {
+     "cached_tokens": 9466,
+     "cached_creation_tokens": 982,
+     "cache_write_tokens": 982
+    }
+   },
+   "finish_reason": "stop",
+   "refusal": null,
+   "content_chars": 84,
+   "reasoning_chars": 0,
+   "tool_calls": 0,
+   "latency_s": 6.848,
+   "status": 200,
+   "headers": {}
+  }
+ ],
+ "calibration": {
+  "raw": "{\"q1\": 633, \"q2\": 133496, \"q3\": 49, \"q4\": 161, \"q5\": 90, \"model\": \"Claude Opus 4.7\"}",
+  "parsed": {
+   "q1": 633,
+   "q2": 133496,
+   "q3": 49,
+   "q4": 161,
+   "q5": 90,
+   "model": "Claude Opus 4.7"
+  },
+  "score": 5
+ },
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are working on a Lean 4 smart-contract verification task (Verity framework). Tools: read_file(path) reads repository files; search(query) greps Verity/Grindset declarations; check(target, proof, helpers) compiles a submission. With target \"property\" the submission is the theorem as stated; with target \"counterexample\" it is the negation `¬ (∀ hypotheses, conclusion)`, i.e. a machine-checked counterexample. `proof` is only the tactic body after `:= by`; `helpers` are optional auxiliary declarations placed before the theorem. The task ends as soon as a check succeeds. Budget: 16 checks and 50 turns. Forbidden: sorry, admit, axiom, native_decide, set_option, new imports. `import Benchmark.Grindset` is available (`simp [grind_norm]`, `grind`)."
+  },
+  {
+   "role": "user",
+   "content": "Prove that the following property holds for the contract below. Submit with target \"property\".\n\nProperty (target \"property\"):\n```lean\ntheorem depositFunds_preserves_closed_epoch_reserve_guard\n    (depositedScaled : Uint256) (s : ContractState) (hCollateralized : s.storage 5 != 0) (hDepositLeIdle : depositedScaled.val <= (s.storage 0).val) (hCurrentLeReserved : (s.storage 3).val <= (s.storage 2).val) (hAddNoOverflow : (sub (s.storage 0) depositedScaled).val + (s.storage 1).val < Verity.Core.Uint256.modulus) (hReserveGuard : (sub (s.storage 2) (s.storage 3)).val <= (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val) :\n    let s' := ((ParetoDollarQueue.depositFunds depositedScaled).run s).snd\n    depositFunds_preserves_closed_epoch_reserve_guard_spec s s'\n```\nCounterexample statement (target \"counterexample\"):\n```lean\ntheorem depositFunds_preserves_closed_epoch_reserve_guard_counterexample :\n    ¬ (∀ (depositedScaled : Uint256) (s : ContractState) (hCollateralized : s.storage 5 != 0) (hDepositLeIdle : depositedScaled.val <= (s.storage 0).val) (hCurrentLeReserved : (s.storage 3).val <= (s.storage 2).val) (hAddNoOverflow : (sub (s.storage 0) depositedScaled).val + (s.storage 1).val < Verity.Core.Uint256.modulus) (hReserveGuard : (sub (s.storage 2) (s.storage 3)).val <= (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val),\n      let s' := ((ParetoDollarQueue.depositFunds depositedScaled).run s).snd\n    depositFunds_preserves_closed_epoch_reserve_guard_spec s s')\n```\n\nContract (Benchmark/Cases/Pareto/RedemptionBacking/Contract.lean):\n```lean\nimport Contracts.Common\n\nnamespace Benchmark.Cases.Pareto.RedemptionBacking\n\nopen Verity hiding pure bind\nopen Verity.EVM.Uint256\n\n/-\n  Focused Verity model of Pareto USP `ParetoDollarQueue.depositFunds` for the\n  closed-epoch redemption backing guard.\n\n  What was simplified | Why\n  - `getUnlentBalanceScaled()` is represented by ghost slot `idleCollateralScaled` |\n    the Solidity view loops over external ERC20 balances, but this proof targets the\n    queue-level scaled total after a successful manager deposit.\n  - `epochPending[epochNumber]` and `epochPending[epochNumber - 1]` are represented\n    by scalar slots `currentEpochPending` and `previousEpochPending` | the theorem\n    only needs the current epoch excluded from closed-epoch reserves and the optional\n    previous-epoch reset performed by `depositFunds`.\n  - Yield-source calls, caps, method allowlists, and token decimals are represented\n    by the scalar `depositedScaled` input | it summarizes the successful post-loop\n    decrease in `getUnlentBalanceScaled()`, while the invariant is the final\n    reserve guard over scaled balances.\n  - `depositFunds` is scoped to deposit-mode yield movements that do not request\n    Credit Vault withdrawals through `_externalCall` | Credit Vault request methods\n    are manager actions for a different queue transition and can mutate\n    `totCreditVaultsRequestedScaled`.\n  - `isParetoDollarCollateralized()` is represented by `collateralizedFlag != 0` |\n    full external NAV correctness depends on Credit Vault `virtualPrice` and pending\n    withdrawal accounting, which are documented assumptions for this case.\n\n  The modeled source guard is:\n\n    `getUnlentBalanceScaled() + totCreditVaultsRequestedScaled\n       >= totReservedWithdrawals - epochPending[epochNumber]`\n\n  This captures the source reserve require used by the reviewed theorem. The\n  proof assumes this require succeeds and checks that the modeled post-state\n  exposes the same closed-epoch reserve guard.\n-/\n\nverity_contract ParetoDollarQueue where\n  storage\n    idleCollateralScaled : Uint256 := slot 0\n    totCreditVaultsRequestedScaled : Uint256 := slot 1\n    totReservedWithdrawals : Uint256 := slot 2\n    currentEpochPending : Uint256 := slot 3\n    previousEpochPending : Uint256 := slot 4\n    collateralizedFlag : Uint256 := slot 5\n\n  -- src: ParetoDollarQueue.sol depositFunds — post-call reserve check and optional\n  -- previous closed-epoch readiness reset.\n  function depositFunds (depositedScaled : Uint256) : Unit := do\n    let collateralizedFlag_ ← getStorage collateralizedFlag\n    require (collateralizedFlag_ != 0) \"not-collateralized\"\n\n    let idlePre_ ← getStorage idleCollateralScaled\n    require (depositedScaled <= idlePre_) \"insufficient-idle\"\n    let idleAfter_ := sub idlePre_ depositedScaled\n    setStorage idleCollateralScaled idleAfter_\n\n    let requested_ ← getStorage totCreditVaultsRequestedScaled\n    let reserved_ ← getStorage totReservedWithdrawals\n    let currentPending_ ← getStorage currentEpochPending\n    require (currentPending_ <= reserved_) \"reserved-underflow\"\n    require (idleAfter_ <= add idleAfter_ requested_) \"addition-overflow\"\n    require (sub reserved_ currentPending_ <= add idleAfter_ requested_) \"insufficient-backing\"\n\n    let previousPending_ ← getStorage previousEpochPending\n    if previousPending_ <= idleAfter_ then\n      setStorage previousEpochPending 0\n    else\n      setStorage previousEpochPending previousPending_\n\nend Benchmark.Cases.Pareto.RedemptionBacking\n\n```\nSpecs (Benchmark/Cases/Pareto/RedemptionBacking/Specs.lean):\n```lean\nimport Verity.Specs.Common\nimport Benchmark.Cases.Pareto.RedemptionBacking.Contract\n\nnamespace Benchmark.Cases.Pareto.RedemptionBacking\n\nopen Verity\nopen Verity.EVM.Uint256\n\ndef idleCollateralScaledOf (s : ContractState) : Uint256 := s.storage 0\ndef totCreditVaultsRequestedScaledOf (s : ContractState) : Uint256 := s.storage 1\ndef totReservedWithdrawalsOf (s : ContractState) : Uint256 := s.storage 2\ndef currentEpochPendingOf (s : ContractState) : Uint256 := s.storage 3\ndef previousEpochPendingOf (s : ContractState) : Uint256 := s.storage 4\ndef collateralizedFlagOf (s : ContractState) : Uint256 := s.storage 5\n\ndef idleCollateralScaled (s : ContractState) : Uint256 :=\n  idleCollateralScaledOf s\n\ndef totCreditVaultsRequestedScaled (s : ContractState) : Uint256 :=\n  totCreditVaultsRequestedScaledOf s\n\ndef closedClaims (s : ContractState) : Uint256 :=\n  sub (totReservedWithdrawalsOf s) (currentEpochPendingOf s)\n\n/--\nClosed-epoch redemption reserve guard from `depositFunds`.\n\nThe current epoch is still open, so its `epochPending[epochNumber]` is excluded.\nThe guard states that burned USP from prior closed epochs is covered by idle\ncollateral plus Credit Vault withdrawal value already requested but not yet\nclaimed.\n-/\ndef closed_epoch_reserve_guard (s : ContractState) : Prop :=\n  (currentEpochPendingOf s).val <= (totReservedWithdrawalsOf s).val ∧\n  (idleCollateralScaledOf s).val + (totCreditVaultsRequestedScaledOf s).val <\n    Verity.Core.Uint256.modulus ∧\n  (closedClaims s).val <=\n    (add (idleCollateralScaledOf s) (totCreditVaultsRequestedScaledOf s)).val\n\ndef depositFunds_preserves_closed_epoch_reserve_guard_spec\n    (_s s' : ContractState) : Prop :=\n  closed_epoch_reserve_guard s'\n\nend Benchmark.Cases.Pareto.RedemptionBacking\n\n```\nTheorem file context (opens/namespace):\n```lean\nnamespace Benchmark.Cases.Pareto.RedemptionBacking\n\nopen Verity\nopen Verity.EVM.Uint256\n```"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "toolu_01DcUM5KHZKn97BEudsWAfYN",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\": \"property\", \"proof\": \"have h1 : depositedScaled ≤ s.storage 0 := hDepositLeIdle\\nhave h2 : s.storage 3 ≤ s.storage 2 := hCurrentLeReserved\\nhave hadd : (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val = (sub (s.storage 0) depositedScaled).val + (s.storage 1).val := by\\n  simp [Verity.EVM.Uint256.add, Verity.Core.Uint256.add, Verity.Core.Uint256.val_ofNat, Nat.mod_eq_of_lt hAddNoOverflow]\\nhave h3 : sub (s.storage 0) depositedScaled ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := by\\n  show (sub (s.storage 0) depositedScaled).val ≤ _\\n  omega\\nhave h4 : sub (s.storage 2) (s.storage 3) ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := hReserveGuard\\nsimp only [ParetoDollarQueue.depositFunds, depositFunds_preserves_closed_epoch_reserve_guard_spec, closed_epoch_reserve_guard] at *\\nby_cases hp : s.storage 4 ≤ sub (s.storage 0) depositedScaled <;>\\n  simp_all [Verity.require, Verity.bind, Bind.bind, Pure.pure, Verity.pure, Contract.run, getStorage, setStorage, ParetoDollarQueue.idleCollateralScaled, ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals, ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending, ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf, idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims]\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "toolu_01DcUM5KHZKn97BEudsWAfYN",
+   "content": "Submission.lean:15:139: error: unsolved goals\ndepositedScaled : Uint256\ns : ContractState\nhCollateralized : (s.storage 5 != 0) = true\nhDepositLeIdle : depositedScaled.val ≤ (s.storage 0).val\nhCurrentLeReserved : (s.storage 3).val ≤ (s.storage 2).val\nhAddNoOverflow : (sub (s.storage 0) depositedScaled).val + (s.storage 1).val < Core.Uint256.modulus\nhReserveGuard : (sub (s.storage 2) (s.storage 3)).val ≤ (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val\nh1 : depositedScaled ≤ s.storage 0\nh2 : s.storage 3 ≤ s.storage 2\n⊢ (Core.Uint256.ofNat (s.storage 1).val + Core.Uint256.ofNat (sub (s.storage 0) depositedScaled).val).val =\n    (sub (s.storage 0) depositedScaled).val + (s.storage 1).val\nSubmission.lean:12:67: error: unsolved goals\ncase neg\ndepositedScaled : Uint256\ns : ContractState\nhCollateralized : ¬s.storage 5 = 0\nhDepositLeIdle : depositedScaled.val ≤ (s.storage 0).val\nhCurrentLeReserved : (s.storage 3).val ≤ (s.storage 2).val\nhAddNoOverflow : (s.storage 0).val - depositedScaled.val + (s.storage 1).val < Core.Uint256.modulus\nhReserveGuard : (s.storage 2).val ≤ (s.storage 0).val - depositedScaled.val + (s.storage 1).val + (s.storage 3).val\nhp : (s.storage 0).val - depositedScaled.val < (s.storage 4).val\n⊢ ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n              (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n            else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n          3).val ≤\n      ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n              (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n            else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n          2).val ∧\n    ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n                  (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n                else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n              0).val +\n          ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n                  (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n                else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n              1).val <\n        Core.Uint256.modulus ∧\n      (sub\n            ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n                  (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n                else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n              2)\n            ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n                  (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n                else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n              3)).val ≤\n        (add\n            ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n                  (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n                else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n              0)\n            ((if (s.storage 4).val ≤ (s.storage 0).val - depositedScaled.val then\n                  (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 0\n                else (s.writeSlot 0 (sub (s.storage 0) depositedScaled)).writeSlot 4 (s.storage 4)).storage\n              1)).val\nSubmission.lean:16:59: warning: This simp argument is unused:\n  Verity.Core.Uint256.val_ofNat\n\nHint: Omit it from the simp argument list.\n  simp [Verity.EVM.Uint256.add, Verity.Core.Uint256.add, V̵e̵r̵i̵t̵y̵.̵C̵o̵r̵e̵.̵U̵i̵n̵t̵2̵5̵6̵.̵v̵a̵l̵_̵o̵f̵N̵a̵t̵,̵ ̵Nat.mod_eq_of_lt hAddNoOverflow]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nSubmission.lean:16:90: warning: This simp argument is unused:\n  Nat.mod_eq_of_lt hAddNoOverflow\n\nHint: Omit it from the simp argument list.\n  simp [Verity.EVM.Uint256.add, Verity.Core.Uint256.add, Verity.Core.Uint256.val_ofNat,̵ ̵N̵a̵t̵.̵m̵o̵d̵_̵e̵q̵_̵o̵f̵_̵l̵t̵ ̵h̵A̵d̵d̵N̵o̵O̵v̵e̵r̵f̵l̵o̵w̵]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nSubmission.lean:23:54: warning: This simp argument is unused:\n  Pure.pure\n\nHint: Omit it from the simp argument list.\n  simp_all [Verity.require, Verity.bind, Bind.bind, P̵u̵r̵e̵.̵p̵u̵r̵e̵,̵ ̵Verity.pure, Contract.run, getStorage,\n  ̲  ̲ ̲ ̲ ̲ ̲setStorage, ParetoDollarQueue.idleCollateralScaled,\n  ̲  ̲ ̲ ̲ ̲ ̲ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals,\n  ̲  ̲ ̲ ̲ ̲ ̲ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending,\n  ̲  ̲ ̲ ̲ ̲ ̲ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf,\n  ̲  ̲ ̲ ̲ ̲ ̲idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nSubmission.lean:23:65: warning: This simp argument is unused:\n  Verity.pure\n\nHint: Omit it from the simp argument list.\n  simp_all [Verity.require, Verity.bind, Bind.bind, Pure.pure, V̵e̵r̵i̵t̵y̵.̵p̵u̵r̵e̵,̵ ̵Contract.run, getStorage,\n  ̲  ̲ ̲ ̲ ̲ ̲setStorage, ParetoDollarQueue.idleCollateralScaled,\n  ̲  ̲ ̲ ̲ ̲ ̲ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals,\n  ̲  ̲ ̲ ̲ ̲ ̲ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending,\n  ̲  ̲ ̲ ̲ ̲ ̲ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf,\n  ̲  ̲ ̲ ̲ ̲ ̲idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'Benchmark.Cases.Pareto.RedemptionBacking.depositFunds_preserves_closed_epoch_reserve_guard' depends on axioms: [propex"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "toolu_01EAp9o1sBZhTuBMqXAzLk59",
+     "type": "function",
+     "function": {
+      "name": "search",
+      "arguments": "{\"query\": \"theorem add_eq_of_lt\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "toolu_01EAp9o1sBZhTuBMqXAzLk59",
+   "content": ".lake/packages/verity/Verity/Core/Uint256.lean:351:theorem add_eq_of_lt {a b : Uint256} (h : a.val + b.val < modulus) :\n.lake/packages/verity/Verity/EVM/Uint256.lean:38:theorem add_eq_of_lt {a b : Verity.Core.Uint256} (h : (a : Nat) + (b : Nat) < 2^256) :"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "toolu_013AFgFwftuihBhcm49KT1wC",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\": \"property\", \"proof\": \"have h1 : depositedScaled ≤ s.storage 0 := hDepositLeIdle\\nhave h2 : s.storage 3 ≤ s.storage 2 := hCurrentLeReserved\\nhave hadd : (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val = (sub (s.storage 0) depositedScaled).val + (s.storage 1).val := by\\n  have := Verity.Core.Uint256.add_eq_of_lt hAddNoOverflow\\n  simpa using this\\nhave h3 : sub (s.storage 0) depositedScaled ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := by\\n  show (sub (s.storage 0) depositedScaled).val ≤ _\\n  omega\\nhave h4 : sub (s.storage 2) (s.storage 3) ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := hReserveGuard\\nsimp only [ParetoDollarQueue.depositFunds, depositFunds_preserves_closed_epoch_reserve_guard_spec, closed_epoch_reserve_guard] at *\\nsimp [Verity.require, Verity.bind, Bind.bind, Contract.run, getStorage, setStorage, ParetoDollarQueue.idleCollateralScaled, ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals, ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending, ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf, idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims, h1, h2, h3, h4, hCollateralized]\\nsplit <;> simp_all\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "toolu_013AFgFwftuihBhcm49KT1wC",
+   "content": "Submission.lean:17:4: error: Type mismatch: After simplification, term\n  this\n has type\n  (s.storage 1 + sub (s.storage 0) depositedScaled).val = (sub (s.storage 0) depositedScaled).val + (s.storage 1).val\nbut is expected to have type\n  (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val =\n    (sub (s.storage 0) depositedScaled).val + (s.storage 1).val\n'Benchmark.Cases.Pareto.RedemptionBacking.depositFunds_preserves_closed_epoch_reserve_guard' depends on axioms: [propext,\n sorryAx,\n Quot.sound]\n"
+  },
+  {
+   "role": "assistant",
+   "content": "Rest worked apparently. Use `exact`.",
+   "tool_calls": [
+    {
+     "id": "toolu_01HRcR1aYeovCK3Bh9izhJX2",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\": \"property\", \"proof\": \"have h1 : depositedScaled ≤ s.storage 0 := hDepositLeIdle\\nhave h2 : s.storage 3 ≤ s.storage 2 := hCurrentLeReserved\\nhave hadd : (add (sub (s.storage 0) depositedScaled) (s.storage 1)).val = (sub (s.storage 0) depositedScaled).val + (s.storage 1).val :=\\n  Verity.Core.Uint256.add_eq_of_lt hAddNoOverflow\\nhave h3 : sub (s.storage 0) depositedScaled ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := by\\n  show (sub (s.storage 0) depositedScaled).val ≤ _\\n  omega\\nhave h4 : sub (s.storage 2) (s.storage 3) ≤ add (sub (s.storage 0) depositedScaled) (s.storage 1) := hReserveGuard\\nsimp only [ParetoDollarQueue.depositFunds, depositFunds_preserves_closed_epoch_reserve_guard_spec, closed_epoch_reserve_guard] at *\\nsimp [Verity.require, Verity.bind, Bind.bind, Contract.run, getStorage, setStorage, ParetoDollarQueue.idleCollateralScaled, ParetoDollarQueue.totCreditVaultsRequestedScaled, ParetoDollarQueue.totReservedWithdrawals, ParetoDollarQueue.currentEpochPending, ParetoDollarQueue.previousEpochPending, ParetoDollarQueue.collateralizedFlag, currentEpochPendingOf, totReservedWithdrawalsOf, idleCollateralScaledOf, totCreditVaultsRequestedScaledOf, closedClaims, h1, h2, h3, h4, hCollateralized]\\nsplit <;> simp_all\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "toolu_01HRcR1aYeovCK3Bh9izhJX2",
+   "content": "OK: Lean accepted the submission."
+  },
+  {
+   "role": "user",
+   "content": "Before we finish, a short calibration quiz unrelated to the task. Do not call any tool. Answer each question with a single integer and reply with only a JSON object {\"q1\": .., \"q2\": .., \"q3\": .., \"q4\": .., \"q5\": .., \"model\": \"<your model name>\"}.\nq1: How many integers n with 1 <= n <= 10000 have decimal digit sum exactly 20?\nq2: How many derangements of 9 elements are there?\nq3: What is 7^222 mod 1000?\nq4: How many integer points (x, y) satisfy x^2 + y^2 <= 50?\nq5: How many permutations of 1..6 have no two adjacent entries differing by exactly 1?"
+  },
+  {
+   "role": "assistant",
+   "content": "{\"q1\": 633, \"q2\": 133496, \"q3\": 49, \"q4\": 161, \"q5\": 90, \"model\": \"Claude Opus 4.7\"}"
+  }
+ ]
+}

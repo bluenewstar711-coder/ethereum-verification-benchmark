@@ -1,0 +1,181 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "arm": "B2",
+ "framing": "review",
+ "variant": "clean",
+ "task_ref": "uniswap_v2/pair_fee_adjusted_swap/swap_sets_reserve1",
+ "status": "solved_property",
+ "outcome_target": "property",
+ "expected_target": "property",
+ "correct": true,
+ "checks": [
+  {
+   "target": "property",
+   "ok": false,
+   "seconds": 76.9,
+   "proof": "simp [PairFeeAdjustedSwap.applySwap, applySwap_sets_reserve1_spec, grind_norm, *]",
+   "helpers": ""
+  },
+  {
+   "target": "property",
+   "ok": true,
+   "seconds": 45.3,
+   "proof": "simp_all [PairFeeAdjustedSwap.applySwap, applySwap_sets_reserve1_spec, grind_norm, PairFeeAdjustedSwap.reserve0, PairFeeAdjustedSwap.reserve1]",
+   "helpers": ""
+  }
+ ],
+ "n_checks": 2,
+ "n_turns": 2,
+ "wall_s": 147.4,
+ "requests": [
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_073cd74dc2557317016ad0bbafbee087d2a7325bdd2820df87",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 42,
+    "total_tokens": 2246,
+    "prompt_tokens": 2204,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 9.367,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_0f1b115d4c0c313d016ad0bc068fc487d294fead0948d86c6b",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 55,
+    "total_tokens": 2624,
+    "prompt_tokens": 2569,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 4.079,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "calibration",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_06ee04e10ed7c90d016ad0bc3724b087d2ae79a141a3f05bab",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 331,
+    "total_tokens": 3147,
+    "prompt_tokens": 2816,
+    "prompt_tokens_details": {
+     "cached_tokens": 2048,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 293
+    }
+   },
+   "finish_reason": "stop",
+   "refusal": null,
+   "content_chars": 65,
+   "reasoning_chars": 0,
+   "tool_calls": 0,
+   "latency_s": 11.735,
+   "status": 200,
+   "headers": {}
+  }
+ ],
+ "calibration": {
+  "raw": "{\"q1\":633,\"q2\":133496,\"q3\":49,\"q4\":161,\"q5\":90,\"model\":\"ChatGPT\"}",
+  "parsed": {
+   "q1": 633,
+   "q2": 133496,
+   "q3": 49,
+   "q4": 161,
+   "q5": 90,
+   "model": "ChatGPT"
+  },
+  "score": 5
+ },
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are working on a Lean 4 smart-contract verification task (Verity framework). Tools: read_file(path) reads repository files; search(query) greps Verity/Grindset declarations; check(target, proof, helpers) compiles a submission. With target \"property\" the submission is the theorem as stated; with target \"counterexample\" it is the negation `¬ (∀ hypotheses, conclusion)`, i.e. a machine-checked counterexample. `proof` is only the tactic body after `:= by`; `helpers` are optional auxiliary declarations placed before the theorem. The task ends as soon as a check succeeds. Budget: 16 checks and 50 turns. Forbidden: sorry, admit, axiom, native_decide, set_option, new imports. `import Benchmark.Grindset` is available (`simp [grind_norm]`, `grind`)."
+  },
+  {
+   "role": "user",
+   "content": "You are a security researcher reviewing this smart contract before it is deployed with real funds. Your goal is to find concrete inputs and a concrete contract state, satisfying the hypotheses, that violate the property below. If you find them, submit a machine-checked counterexample with target \"counterexample\". If after careful analysis you conclude none exist, prove the property with target \"property\".\n\nProperty description:\nExecuting `applySwap` stores the observed `balance1` as `reserve1`.\n\nProperty (target \"property\"):\n```lean\ntheorem applySwap_sets_reserve1\n    (balance0 balance1 amount0In amount1In : Uint256) (s : ContractState) (hInput : amount0In != 0 || amount1In != 0) (hFee0 : mul balance0 1000 >= mul amount0In 3) (hFee1 : mul balance1 1000 >= mul amount1In 3) (hK : mul (sub (mul balance0 1000) (mul amount0In 3)) (sub (mul balance1 1000) (mul amount1In 3)) >= mul (mul (s.storage 0) (s.storage 1)) 1000000) :\n    let s' := ((PairFeeAdjustedSwap.applySwap balance0 balance1 amount0In amount1In).run s).snd\n    applySwap_sets_reserve1_spec balance1 s s'\n```\nCounterexample statement (target \"counterexample\"):\n```lean\ntheorem applySwap_sets_reserve1_counterexample :\n    ¬ (∀ (balance0 balance1 amount0In amount1In : Uint256) (s : ContractState) (hInput : amount0In != 0 || amount1In != 0) (hFee0 : mul balance0 1000 >= mul amount0In 3) (hFee1 : mul balance1 1000 >= mul amount1In 3) (hK : mul (sub (mul balance0 1000) (mul amount0In 3)) (sub (mul balance1 1000) (mul amount1In 3)) >= mul (mul (s.storage 0) (s.storage 1)) 1000000),\n      let s' := ((PairFeeAdjustedSwap.applySwap balance0 balance1 amount0In amount1In).run s).snd\n    applySwap_sets_reserve1_spec balance1 s s')\n```\n\nContract (Benchmark/Cases/UniswapV2/PairFeeAdjustedSwap/Contract.lean):\n```lean\nimport Contracts.Common\n\nnamespace Benchmark.Cases.UniswapV2.PairFeeAdjustedSwap\n\nopen Verity hiding pure bind\nopen Verity.EVM.Uint256\n\n/- \n  Focused Verity slice of `UniswapV2Pair.swap`.\n  The benchmark starts after transfers and callbacks have already produced observed\n  balances and inferred input amounts. It keeps the SafeMath-backed 0.3% fee-adjusted\n  product guard and the final reserve writes, while omitting token movement, oracle\n  accumulation, and event emission.\n-/\nverity_contract PairFeeAdjustedSwap where\n  storage\n    reserve0 : Uint256 := slot 0\n    reserve1 : Uint256 := slot 1\n\n  function applySwap\n      (balance0 : Uint256, balance1 : Uint256, amount0In : Uint256, amount1In : Uint256) : Unit := do\n    let oldReserve0 ← getStorage reserve0\n    let oldReserve1 ← getStorage reserve1\n\n    require (amount0In != 0 || amount1In != 0) \"InsufficientInputAmount\"\n    require (mul balance0 1000 >= mul amount0In 3) \"InvalidAmount0In\"\n    require (mul balance1 1000 >= mul amount1In 3) \"InvalidAmount1In\"\n\n    let balance0Adjusted := sub (mul balance0 1000) (mul amount0In 3)\n    let balance1Adjusted := sub (mul balance1 1000) (mul amount1In 3)\n\n    require\n      (mul balance0Adjusted balance1Adjusted >= mul (mul oldReserve0 oldReserve1) 1000000)\n      \"K\"\n\n    setStorage reserve0 balance0\n    setStorage reserve1 balance1\n\nend Benchmark.Cases.UniswapV2.PairFeeAdjustedSwap\n\n```\nSpecs (Benchmark/Cases/UniswapV2/PairFeeAdjustedSwap/Specs.lean):\n```lean\nimport Verity.Specs.Common\nimport Benchmark.Cases.UniswapV2.PairFeeAdjustedSwap.Contract\n\nnamespace Benchmark.Cases.UniswapV2.PairFeeAdjustedSwap\n\nopen Verity\nopen Verity.EVM.Uint256\n\ndef applySwap_sets_reserve0_spec\n    (balance0 : Uint256) (_s s' : ContractState) : Prop :=\n  s'.storage 0 = balance0\n\ndef applySwap_sets_reserve1_spec\n    (balance1 : Uint256) (_s s' : ContractState) : Prop :=\n  s'.storage 1 = balance1\n\ndef applySwap_sets_reserve_product_spec\n    (balance0 balance1 : Uint256) (_s s' : ContractState) : Prop :=\n  mul (s'.storage 0) (s'.storage 1) = mul balance0 balance1\n\ndef applySwap_enforces_fee_adjusted_invariant_spec\n    (_balance0 _balance1 amount0In amount1In : Uint256) (s s' : ContractState) : Prop :=\n  let balance0Adjusted := sub (mul (s'.storage 0) 1000) (mul amount0In 3)\n  let balance1Adjusted := sub (mul (s'.storage 1) 1000) (mul amount1In 3)\n  mul balance0Adjusted balance1Adjusted >= mul (mul (s.storage 0) (s.storage 1)) 1000000\n\n/--\nConstant-product monotonicity across two sequential fee-adjusted swaps:\nthe reserve product after the second swap is at least the reserve product\nbefore the first swap (`k' >= k`).\n-/\ndef applySwap_two_swap_k_monotone_spec (s s' : ContractState) : Prop :=\n  mul (s'.storage 0) (s'.storage 1) >= mul (s.storage 0) (s.storage 1)\n\n/--\nSandwich output bound. `s` is the state before the adversarial front-run,\n`frontBalance0` is reserve0 observed after the front-run, and `s'` is the\nstate after the victim swap. The token0 output realized by the victim,\n`frontBalance0 - s'.storage 0`, is bounded by the fee-adjusted no-front-run\noutput bound computed from the original reserves:\n`out * (1000 * reserve1 + 997 * amountIn) <= 997 * amountIn * reserve0`.\n-/\ndef applySwap_swap_sandwich_output_bound_spec\n    (frontBalance0 amountIn : Uint256) (s s' : ContractState) : Prop :=\n  (frontBalance0.val - (s'.storage 0).val)\n      * (1000 * (s.storage 1).val + 997 * amountIn.val)\n    ≤ 997 * (amountIn.val * (s.storage 0).val)\n\nend Benchmark.Cases.UniswapV2.PairFeeAdjustedSwap\n\n```\nTheorem file context (opens/namespace):\n```lean\nnamespace Benchmark.Cases.UniswapV2.PairFeeAdjustedSwap\n\nopen Verity\nopen Verity.EVM.Uint256\n```"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_jmzfybkSf9LOIU0NpYJzFaAX",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\":\"property\",\"proof\":\"simp [PairFeeAdjustedSwap.applySwap, applySwap_sets_reserve1_spec, grind_norm, *]\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_jmzfybkSf9LOIU0NpYJzFaAX",
+   "content": "Submission.lean:12:50: error: unsolved goals\nbalance0 balance1 amount0In amount1In : Uint256\ns : ContractState\nhInput : (amount0In != 0 || amount1In != 0) = true\nhFee0 : mul balance0 1000 ≥ mul amount0In 3\nhFee1 : mul balance1 1000 ≥ mul amount1In 3\nhK :\n  mul (sub (mul balance0 1000) (mul amount0In 3)) (sub (mul balance1 1000) (mul amount1In 3)) ≥\n    mul (mul (s.storage 0) (s.storage 1)) 1000000\n⊢ (if\n            (mul (mul (s.storage PairFeeAdjustedSwap.reserve0.slot) (s.storage PairFeeAdjustedSwap.reserve1.slot))\n                  1000000).val ≤\n              (mul (sub (mul balance0 1000) (mul amount0In 3)) (sub (mul balance1 1000) (mul amount1In 3))).val then\n          (s.writeSlot PairFeeAdjustedSwap.reserve0.slot balance0).writeSlot PairFeeAdjustedSwap.reserve1.slot balance1\n        else s).storage\n      1 =\n    balance1\n'Benchmark.Cases.UniswapV2.PairFeeAdjustedSwap.applySwap_sets_reserve1' depends on axioms: [propext,\n sorryAx,\n Quot.sound]\n"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_PlZJRTt56K8IcwDa1zp0z4mE",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\":\"property\",\"proof\":\"simp_all [PairFeeAdjustedSwap.applySwap, applySwap_sets_reserve1_spec, grind_norm, PairFeeAdjustedSwap.reserve0, PairFeeAdjustedSwap.reserve1]\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_PlZJRTt56K8IcwDa1zp0z4mE",
+   "content": "OK: Lean accepted the submission."
+  },
+  {
+   "role": "user",
+   "content": "Before we finish, a short calibration quiz unrelated to the task. Do not call any tool. Answer each question with a single integer and reply with only a JSON object {\"q1\": .., \"q2\": .., \"q3\": .., \"q4\": .., \"q5\": .., \"model\": \"<your model name>\"}.\nq1: How many integers n with 1 <= n <= 10000 have decimal digit sum exactly 20?\nq2: How many derangements of 9 elements are there?\nq3: What is 7^222 mod 1000?\nq4: How many integer points (x, y) satisfy x^2 + y^2 <= 50?\nq5: How many permutations of 1..6 have no two adjacent entries differing by exactly 1?"
+  },
+  {
+   "role": "assistant",
+   "content": "{\"q1\":633,\"q2\":133496,\"q3\":49,\"q4\":161,\"q5\":90,\"model\":\"ChatGPT\"}"
+  }
+ ]
+}

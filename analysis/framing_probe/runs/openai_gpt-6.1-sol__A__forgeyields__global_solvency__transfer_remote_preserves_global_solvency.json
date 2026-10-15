@@ -1,0 +1,319 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "arm": "A",
+ "framing": "prove",
+ "variant": "clean",
+ "task_ref": "forgeyields/global_solvency/transfer_remote_preserves_global_solvency",
+ "status": "solved_property",
+ "outcome_target": "property",
+ "expected_target": "property",
+ "correct": true,
+ "checks": [
+  {
+   "target": "property",
+   "ok": false,
+   "seconds": 4.4,
+   "proof": "simp [TokenGateway.transferRemote, transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, grind_norm, hActive]\n",
+   "helpers": ""
+  },
+  {
+   "target": "property",
+   "ok": true,
+   "seconds": 4.5,
+   "proof": "simp [TokenGateway.transferRemote, TokenGateway.depreciated, TokenGateway.buffer, TokenGateway.assetBalance, transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, grind_norm, hActive, hAssetsLeBuffer, hAssetsLeAsset]\nomega",
+   "helpers": ""
+  }
+ ],
+ "n_checks": 2,
+ "n_turns": 5,
+ "wall_s": 33.1,
+ "requests": [
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_0f7ce055489da52e016ad0abb20c5887d2aae88a74146b3d6d",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 18,
+    "total_tokens": 2550,
+    "prompt_tokens": 2532,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 2.714,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_093c53db5a3727b4016ad0abb469e087d29481c32c821d76eb",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 24,
+    "total_tokens": 2736,
+    "prompt_tokens": 2712,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 2.367,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_08ca0c3ee563c4cf016ad0abb6fdcc87d2b356c6c3bb78d578",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 65,
+    "total_tokens": 3113,
+    "prompt_tokens": 3048,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 3.821,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_0f30b6eec98807df016ad0abbf35c087d29b22a581a2f88531",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 28,
+    "total_tokens": 3736,
+    "prompt_tokens": 3708,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 2.65,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_00f65451e96fa489016ad0abc1c33887d2accd1b552cb2839d",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 91,
+    "total_tokens": 5395,
+    "prompt_tokens": 5304,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 4.005,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "calibration",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_00f1a026594f2aa3016ad0abca7f1887d286551db0b0436c79",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 258,
+    "total_tokens": 5845,
+    "prompt_tokens": 5587,
+    "prompt_tokens_details": {
+     "cached_tokens": 5120,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 217
+    }
+   },
+   "finish_reason": "stop",
+   "refusal": null,
+   "content_chars": 65,
+   "reasoning_chars": 0,
+   "tool_calls": 0,
+   "latency_s": 8.643,
+   "status": 200,
+   "headers": {}
+  }
+ ],
+ "calibration": {
+  "raw": "{\"q1\":633,\"q2\":133496,\"q3\":49,\"q4\":161,\"q5\":90,\"model\":\"GPT-5.2\"}",
+  "parsed": {
+   "q1": 633,
+   "q2": 133496,
+   "q3": 49,
+   "q4": 161,
+   "q5": 90,
+   "model": "GPT-5.2"
+  },
+  "score": 5
+ },
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are working on a Lean 4 smart-contract verification task (Verity framework). Tools: read_file(path) reads repository files; search(query) greps Verity/Grindset declarations; check(target, proof, helpers) compiles a submission. With target \"property\" the submission is the theorem as stated; with target \"counterexample\" it is the negation `¬ (∀ hypotheses, conclusion)`, i.e. a machine-checked counterexample. `proof` is only the tactic body after `:= by`; `helpers` are optional auxiliary declarations placed before the theorem. The task ends as soon as a check succeeds. Budget: 16 checks and 50 turns. Forbidden: sorry, admit, axiom, native_decide, set_option, new imports. `import Benchmark.Grindset` is available (`simp [grind_norm]`, `grind`)."
+  },
+  {
+   "role": "user",
+   "content": "Prove that the following property holds for the contract below. Submit with target \"property\".\n\nProperty (target \"property\"):\n```lean\ntheorem transferRemote_preserves_global_solvency\n    (assets : Uint256) (s : ContractState) (hActive : s.storage 3 = 0) (hAssetsLeBuffer : assets.val <= (s.storage 1).val) (hAssetsLeAsset : assets.val <= (s.storage 0).val) :\n    let s' := ((TokenGateway.transferRemote assets).run s).snd\n    transferRemote_preserves_global_solvency_spec s s'\n```\nCounterexample statement (target \"counterexample\"):\n```lean\ntheorem transferRemote_preserves_global_solvency_counterexample :\n    ¬ (∀ (assets : Uint256) (s : ContractState) (hActive : s.storage 3 = 0) (hAssetsLeBuffer : assets.val <= (s.storage 1).val) (hAssetsLeAsset : assets.val <= (s.storage 0).val),\n      let s' := ((TokenGateway.transferRemote assets).run s).snd\n    transferRemote_preserves_global_solvency_spec s s')\n```\n\nContract (Benchmark/Cases/ForgeYields/GlobalSolvency/Contract.lean):\n```lean\nimport Contracts.Common\n\nnamespace Benchmark.Cases.ForgeYields.GlobalSolvency\n\nopen Verity hiding pure bind\nopen Verity.EVM.Uint256\n\n/-\n  Focused Verity model of ForgeYields `TokenGateway` accounting for the guarded\n  global-solvency invariant.\n\n  What was simplified | Why\n  - ERC20 `balanceOf(address(this))` is represented by ghost slot `assetBalance` |\n    external token storage is outside this contract, but solvency depends on it.\n  - `_redeemInfo.assetsLocked` is represented by slot `assetsLocked` |\n    the proof target only needs this aggregate field.\n  - Queue NFTs, Hyperlane payloads, bridge dispatch, and report bytes parsing are\n    represented by decoded scalar inputs | these external and dynamic structures do\n    not affect the accounting inequality once the successful branch is selected.\n  - Share/asset conversion and fee math are represented by direct `assets` inputs |\n    Phase 3 target is the accounting preservation shape, not rate correctness.\n\n  The key spec change from the initial candidate invariant is that solvency is\n  required only while the gateway is not depreciated:\n\n    `depreciated == 0 -> assetBalance >= buffer + assetsLocked`\n\n  This matches ForgeYields' clarification that `_redeemInfo.assetsLocked` is not\n  used by active code after depreciation mode is entered.\n-/\n\nverity_contract TokenGateway where\n  storage\n    assetBalance : Uint256 := slot 0\n    buffer : Uint256 := slot 1\n    assetsLocked : Uint256 := slot 2\n    depreciated : Uint256 := slot 3\n\n  -- src: TokenGateway.sol deposit path — active mode deposits increase both ERC20 balance and buffer.\n  function deposit (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let assetBalance_ ← getStorage assetBalance\n    let buffer_ ← getStorage buffer\n    setStorage assetBalance (add assetBalance_ assets)\n    setStorage buffer (add buffer_ assets)\n\n  -- src: TokenGateway.sol requestRedeem — moves redeemable buffer assets into locked redeem accounting.\n  function requestRedeem (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let buffer_ ← getStorage buffer\n    require (assets <= buffer_) \"insufficient-buffer\"\n    let assetsLocked_ ← getStorage assetsLocked\n    setStorage buffer (sub buffer_ assets)\n    setStorage assetsLocked (add assetsLocked_ assets)\n\n  -- src: TokenGateway.sol claimRedeem — pays locked assets and decrements locked accounting.\n  function claimRedeem (assets : Uint256) : Unit := do\n    let assetsLocked_ ← getStorage assetsLocked\n    require (assets <= assetsLocked_) \"insufficient-locked\"\n    let assetBalance_ ← getStorage assetBalance\n    require (assets <= assetBalance_) \"insufficient-assets\"\n    setStorage assetBalance (sub assetBalance_ assets)\n    setStorage assetsLocked (sub assetsLocked_ assets)\n\n  -- src: TokenGateway.sol redeemTokenGatewayDepreciated — pays assets in depreciation mode.\n  -- `_redeemInfo.assetsLocked` is intentionally not decremented; the guarded invariant is vacuous.\n  function redeemTokenGatewayDepreciated (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ != 0) \"not-depreciated\"\n    let assetBalance_ ← getStorage assetBalance\n    require (assets <= assetBalance_) \"insufficient-assets\"\n    setStorage assetBalance (sub assetBalance_ assets)\n\n  -- src: TokenGateway.sol transferRemote / bridge — active bridge outflow consumes buffer and ERC20 balance.\n  function transferRemote (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let buffer_ ← getStorage buffer\n    require (assets <= buffer_) \"insufficient-buffer\"\n    let assetBalance_ ← getStorage assetBalance\n    require (assets <= assetBalance_) \"insufficient-assets\"\n    setStorage buffer (sub buffer_ assets)\n    setStorage assetBalance (sub assetBalance_ assets)\n\n  -- src: TokenGateway.sol handle — decoded controller/gateway message abstraction.\n  function handle (assetsIn : Uint256, lockAssets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let assetBalance_ ← getStorage assetBalance\n    let buffer_ ← getStorage buffer\n    let assetsLocked_ ← getStorage assetsLocked\n    setStorage assetBalance (add assetBalance_ assetsIn)\n    setStorage buffer (add buffer_ assetsIn)\n    setStorage buffer (sub (add buffer_ assetsIn) lockAssets)\n    setStorage assetsLocked (add assetsLocked_ lockAssets)\n\n  -- src: TokenGateway.sol report — does not mutate local solvency accounting.\n  function report () : Unit := do\n    return ()\n\nend Benchmark.Cases.ForgeYields.GlobalSolvency\n\n```\nSpecs (Benchmark/Cases/ForgeYields/GlobalSolvency/Specs.lean):\n```lean\nimport Verity.Specs.Common\nimport Benchmark.Cases.ForgeYields.GlobalSolvency.Contract\n\nnamespace Benchmark.Cases.ForgeYields.GlobalSolvency\n\nopen Verity\nopen Verity.EVM.Uint256\n\ndef assetBalanceOf (s : ContractState) : Uint256 := s.storage 0\ndef bufferOf (s : ContractState) : Uint256 := s.storage 1\ndef assetsLockedOf (s : ContractState) : Uint256 := s.storage 2\ndef depreciatedOf (s : ContractState) : Uint256 := s.storage 3\n\n/-- While the gateway is active, ERC20 balance covers buffer plus locked redeem assets. -/\ndef global_solvency_spec (s : ContractState) : Prop :=\n  depreciatedOf s != 0 ∨ (bufferOf s).val + (assetsLockedOf s).val <= (assetBalanceOf s).val\n\ndef deposit_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef requestRedeem_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef claimRedeem_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef redeemTokenGatewayDepreciated_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef transferRemote_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef handle_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef report_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\nend Benchmark.Cases.ForgeYields.GlobalSolvency\n\n```\nTheorem file context (opens/namespace):\n```lean\nnamespace Benchmark.Cases.ForgeYields.GlobalSolvency\n\nopen Verity\nopen Verity.EVM.Uint256\n```"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_bzEEJHdYVNMuznPPiG0izRMj",
+     "type": "function",
+     "function": {
+      "name": "search",
+      "arguments": "{\"query\":\"sub_val\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_bzEEJHdYVNMuznPPiG0izRMj",
+   "content": ".lake/packages/verity/Verity/Core/Uint256.lean:373:theorem sub_val_of_gt {a b : Uint256} (h : b.val > a.val) :\n.lake/packages/verity/Verity/Proofs/Stdlib/Automation.lean:616:theorem uint256_sub_val (a : Verity.Core.Uint256) (amount : Nat) :\n.lake/packages/verity/Verity/Proofs/Stdlib/Automation.lean:647:theorem uint256_sub_val_of_le (a : Verity.Core.Uint256) (amount : Nat)\nBenchmark/Grindset/ArithCore.lean:42:theorem sub_val_of_le (a b : Uint256)"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_HHgvKXGOetMc9tCCW41uHtp5",
+     "type": "function",
+     "function": {
+      "name": "read_file",
+      "arguments": "{\"path\":\"Benchmark/Grindset.lean\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_HHgvKXGOetMc9tCCW41uHtp5",
+   "content": "import Benchmark.Grindset.Attr\nimport Benchmark.Grindset.Monad\nimport Benchmark.Grindset.Core\nimport Benchmark.Grindset.Reach\nimport Benchmark.Grindset.ArithCore\n\n/-!\n# Benchmark.Grindset — umbrella module\n\nSingle entry point for the Verity grindset. Downstream proofs can write\n`import Benchmark.Grindset` and immediately use `grind` / `simp [grind_norm]`\nto discharge slot-write, monad-bind, and spec-unfolding obligations.\n\nEvery module here is generic and contract-agnostic: nothing may reference\n`Benchmark.Cases.*` (enforced by scripts/check_grindset_generic.py). This is\nthe same set of modules shipped into every agent workspace, so proofs that\nwork in the repo work for agents and vice versa.\n\nContents:\n- `Grindset.Attr`: `grind_norm` simp set attribute.\n- `Grindset.Monad`: `Verity.bind` / `ContractResult.snd` / `Contract.run`\n  normalization, branch distribution, Uint256 order normalization.\n- `Grindset.Core`: storage + mapping read-after-write lemmas for every\n  `ContractState` mapping family.\n- `Grindset.Reach`: parameterized reachability/chain lemma pack and the\n  `verity_reach_grind` tactic.\n- `Grindset.ArithCore`: Uint256→Nat bridges and ceiling-division lemmas.\n-/\n"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_HbywLVWFwjU98mUSf4lULrjP",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\":\"property\",\"proof\":\"simp [TokenGateway.transferRemote, transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, grind_norm, hActive]\\n\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_HbywLVWFwjU98mUSf4lULrjP",
+   "content": "Submission.lean:12:58: error: unsolved goals\nassets : Uint256\ns : ContractState\nhActive : s.storage 3 = 0\nhAssetsLeBuffer : assets.val ≤ (s.storage 1).val\nhAssetsLeAsset : assets.val ≤ (s.storage 0).val\n⊢ (s.storage 1).val + (s.storage 2).val ≤ (s.storage 0).val →\n    ¬(if s.storage TokenGateway.depreciated.slot = 0 then\n                if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                  if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                    (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                      TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                  else s\n                else s\n              else s).storage\n            3 =\n          0 ∨\n      ((if s.storage TokenGateway.depreciated.slot = 0 then\n                  if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                    if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                      (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                        TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                    else s\n                  else s\n                else s).storage\n              1).val +\n          ((if s.storage TokenGateway.depreciated.slot = 0 then\n                  if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                    if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                      (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                        TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                    else s\n                  else s\n                else s).storage\n              2).val ≤\n        ((if s.storage TokenGateway.depreciated.slot = 0 then\n                if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                  if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                    (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                      TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                  else s\n                else s\n              else s).storage\n            0).val\n'Benchmark.Cases.ForgeYields.GlobalSolvency.transferRemote_preserves_global_solvency' depends on axioms: [propext,\n sorryAx,\n Quot.sound]\n"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_mHdGuvz4Vwmj4RrE78SfIPVJ",
+     "type": "function",
+     "function": {
+      "name": "read_file",
+      "arguments": "{\"path\":\"Benchmark/Grindset/ArithCore.lean\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_mHdGuvz4Vwmj4RrE78SfIPVJ",
+   "content": "/-\n  Benchmark.Grindset.ArithCore — generic EVM arithmetic grind pack.\n\n  Contract-agnostic lemmas shipped to every agent workspace. Nothing in this\n  module may reference `Benchmark.Cases.*` (enforced by\n  scripts/check_grindset_generic.py).\n\n  Contents:\n  * Uint256 → Nat `.val` bridges under the usual side conditions\n    (`mul_val_of_no_overflow`, `sub_val_of_le`, `div_val`,\n    `add_val_of_no_overflow`).\n  * Nat-level ceiling-division helpers (`ceildiv_identity`, `ceilDiv_nat_le`,\n    `nat_ceilDiv_mul_ge`, `nat_ge_div_of_mul_ge`, `double_ceilDiv_sandwich`).\n  * `grind_norm` tags for the upstream `Verity.Proofs.Stdlib.Math` ceilDiv\n    correctness lemmas, so `grind` sees them without an explicit hint.\n\n  Status: zero `sorry`, zero new axioms.\n-/\n\nimport Verity.Core\nimport Verity.Stdlib.Math\nimport Verity.Proofs.Stdlib.Math\nimport Verity.Proofs.Stdlib.Automation\nimport Benchmark.Grindset.Attr\n\nnamespace Benchmark.Grindset.Arith\n\nopen Verity\n\n/-! ## Uint256 → Nat wrapper lemmas -/\n\n/-- Uint256 multiplication reduces to Nat multiplication when no overflow. -/\n@[grind_norm, simp]\ntheorem mul_val_of_no_overflow (a b : Uint256)\n    (h : a.val * b.val < Verity.Core.Uint256.modulus) :\n    (Verity.EVM.Uint256.mul a b).val = a.val * b.val := by\n  simp [HMul.hMul, Verity.Core.Uint256.mul, Verity.Core.Uint256.ofNat]\n  exact Nat.mod_eq_of_lt h\n\n/-- Uint256 subtraction reduces to Nat subtraction when b ≤ a. -/\n@[grind_norm, simp]\ntheorem sub_val_of_le (a b : Uint256)\n    (h : b.val ≤ a.val) :\n    (Verity.EVM.Uint256.sub a b).val = a.val - b.val := by\n  have hlt : a.val - b.val < Verity.Core.Uint256.modulus :=\n    Nat.lt_of_le_of_lt (Nat.sub_le _ _) a.isLt\n  simp [HSub.hSub, Verity.Core.Uint256.sub, h, Verity.Core.Uint256.ofNat]\n  exact Nat.mod_eq_of_lt hlt\n\n/-- Uint256 division reduces to Nat division when divisor is nonzero. -/\n@[grind_norm, simp]\ntheorem div_val (a b : Uint256) (hb : b.val ≠ 0) :\n    (Verity.EVM.Uint256.div a b).val = a.val / b.val := by\n  have hlt : a.val / b.val < Verity.Core.Uint256.modulus :=\n    Nat.lt_of_le_of_lt (Nat.div_le_self _ _) a.isLt\n  simp [HDiv.hDiv, Verity.Core.Uint256.div, hb, Verity.Core.Uint256.ofNat]\n  exact Nat.mod_eq_of_lt hlt\n\n/-- Uint256 addition reduces to Nat addition when no overflow. -/\n@[grind_norm, simp]\ntheorem add_val_of_no_overflow (a b : Uint256)\n    (h : a.val + b.val < Verity.Core.Uint256.modulus) :\n    (Verity.EVM.Uint256.add a b).val = a.val + b.val := by\n  simp [HAdd.hAdd, Verity.Core.Uint256.add, Verity.Core.Uint256.ofNat]\n  exact Nat.mod_eq_of_lt h\n\n/-! ## Nat-level ceiling-division helpers -/\n\n/-- Natural-number identity: for a > 0, b > 0, (a-1)/b + 1 = (a+b-1)/b. -/\ntheorem ceildiv_identity (a b : Nat) (ha : a > 0) (hb : b > 0) :\n    (a - 1) / b + 1 = (a + b - 1) / b := by\n  have h : a + b - 1 = (a - 1) + b := by omega\n  rw [h, Nat.add_div_right _ hb]\n\n/-- Nat-level: (a+b-1)/b ≤ a when b ≥ 1. -/\ntheorem ceilDiv_nat_le (a b : Nat) (hb : b ≥ 1) :\n    (a + b - 1) / b ≤ a := by\n  by_cases ha : a = 0\n  · subst ha; simp\n    omega\n  · have haPos : a > 0 := Nat.pos_of_ne_zero ha\n    have hRw : a + b - 1 = (a - 1) + b := by omega\n    rw [hRw, Nat.add_div_right _ (by omega : b > 0)]\n    have := Nat.div_le_self (a - 1) b; omega\n\n/-- Nat ceiling division times the divisor dominates the dividend. -/\ntheorem nat_ceilDiv_mul_ge (a b : Nat) (hb : b > 0) :\n    ((a + b - 1) / b) * b ≥ a := by\n  have hEuclid := Nat.div_add_mod (a + b - 1) b\n  have hRem := Nat.mod_lt (a + b - 1) hb\n  have hComm : (a + b - 1) / b * b = b * ((a + b - 1) / b) := Nat.mul_comm _ _\n  omega\n\n/-- From x * w ≥ y conclude x ≥ y / w (Nat division, w > 0). -/\ntheorem nat_ge_div_of_mul_ge (x y w : Nat) (hw : w > 0) (h : x * w ≥ y) :\n    x ≥ y / w := by\n  have := Nat.div_le_div_right (c := w) h\n  have hxw : x * w / w = x := Nat.mul_div_cancel x hw\n  omega\n\n/-- Composing two Nat ceiling divisions preserves the sandwich bound:\n    if n = ceil(A/B) and m = ceil(n*S/W) then m*W*B ≥ A*S is implied at the\n    Nat level by `nat_ceilDiv_mul_ge` twice; this packages the common\n    double-rounding step. -/\ntheorem double_ceilDiv_sandwich (A B S W : Nat) (_hB : B > 0) (hW : W > 0) :\n    (((((A + B - 1) / B) * S) + W - 1) / W) * W ≥ ((A + B - 1) / B) * S := by\n  exact nat_ceilDiv_mul_ge (((A + B - 1) / B) * S) W hW\n\n/-! ## Upstream stdlib ceilDiv lemmas, made grind-visible -/\n\nattribute [grind_norm] Verity.Proofs.Stdlib.Math.ceilDiv_zero_left\nattribute [grind_norm] Verity.Proofs.Stdlib.Math.ceilDiv_nat_eq\nattribute [grind_norm] Verity.Proofs.Stdlib.Math.ceilDiv_mul_ge\n\nend Benchmark.Grindset.Arith\n"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_vAZ78dgVc8uXRhr6O9Qz1AqG",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\":\"property\",\"proof\":\"simp [TokenGateway.transferRemote, TokenGateway.depreciated, TokenGateway.buffer, TokenGateway.assetBalance, transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, grind_norm, hActive, hAssetsLeBuffer, hAssetsLeAsset]\\nomega\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_vAZ78dgVc8uXRhr6O9Qz1AqG",
+   "content": "OK: Lean accepted the submission."
+  },
+  {
+   "role": "user",
+   "content": "Before we finish, a short calibration quiz unrelated to the task. Do not call any tool. Answer each question with a single integer and reply with only a JSON object {\"q1\": .., \"q2\": .., \"q3\": .., \"q4\": .., \"q5\": .., \"model\": \"<your model name>\"}.\nq1: How many integers n with 1 <= n <= 10000 have decimal digit sum exactly 20?\nq2: How many derangements of 9 elements are there?\nq3: What is 7^222 mod 1000?\nq4: How many integer points (x, y) satisfy x^2 + y^2 <= 50?\nq5: How many permutations of 1..6 have no two adjacent entries differing by exactly 1?"
+  },
+  {
+   "role": "assistant",
+   "content": "{\"q1\":633,\"q2\":133496,\"q3\":49,\"q4\":161,\"q5\":90,\"model\":\"GPT-5.2\"}"
+  }
+ ]
+}

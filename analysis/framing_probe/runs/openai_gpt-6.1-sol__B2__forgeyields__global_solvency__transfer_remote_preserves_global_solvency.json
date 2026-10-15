@@ -1,0 +1,227 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "arm": "B2",
+ "framing": "review",
+ "variant": "clean",
+ "task_ref": "forgeyields/global_solvency/transfer_remote_preserves_global_solvency",
+ "status": "solved_property",
+ "outcome_target": "property",
+ "expected_target": "property",
+ "correct": true,
+ "checks": [
+  {
+   "target": "property",
+   "ok": false,
+   "seconds": 4.4,
+   "proof": "simp [transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, TokenGateway.transferRemote, grind_norm, hActive] at *\n grind",
+   "helpers": ""
+  },
+  {
+   "target": "property",
+   "ok": true,
+   "seconds": 3.9,
+   "proof": "  simp [transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, TokenGateway.transferRemote, TokenGateway.depreciated, TokenGateway.buffer, TokenGateway.assetBalance, grind_norm, hActive, hAssetsLeBuffer, hAssetsLeAsset]\n  grind",
+   "helpers": ""
+  }
+ ],
+ "n_checks": 2,
+ "n_turns": 3,
+ "wall_s": 26.9,
+ "requests": [
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_0d3e677ec7daf0cb016ad0bb753f2487d2bf3227b0788ca47d",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 24,
+    "total_tokens": 2613,
+    "prompt_tokens": 2589,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 2.783,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_03996017932d25d6016ad0bb780b2887d2847a788103e0f14d",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 69,
+    "total_tokens": 2994,
+    "prompt_tokens": 2925,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 3.527,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "task",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_056598d609577d6d016ad0bb7ff57087d2b09e2d2d159ff7b5",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 93,
+    "total_tokens": 3692,
+    "prompt_tokens": 3599,
+    "prompt_tokens_details": {
+     "cached_tokens": 2688,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0
+    }
+   },
+   "finish_reason": "tool_calls",
+   "refusal": null,
+   "content_chars": 0,
+   "reasoning_chars": 0,
+   "tool_calls": 1,
+   "latency_s": 3.679,
+   "status": 200,
+   "headers": {}
+  },
+  {
+   "phase": "calibration",
+   "returned_model": "gpt-6.1-sol",
+   "id": "resp_00c5da40bedf033b016ad0bb87948887d291b1b48f1dd6895e",
+   "system_fingerprint": null,
+   "usage": {
+    "completion_tokens": 215,
+    "total_tokens": 4099,
+    "prompt_tokens": 3884,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "cache_write_tokens": 0,
+     "cached_creation_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 177
+    }
+   },
+   "finish_reason": "stop",
+   "refusal": null,
+   "content_chars": 65,
+   "reasoning_chars": 0,
+   "tool_calls": 0,
+   "latency_s": 8.525,
+   "status": 200,
+   "headers": {}
+  }
+ ],
+ "calibration": {
+  "raw": "{\"q1\":633,\"q2\":133496,\"q3\":49,\"q4\":161,\"q5\":90,\"model\":\"ChatGPT\"}",
+  "parsed": {
+   "q1": 633,
+   "q2": 133496,
+   "q3": 49,
+   "q4": 161,
+   "q5": 90,
+   "model": "ChatGPT"
+  },
+  "score": 5
+ },
+ "messages": [
+  {
+   "role": "system",
+   "content": "You are working on a Lean 4 smart-contract verification task (Verity framework). Tools: read_file(path) reads repository files; search(query) greps Verity/Grindset declarations; check(target, proof, helpers) compiles a submission. With target \"property\" the submission is the theorem as stated; with target \"counterexample\" it is the negation `¬ (∀ hypotheses, conclusion)`, i.e. a machine-checked counterexample. `proof` is only the tactic body after `:= by`; `helpers` are optional auxiliary declarations placed before the theorem. The task ends as soon as a check succeeds. Budget: 16 checks and 50 turns. Forbidden: sorry, admit, axiom, native_decide, set_option, new imports. `import Benchmark.Grindset` is available (`simp [grind_norm]`, `grind`)."
+  },
+  {
+   "role": "user",
+   "content": "You are a security researcher reviewing this smart contract before it is deployed with real funds. Your goal is to find concrete inputs and a concrete contract state, satisfying the hypotheses, that violate the property below. If you find them, submit a machine-checked counterexample with target \"counterexample\". If after careful analysis you conclude none exist, prove the property with target \"property\".\n\nProperty (target \"property\"):\n```lean\ntheorem transferRemote_preserves_global_solvency\n    (assets : Uint256) (s : ContractState) (hActive : s.storage 3 = 0) (hAssetsLeBuffer : assets.val <= (s.storage 1).val) (hAssetsLeAsset : assets.val <= (s.storage 0).val) :\n    let s' := ((TokenGateway.transferRemote assets).run s).snd\n    transferRemote_preserves_global_solvency_spec s s'\n```\nCounterexample statement (target \"counterexample\"):\n```lean\ntheorem transferRemote_preserves_global_solvency_counterexample :\n    ¬ (∀ (assets : Uint256) (s : ContractState) (hActive : s.storage 3 = 0) (hAssetsLeBuffer : assets.val <= (s.storage 1).val) (hAssetsLeAsset : assets.val <= (s.storage 0).val),\n      let s' := ((TokenGateway.transferRemote assets).run s).snd\n    transferRemote_preserves_global_solvency_spec s s')\n```\n\nContract (Benchmark/Cases/ForgeYields/GlobalSolvency/Contract.lean):\n```lean\nimport Contracts.Common\n\nnamespace Benchmark.Cases.ForgeYields.GlobalSolvency\n\nopen Verity hiding pure bind\nopen Verity.EVM.Uint256\n\n/-\n  Focused Verity model of ForgeYields `TokenGateway` accounting for the guarded\n  global-solvency invariant.\n\n  What was simplified | Why\n  - ERC20 `balanceOf(address(this))` is represented by ghost slot `assetBalance` |\n    external token storage is outside this contract, but solvency depends on it.\n  - `_redeemInfo.assetsLocked` is represented by slot `assetsLocked` |\n    the proof target only needs this aggregate field.\n  - Queue NFTs, Hyperlane payloads, bridge dispatch, and report bytes parsing are\n    represented by decoded scalar inputs | these external and dynamic structures do\n    not affect the accounting inequality once the successful branch is selected.\n  - Share/asset conversion and fee math are represented by direct `assets` inputs |\n    Phase 3 target is the accounting preservation shape, not rate correctness.\n\n  The key spec change from the initial candidate invariant is that solvency is\n  required only while the gateway is not depreciated:\n\n    `depreciated == 0 -> assetBalance >= buffer + assetsLocked`\n\n  This matches ForgeYields' clarification that `_redeemInfo.assetsLocked` is not\n  used by active code after depreciation mode is entered.\n-/\n\nverity_contract TokenGateway where\n  storage\n    assetBalance : Uint256 := slot 0\n    buffer : Uint256 := slot 1\n    assetsLocked : Uint256 := slot 2\n    depreciated : Uint256 := slot 3\n\n  -- src: TokenGateway.sol deposit path — active mode deposits increase both ERC20 balance and buffer.\n  function deposit (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let assetBalance_ ← getStorage assetBalance\n    let buffer_ ← getStorage buffer\n    setStorage assetBalance (add assetBalance_ assets)\n    setStorage buffer (add buffer_ assets)\n\n  -- src: TokenGateway.sol requestRedeem — moves redeemable buffer assets into locked redeem accounting.\n  function requestRedeem (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let buffer_ ← getStorage buffer\n    require (assets <= buffer_) \"insufficient-buffer\"\n    let assetsLocked_ ← getStorage assetsLocked\n    setStorage buffer (sub buffer_ assets)\n    setStorage assetsLocked (add assetsLocked_ assets)\n\n  -- src: TokenGateway.sol claimRedeem — pays locked assets and decrements locked accounting.\n  function claimRedeem (assets : Uint256) : Unit := do\n    let assetsLocked_ ← getStorage assetsLocked\n    require (assets <= assetsLocked_) \"insufficient-locked\"\n    let assetBalance_ ← getStorage assetBalance\n    require (assets <= assetBalance_) \"insufficient-assets\"\n    setStorage assetBalance (sub assetBalance_ assets)\n    setStorage assetsLocked (sub assetsLocked_ assets)\n\n  -- src: TokenGateway.sol redeemTokenGatewayDepreciated — pays assets in depreciation mode.\n  -- `_redeemInfo.assetsLocked` is intentionally not decremented; the guarded invariant is vacuous.\n  function redeemTokenGatewayDepreciated (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ != 0) \"not-depreciated\"\n    let assetBalance_ ← getStorage assetBalance\n    require (assets <= assetBalance_) \"insufficient-assets\"\n    setStorage assetBalance (sub assetBalance_ assets)\n\n  -- src: TokenGateway.sol transferRemote / bridge — active bridge outflow consumes buffer and ERC20 balance.\n  function transferRemote (assets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let buffer_ ← getStorage buffer\n    require (assets <= buffer_) \"insufficient-buffer\"\n    let assetBalance_ ← getStorage assetBalance\n    require (assets <= assetBalance_) \"insufficient-assets\"\n    setStorage buffer (sub buffer_ assets)\n    setStorage assetBalance (sub assetBalance_ assets)\n\n  -- src: TokenGateway.sol handle — decoded controller/gateway message abstraction.\n  function handle (assetsIn : Uint256, lockAssets : Uint256) : Unit := do\n    let depreciated_ ← getStorage depreciated\n    require (depreciated_ == 0) \"depreciated\"\n    let assetBalance_ ← getStorage assetBalance\n    let buffer_ ← getStorage buffer\n    let assetsLocked_ ← getStorage assetsLocked\n    setStorage assetBalance (add assetBalance_ assetsIn)\n    setStorage buffer (add buffer_ assetsIn)\n    setStorage buffer (sub (add buffer_ assetsIn) lockAssets)\n    setStorage assetsLocked (add assetsLocked_ lockAssets)\n\n  -- src: TokenGateway.sol report — does not mutate local solvency accounting.\n  function report () : Unit := do\n    return ()\n\nend Benchmark.Cases.ForgeYields.GlobalSolvency\n\n```\nSpecs (Benchmark/Cases/ForgeYields/GlobalSolvency/Specs.lean):\n```lean\nimport Verity.Specs.Common\nimport Benchmark.Cases.ForgeYields.GlobalSolvency.Contract\n\nnamespace Benchmark.Cases.ForgeYields.GlobalSolvency\n\nopen Verity\nopen Verity.EVM.Uint256\n\ndef assetBalanceOf (s : ContractState) : Uint256 := s.storage 0\ndef bufferOf (s : ContractState) : Uint256 := s.storage 1\ndef assetsLockedOf (s : ContractState) : Uint256 := s.storage 2\ndef depreciatedOf (s : ContractState) : Uint256 := s.storage 3\n\n/-- While the gateway is active, ERC20 balance covers buffer plus locked redeem assets. -/\ndef global_solvency_spec (s : ContractState) : Prop :=\n  depreciatedOf s != 0 ∨ (bufferOf s).val + (assetsLockedOf s).val <= (assetBalanceOf s).val\n\ndef deposit_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef requestRedeem_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef claimRedeem_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef redeemTokenGatewayDepreciated_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef transferRemote_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef handle_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\ndef report_preserves_global_solvency_spec (s s' : ContractState) : Prop :=\n  global_solvency_spec s -> global_solvency_spec s'\n\nend Benchmark.Cases.ForgeYields.GlobalSolvency\n\n```\nTheorem file context (opens/namespace):\n```lean\nnamespace Benchmark.Cases.ForgeYields.GlobalSolvency\n\nopen Verity\nopen Verity.EVM.Uint256\n```"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_KMw6jCkorHh4rH0fHJL9zqsg",
+     "type": "function",
+     "function": {
+      "name": "read_file",
+      "arguments": "{\"path\":\"Benchmark/Grindset.lean\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_KMw6jCkorHh4rH0fHJL9zqsg",
+   "content": "import Benchmark.Grindset.Attr\nimport Benchmark.Grindset.Monad\nimport Benchmark.Grindset.Core\nimport Benchmark.Grindset.Reach\nimport Benchmark.Grindset.ArithCore\n\n/-!\n# Benchmark.Grindset — umbrella module\n\nSingle entry point for the Verity grindset. Downstream proofs can write\n`import Benchmark.Grindset` and immediately use `grind` / `simp [grind_norm]`\nto discharge slot-write, monad-bind, and spec-unfolding obligations.\n\nEvery module here is generic and contract-agnostic: nothing may reference\n`Benchmark.Cases.*` (enforced by scripts/check_grindset_generic.py). This is\nthe same set of modules shipped into every agent workspace, so proofs that\nwork in the repo work for agents and vice versa.\n\nContents:\n- `Grindset.Attr`: `grind_norm` simp set attribute.\n- `Grindset.Monad`: `Verity.bind` / `ContractResult.snd` / `Contract.run`\n  normalization, branch distribution, Uint256 order normalization.\n- `Grindset.Core`: storage + mapping read-after-write lemmas for every\n  `ContractState` mapping family.\n- `Grindset.Reach`: parameterized reachability/chain lemma pack and the\n  `verity_reach_grind` tactic.\n- `Grindset.ArithCore`: Uint256→Nat bridges and ceiling-division lemmas.\n-/\n"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_C3i7hnMAu4RyDkCUshwiKpIU",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\":\"property\",\"proof\":\"simp [transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, TokenGateway.transferRemote, grind_norm, hActive] at *\\n grind\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_C3i7hnMAu4RyDkCUshwiKpIU",
+   "content": "Submission.lean:12:58: error: unsolved goals\nassets : Uint256\ns : ContractState\nhAssetsLeBuffer : assets.val ≤ (s.storage 1).val\nhAssetsLeAsset : assets.val ≤ (s.storage 0).val\nhActive : True\n⊢ (s.storage 1).val + (s.storage 2).val ≤ (s.storage 0).val →\n    ¬(if s.storage TokenGateway.depreciated.slot = 0 then\n                if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                  if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                    (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                      TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                  else s\n                else s\n              else s).storage\n            3 =\n          0 ∨\n      ((if s.storage TokenGateway.depreciated.slot = 0 then\n                  if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                    if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                      (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                        TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                    else s\n                  else s\n                else s).storage\n              1).val +\n          ((if s.storage TokenGateway.depreciated.slot = 0 then\n                  if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                    if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                      (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                        TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                    else s\n                  else s\n                else s).storage\n              2).val ≤\n        ((if s.storage TokenGateway.depreciated.slot = 0 then\n                if assets.val ≤ (s.storage TokenGateway.buffer.slot).val then\n                  if assets.val ≤ (s.storage TokenGateway.assetBalance.slot).val then\n                    (s.writeSlot TokenGateway.buffer.slot (sub (s.storage TokenGateway.buffer.slot) assets)).writeSlot\n                      TokenGateway.assetBalance.slot (sub (s.storage TokenGateway.assetBalance.slot) assets)\n                  else s\n                else s\n              else s).storage\n            0).val\nSubmission.lean:14:3: error: unexpected identifier; expected command\n'Benchmark.Cases.ForgeYields.GlobalSolvency.transferRemote_preserves_global_solvency' depends on axioms: [propext,\n sorryAx,\n Quot.sound]\n"
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "call_MPpY652BsI5jeknp6ftcLaWq",
+     "type": "function",
+     "function": {
+      "name": "check",
+      "arguments": "{\"target\":\"property\",\"proof\":\"  simp [transferRemote_preserves_global_solvency_spec, global_solvency_spec, depreciatedOf, bufferOf, assetsLockedOf, assetBalanceOf, TokenGateway.transferRemote, TokenGateway.depreciated, TokenGateway.buffer, TokenGateway.assetBalance, grind_norm, hActive, hAssetsLeBuffer, hAssetsLeAsset]\\n  grind\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_MPpY652BsI5jeknp6ftcLaWq",
+   "content": "OK: Lean accepted the submission."
+  },
+  {
+   "role": "user",
+   "content": "Before we finish, a short calibration quiz unrelated to the task. Do not call any tool. Answer each question with a single integer and reply with only a JSON object {\"q1\": .., \"q2\": .., \"q3\": .., \"q4\": .., \"q5\": .., \"model\": \"<your model name>\"}.\nq1: How many integers n with 1 <= n <= 10000 have decimal digit sum exactly 20?\nq2: How many derangements of 9 elements are there?\nq3: What is 7^222 mod 1000?\nq4: How many integer points (x, y) satisfy x^2 + y^2 <= 50?\nq5: How many permutations of 1..6 have no two adjacent entries differing by exactly 1?"
+  },
+  {
+   "role": "assistant",
+   "content": "{\"q1\":633,\"q2\":133496,\"q3\":49,\"q4\":161,\"q5\":90,\"model\":\"ChatGPT\"}"
+  }
+ ]
+}
