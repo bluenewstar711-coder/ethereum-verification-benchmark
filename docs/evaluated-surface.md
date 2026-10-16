@@ -7,7 +7,7 @@ and `backlog/*/*/tasks/*.yaml`.
 
 ## Active Suite
 
-The active suite currently contains 51 cases and 310 task manifests. Of those, 310 tasks are runnable proof tasks with hidden reference proofs.
+The active suite currently contains 53 cases and 319 task manifests. Of those, 319 tasks are runnable proof tasks with hidden reference proofs.
 
 | Case | Runnable Tasks | Case Proof Status |
 |------|---------------:|-------------------|
@@ -20,6 +20,7 @@ The active suite currently contains 51 cases and 310 task manifests. Of those, 3
 | `cow/gpv2_settlement` | 6 | `complete` |
 | `damn_vulnerable_defi/side_entrance` | 5 | `partial` |
 | `doppler/multicurve_fee_conservation` | 18 | `complete` |
+| `dromos/allocation_conservation` | 1 | `complete` |
 | `enzyme/onyx_fee_handler` | 1 | `complete` |
 | `erc4337/entry_point_invariant` | 33 | `complete` |
 | `ethereum/deposit_contract_minimal` | 5 | `partial` |
@@ -29,6 +30,7 @@ The active suite currently contains 51 cases and 310 task manifests. Of those, 3
 | `ipor/plasma_vault_redeem_split` | 2 | `complete` |
 | `kleros/sortition_trees` | 6 | `partial` |
 | `kpk/shares_settlement_accounting` | 3 | `complete` |
+| `kuru/withdrawal_limit` | 8 | `complete` |
 | `kyberswap/partial_fill_price_floor` | 1 | `complete` |
 | `lagoon/guardrails` | 3 | `complete` |
 | `lido/vaulthub_locked` | 5 | `partial` |

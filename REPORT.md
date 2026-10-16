@@ -4,11 +4,11 @@ This report is generated from the benchmark manifests.
 
 ## Summary
 
-- Families: 51
-- Implementations: 52
-- Active cases: 51
-- Buildable active cases: 51
-- Active tasks: 310
+- Families: 53
+- Implementations: 54
+- Active cases: 53
+- Buildable active cases: 53
+- Active tasks: 319
 - Backlog cases: 1
 
 ## Buildable active cases
@@ -103,6 +103,16 @@ This report is generated from the benchmark manifests.
 - Upstream source artifact: `src/supported/grid-full-range/FullRangeFeeRehype.sol`
 - Notes: FullRangeFeeRehype fee conservation: routed fee credit cannot disappear or be consumed twice; unspent or failed-leg value remains in carry.
 
+### `dromos/allocation_conservation`
+- Family / implementation: `dromos` / `metadex03`
+- Stage: `proof_complete`
+- Status dimensions: translation=`translated`, spec=`frozen`, proof=`complete`
+- Lean target: `Benchmark.Cases.Dromos.AllocationConservation.Compile`
+- Source ref: `https://github.com/dromos-labs/metadex-public@0058bd9b1d49b0fb0a6d130dd51886b2c64e3d99:V3/src/voter/Voter.sol`
+- Selected functions: `allocateChains`, `allocate`, `burn`, `rebalanceChain0`, `processDeallocation`, `emergencyDeallocate`, `parkOnChain0`, `clearToken`
+- Upstream source artifact: `V3/src/voter/Voter.sol`
+- Notes: Source-derived model is modified for formal evaluation only; source license and notices retained in this directory. Targeted gates pass and transaction conservation has no case-local domain axiom. Independent scoped proof re-review passed; downstream article/public-claim gates remain separate. Full baseline build was bounded and not completed; it is not reported green.
+
 ### `enzyme/onyx_fee_handler`
 - Family / implementation: `enzyme` / `onyx_fee_handler`
 - Stage: `build_green`
@@ -192,6 +202,16 @@ This report is generated from the benchmark manifests.
 - Selected functions: `KpkShares.processRequests`, `KpkShares._chargeFees`, `KpkShares._processApproved`, `KpkShares._processRejected`, `KpkShares.assetsToShares`, `KpkShares.sharesToAssets`
 - Upstream source artifact: `src/kpkShares.sol`
 - Notes: Complete unchanged SettlementAccounting conjunction proved from actual successful processRequests execution; kernel dependencies standard-only. Includes exact fees/world replay, ordered duplicate-safe decisions, signed accounting, finite/infinite allowances, records/frames and conversion/request-trace facts. Independent terminal Proof/Build and Final Red Team accepted complete model-level proof; generated agent targets deliberately retain holes. Manual source-structured conventional-token model, not compiler/bytecode refinement or complete protocol verification. Carry source graph only, not kUSD/kETH.
+
+### `kuru/withdrawal_limit`
+- Family / implementation: `kuru` / `v2`
+- Stage: `proof_complete`
+- Status dimensions: translation=`translated`, spec=`frozen`, proof=`complete`
+- Lean target: `Benchmark.Cases.Kuru.WithdrawalLimit.Compile`
+- Source ref: `model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Selected functions: `WithdrawalWindowLib.current`, `WithdrawalWindowLib.write`, `WithdrawalWindowLib.referenceAt`, `WithdrawalLimiter.initialize`, `WithdrawalLimiter.recordDeposit`, `WithdrawalLimiter.recordWithdrawal`, `WithdrawalLimiter.checkApprovedWithdrawal`, `WithdrawalLimiter.setDripConfig`, `WithdrawalLimiter.setPriceSource`, `AccountCore.deposit (both overloads)`, `AccountCore.withdraw`, `AccountCore.fulfillApprovedWithdrawal`, `AccountCore.invalidateApprovedWithdrawalNonce`, `AccountCore.setWithdrawalAuthority`, `AccountCore._transferAsset`, `AccountCore.receive`, `AccountCore._registerAccount`, `AccountCore._ensureRootAccount`, `AccountCore._createSubaccount (successful retained-effects projection)`, `AccountCore.setFeeCollector`, `WithdrawalLimiter.previewWithdrawal`
+- Upstream source artifact: `src/account/AccountCore.sol`
+- Notes: Eight runnable whole-group proof tasks with complete reference solutions in Proofs.lean; generated tasks intentionally end in exact ?_. See README.md for reproduction, proof coverage and scope. The complete global benchmark build and whole Solidity suite were not established green by this case.
 
 ### `kyberswap/partial_fill_price_floor`
 - Family / implementation: `kyberswap` / `meta-aggregation-router-v2`
@@ -1069,6 +1089,16 @@ This report is generated from the benchmark manifests.
 - Editable proof file: `Benchmark/Generated/Doppler/MulticurveFeeConservation/Tasks/SettleMarketForwardsPreservesAccounting.lean`
 - Hidden reference solution: `Benchmark.Cases.Doppler.MulticurveFeeConservation.Proofs`
 
+### `dromos/allocation_conservation/transaction_conservation`
+- Track / property class / proof family: `proof-only` / `accounting_conservation` / `state_preservation_local_effects`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Dromos.AllocationConservation.transaction_conservation`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Dromos/AllocationConservation/Contract.lean`, `cases/dromos/allocation_conservation/verity/Contract.lean`
+- Specification files: `Benchmark/Cases/Dromos/AllocationConservation/Specs.lean`, `cases/dromos/allocation_conservation/verity/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Dromos/AllocationConservation/Tasks/TransactionConservation.lean`
+- Hidden reference solution: `Benchmark.Cases.Dromos.AllocationConservation.Proofs`
+
 ### `enzyme/onyx_fee_handler/settle_dynamic_fees_exact_accounting`
 - Track / property class / proof family: `proof-only` / `cross_contract_fee_accounting` / `state_preservation_local_effects`
 - Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
@@ -1668,6 +1698,86 @@ This report is generated from the benchmark manifests.
 - Specification files: `cases/kpk/shares_settlement_accounting/verity/Specs.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Specs.lean`
 - Editable proof file: `Benchmark/Generated/KPK/SharesSettlementAccounting/Tasks/SettlementAccounting.lean`
 - Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs`
+
+### `kuru/withdrawal_limit/approved_authority_and_replay`
+- Track / property class / proof family: `proof-only` / `ApprovedAuthorityAndReplay` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.approved_authority_and_replay`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ApprovedAuthorityAndReplay.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs`
+
+### `kuru/withdrawal_limit/drip_and_configuration`
+- Track / property class / proof family: `proof-only` / `DripAndConfiguration` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.drip_and_configuration`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/DripAndConfiguration.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs`
+
+### `kuru/withdrawal_limit/exact_history_correspondence`
+- Track / property class / proof family: `proof-only` / `ExactHistoryCorrespondence` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.exact_history_correspondence`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ExactHistoryCorrespondence.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs`
+
+### `kuru/withdrawal_limit/initialization_and_writer_closure`
+- Track / property class / proof family: `proof-only` / `InitializationAndWriterClosure` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.initialization_and_writer_closure`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/InitializationAndWriterClosure.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs`
+
+### `kuru/withdrawal_limit/ordinary_and_global_no_reuse`
+- Track / property class / proof family: `proof-only` / `OrdinaryAndGlobalNoReuse` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.ordinary_and_global_no_reuse`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/OrdinaryAndGlobalNoReuse.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs`
+
+### `kuru/withdrawal_limit/payout_coverage_and_atomicity`
+- Track / property class / proof family: `proof-only` / `PayoutCoverageAndAtomicity` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.payout_coverage_and_atomicity`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/PayoutCoverageAndAtomicity.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs`
+
+### `kuru/withdrawal_limit/transaction_and_snapshots`
+- Track / property class / proof family: `proof-only` / `TransactionAndSnapshots` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.transaction_and_snapshots`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/TransactionAndSnapshots.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs`
+
+### `kuru/withdrawal_limit/valuation_and_widths`
+- Track / property class / proof family: `proof-only` / `ValuationAndWidths` / `protocol_transition_correctness`
+- Readiness: prompt_context=`ready`, editable_proof=`ready`, reference_solution=`ready`
+- Theorem target: `Benchmark.Cases.Kuru.WithdrawalLimit.valuation_and_widths`
+- Evaluation: engine=`lean_proof_generation`, target_kind=`proof_generation`
+- Implementation files: `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean`, `Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean`
+- Specification files: `Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean`
+- Editable proof file: `Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ValuationAndWidths.lean`
+- Hidden reference solution: `Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs`
 
 ### `kyberswap/partial_fill_price_floor/check_return_amount_partial_fill_price_floor`
 - Track / property class / proof family: `proof-only` / `price_floor` / `functional_correctness`

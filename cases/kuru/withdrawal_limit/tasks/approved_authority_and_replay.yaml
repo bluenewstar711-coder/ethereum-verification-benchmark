@@ -1,0 +1,34 @@
+manifest_kind: task
+schema_version: 1
+task_id: approved_authority_and_replay
+case_id: kuru/withdrawal_limit
+split: active
+family_id: kuru
+implementation_id: v2
+source_ref: model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean
+task_interface_version: 2
+theorem_name: Benchmark.Cases.Kuru.WithdrawalLimit.approved_authority_and_replay
+proof_family: protocol_transition_correctness
+property_class: ApprovedAuthorityAndReplay
+difficulty: hard
+category: global-withdrawal-policy
+track: proof-only
+translation_status: translated
+proof_status: complete
+evaluation_engine: lean_proof_generation
+implementation_files:
+  - Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean
+  - Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean
+  - Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean
+specification_files:
+  - Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean
+editable_files:
+  - Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ApprovedAuthorityAndReplay.lean
+reference_solution_module: Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs
+reference_solution_declaration: Benchmark.Cases.Kuru.WithdrawalLimit.approved_authority_and_replay
+abstraction_level: protocol_slice
+abstraction_notes: >
+  The complete named proposition includes every sub-obligation of this group. The reference proof
+  is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external
+  correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.
+unsupported_feature_codes: []
