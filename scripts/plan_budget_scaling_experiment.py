@@ -166,10 +166,14 @@ def command_for(task_ref: str, profile: BudgetProfile, model: str = DEFAULT_MODE
 
 
 def command_args(task_ref: str, profile: BudgetProfile) -> list[str]:
+    # BUDGET_SCALING_RUNNER swaps `python3 -m harness.cli` for a wrapper script with the
+    # same CLI (e.g. one that reuses a prewarmed Lake cache); BUDGET_SCALING_SUITE selects
+    # the task suite (STRAT-50 panels need "all").
+    runner = os.environ.get("BUDGET_SCALING_RUNNER")
+    suite = os.environ.get("BUDGET_SCALING_SUITE")
+    head = ["python3", runner] if runner else ["python3", "-m", "harness.cli"]
     return [
-        "python3",
-        "-m",
-        "harness.cli",
+        *head,
         "run-task",
         task_ref,
         "--harness",
@@ -182,6 +186,7 @@ def command_args(task_ref: str, profile: BudgetProfile) -> list[str]:
         str(profile.max_turns),
         "--shell-timeout-seconds",
         str(profile.shell_timeout_seconds),
+        *(["--suite", suite] if suite else []),
     ]
 
 
@@ -304,6 +309,11 @@ def usage_from_run_dir(run_dir: Path) -> dict:
     }
 
 
+def final_class_from_run_dir(run_dir: Path) -> str | None:
+    targets = (load_json(run_dir / "run.json").get("classification") or {}).get("targets") or []
+    return targets[0].get("final_class") if targets else None
+
+
 def row_from_run_dir(task_ref: str, profile: BudgetProfile, run_dir: str, *, recovered: bool = False) -> dict | None:
     run_path = Path(run_dir)
     if not run_path.is_dir() or not (run_path / "run.json").is_file():
@@ -315,6 +325,7 @@ def row_from_run_dir(task_ref: str, profile: BudgetProfile, run_dir: str, *, rec
         "run_dir": str(run_path),
         "skipped_already_solved": False,
         "passed": is_solved_run(run_path),
+        "final_class": final_class_from_run_dir(run_path),
     }
     if recovered:
         row["recovered_from_logs"] = True
@@ -419,7 +430,11 @@ def run_one_task(
             run_row["returncode"] = returncode
             run_row["runner_attempts"] = attempt
             row.update(run_row)
-            break
+            # Provider/transport failures are not a verdict at this budget: retry them.
+            if run_row.get("final_class") != "INFRA_INVALID" or attempt > retries:
+                break
+            time.sleep(min(600, 60 * attempt))
+            continue
         if timed_out:
             break
         if attempt <= retries:
@@ -532,6 +547,7 @@ def write_cascade_summary(output: Path) -> None:
                 "max_turns": profile.max_turns,
                 "shell_timeout_seconds": profile.shell_timeout_seconds,
                 "executed_tasks": sum(1 for row in profile_rows if not row.get("skipped_already_solved")),
+                "infra_invalid_tasks": sum(1 for row in profile_rows if row.get("final_class") == "INFRA_INVALID"),
                 "newly_solved": len(newly_solved),
                 "cumulative_solved": len(solved),
                 "task_count": task_count,
