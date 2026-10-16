@@ -37,7 +37,7 @@ All dependencies use the repository's unchanged lake-manifest.json.
     lake env lean -M 2400 Benchmark/Cases/Taurus/CMTATPartialFreeze/Proofs.lean
     lake env lean -M 2400 Benchmark/Cases/Taurus/CMTATPartialFreeze/Regression.lean
 
-Run these serially with resource supervision appropriate to the actual cgroup. The case-local targets and separate source elaborations pass. Independent build review reproduced the model targets and direct source checks. The whole-root baseline remains INCOMPLETE: a bounded root build reached an unchanged pinned Compiler/CodegenCommon.lean compilation and hit its wall timeout. No source error was observed before termination, but that is not a completed root build or a green full suite. No source-EVM tests are claimed. The case-local success must not be generalized to repository-wide readiness.
+Run these serially with resource supervision appropriate to the actual cgroup. The case-local targets and separate source elaborations pass. Independent build review reproduced the model targets and direct source checks. The whole-root baseline remains INCOMPLETE: a bounded live-main root build reached an unchanged pinned Verity/Macro/SpecGen.lean compilation and hit its wall timeout. Historical attempts under the supplied worktree's older Verity pin stopped earlier in other dependency modules. No source error was observed before termination, but that is not a completed root build or a green full suite. No source-EVM tests are claimed. The case-local success must not be generalized to repository-wide readiness.
 
 ## Proof artifacts
 

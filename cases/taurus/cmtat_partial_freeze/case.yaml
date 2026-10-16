@@ -43,5 +43,5 @@ abstraction_notes: >
 unsupported_feature_codes: []
 notes: >
   Case-local Lake targets and separate source checks pass. Whole-root baseline
-  remains incomplete at an unchanged pinned Compiler/CodegenCommon.lean timeout;
+  remains incomplete at an unchanged pinned Verity/Macro/SpecGen.lean timeout;
   no root-green or source-EVM-test claim. See REPRODUCIBILITY.md.
