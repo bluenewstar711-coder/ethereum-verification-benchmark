@@ -24,7 +24,7 @@ selected_functions:
   - _transfer
   - _update
 source_language: solidity
-verity_version: 0cb6b59b2e9a93c377280cc56610b5bd5e277bd3
+verity_version: 85e0262baca2656ba2444ddfc2ed1d596544cd7b
 lean_toolchain: leanprover/lean4:v4.31.0
 abstraction_level: protocol_slice
 abstraction_tags:

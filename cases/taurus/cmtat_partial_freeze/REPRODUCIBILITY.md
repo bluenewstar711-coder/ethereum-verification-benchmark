@@ -26,7 +26,7 @@ RuleEngine and SnapshotEngine callbacks are absent by the selected zero-address 
 ## Reproduce
 
 Pinned Lean: leanprover/lean4:v4.31.0.
-Pinned Verity: 0cb6b59b2e9a93c377280cc56610b5bd5e277bd3.
+Pinned Verity: 85e0262baca2656ba2444ddfc2ed1d596544cd7b.
 All dependencies use the repository's unchanged lake-manifest.json.
 
     lake build Benchmark.Cases.Taurus.CMTATPartialFreeze.Contract
