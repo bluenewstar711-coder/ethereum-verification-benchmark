@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.Accounting
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.AccountingProofs
 
 namespace Benchmark.Cases.KPK.SharesSettlementAccounting
 open Verity Verity.Stdlib.Math

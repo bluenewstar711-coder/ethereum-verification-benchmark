@@ -1,5 +1,5 @@
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.IntervalLemmas
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.LedgerLemmas
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.IntervalProofs
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.LedgerProofs
 
 namespace Benchmark.Cases.RailnetV2.QueryRedeemQueueV2
 

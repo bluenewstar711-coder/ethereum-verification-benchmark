@@ -1,4 +1,4 @@
-import Benchmark.Cases.Dromos.AllocationConservation.SetProofs
+import Benchmark.Cases.Dromos.AllocationConservation.Proofs.SetProofs
 
 /-!
 Reference proof development for the Dromos Labs team's single selected invariant.

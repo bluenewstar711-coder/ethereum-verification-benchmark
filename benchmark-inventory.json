@@ -9820,7 +9820,7 @@
       "abstraction_level": "arithmetic_supporting_lemma",
       "abstraction_notes": "Supporting mathematical floor lemma; execution-to-conversion connection and whole-batch SettlementAccounting are proved separately. Terminal independent reviews pending.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.KPK.SharesSettlementAccounting.ConversionBounds",
+      "reference_solution_module": "Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.ConversionBoundsProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -9865,7 +9865,7 @@
       "abstraction_level": "arithmetic_supporting_lemma",
       "abstraction_notes": "Supporting mathematical floor lemma; execution-to-conversion connection and whole-batch SettlementAccounting are proved separately. Terminal independent reviews pending.",
       "unsupported_feature_codes": [],
-      "reference_solution_module": "Benchmark.Cases.KPK.SharesSettlementAccounting.ConversionBounds",
+      "reference_solution_module": "Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.ConversionBoundsProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -19341,5 +19341,5 @@
     }
   ],
   "backlog_tasks": [],
-  "generated_at": "2026-10-15T18:14:40.774685+00:00"
+  "generated_at": "2026-10-16T07:56:38.998663+00:00"
 }

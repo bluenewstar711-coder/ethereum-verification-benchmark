@@ -1,5 +1,5 @@
 import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Specs
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.AccountingLemmas
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.AccountingProofs
 import Mathlib.Algebra.Order.BigOperators.Group.List
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 

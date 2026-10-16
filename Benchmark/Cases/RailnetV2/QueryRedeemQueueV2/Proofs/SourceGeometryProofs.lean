@@ -1,5 +1,5 @@
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.AllocationMath
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.SourceArrays
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.AllocationMathProofs
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.SourceArraysProofs
 
 namespace Benchmark.Cases.RailnetV2.QueryRedeemQueueV2
 

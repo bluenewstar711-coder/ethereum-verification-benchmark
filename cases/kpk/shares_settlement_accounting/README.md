@@ -29,7 +29,7 @@ Equivalent ordinary targets are:
 
     lake build Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs
     lake build Benchmark.Cases.KPK.SharesSettlementAccounting.Compile
-    lake build Benchmark.Cases.KPK.SharesSettlementAccounting.Regression
+    lake build Benchmark.Cases.KPK.SharesSettlementAccounting.Tests.Regression
 
 The helper creates a temporary root Lake config with per-Lean -M3000/-j1 and
 170-second target timeouts, without changing dependency pins. It uses retained

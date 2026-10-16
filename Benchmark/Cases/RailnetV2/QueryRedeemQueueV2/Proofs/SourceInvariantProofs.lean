@@ -1,5 +1,5 @@
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.SourceFunding
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.CallbackProofs
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.SourceFundingProofs
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.CallbackProofs
 
 namespace Benchmark.Cases.RailnetV2.QueryRedeemQueueV2
 

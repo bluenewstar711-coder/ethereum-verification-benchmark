@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.FeeTrace
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.FeeTraceProofs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 

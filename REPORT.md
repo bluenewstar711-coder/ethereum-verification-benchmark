@@ -1677,7 +1677,7 @@ This report is generated from the benchmark manifests.
 - Implementation files: `cases/kpk/shares_settlement_accounting/verity/Contract.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Contract.lean`
 - Specification files: `cases/kpk/shares_settlement_accounting/verity/Specs.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Specs.lean`
 - Editable proof file: `Benchmark/Generated/KPK/SharesSettlementAccounting/Tasks/MintFloorBounds.lean`
-- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.ConversionBounds`
+- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.ConversionBoundsProofs`
 
 ### `kpk/shares_settlement_accounting/out_floor_bounds`
 - Track / property class / proof family: `proof-only` / `rounding_bound` / `functional_correctness`
@@ -1687,7 +1687,7 @@ This report is generated from the benchmark manifests.
 - Implementation files: `cases/kpk/shares_settlement_accounting/verity/Contract.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Contract.lean`
 - Specification files: `cases/kpk/shares_settlement_accounting/verity/Specs.lean`, `Benchmark/Cases/KPK/SharesSettlementAccounting/Specs.lean`
 - Editable proof file: `Benchmark/Generated/KPK/SharesSettlementAccounting/Tasks/OutFloorBounds.lean`
-- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.ConversionBounds`
+- Hidden reference solution: `Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.ConversionBoundsProofs`
 
 ### `kpk/shares_settlement_accounting/settlement_accounting`
 - Track / property class / proof family: `proof-only` / `settlement_accounting_integrity` / `functional_correctness`

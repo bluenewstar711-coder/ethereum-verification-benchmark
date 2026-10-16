@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.ConversionBounds
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.ConversionBoundsProofs
 
 namespace Benchmark.Cases.KPK.SharesSettlementAccounting
 open Verity

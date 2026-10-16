@@ -1,4 +1,4 @@
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.SourceGeometry
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.SourceGeometryProofs
 import Mathlib.Tactic.SplitIfs
 
 namespace Benchmark.Cases.RailnetV2.QueryRedeemQueueV2

@@ -1,4 +1,4 @@
-import Benchmark.Cases.KPK.SharesSettlementAccounting.FeeEffects
+import Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs.FeeEffectsProofs
 
 namespace Benchmark.Cases.KPK.SharesSettlementAccounting
 open Verity

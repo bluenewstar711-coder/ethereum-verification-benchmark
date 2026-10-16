@@ -1,4 +1,4 @@
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.SourceTransitionBasics
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.SourceTransitionBasicsProofs
 
 namespace Benchmark.Cases.RailnetV2.QueryRedeemQueueV2
 

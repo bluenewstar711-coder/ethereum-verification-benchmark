@@ -1,4 +1,4 @@
-import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.AccountingLemmas
+import Benchmark.Cases.RailnetV2.QueryRedeemQueueV2.Proofs.AccountingProofs
 import Mathlib.Data.Finset.Card
 import Mathlib.Order.Interval.Finset.Nat
 
