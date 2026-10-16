@@ -37,6 +37,7 @@ active_cases = [
   "ipor/plasma_vault_redeem_split",
   "kleros/sortition_trees",
   "kpk/shares_settlement_accounting",
+  "kuru/withdrawal_limit",
   "kyberswap/partial_fill_price_floor",
   "lagoon/guardrails",
   "lido/vaulthub_locked",

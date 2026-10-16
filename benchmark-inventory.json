@@ -10,32 +10,40 @@
     "backlog_tasks": "backlog/*/*/tasks/*.yaml"
   },
   "summary": {
-    "family_count": 52,
-    "implementation_count": 53,
-    "active_case_count": 52,
+    "family_count": 53,
+    "implementation_count": 54,
+    "active_case_count": 53,
     "backlog_case_count": 1,
-    "active_task_count": 311,
+    "active_task_count": 319,
     "backlog_task_count": 0,
-    "buildable_case_count": 52,
-    "runnable_task_count": 311,
+    "buildable_case_count": 53,
+    "runnable_task_count": 319,
     "case_stage_counts": {
       "build_green": 36,
       "candidate": 1,
-      "proof_complete": 16
+      "proof_complete": 17
     },
     "translation_status_counts": {
       "blocked": 1,
-      "translated": 52
+      "translated": 53
     },
     "proof_status_counts": {
       "blocked": 1,
-      "complete": 45,
+      "complete": 46,
       "partial": 7
     },
     "task_track_counts": {
-      "proof-only": 311
+      "proof-only": 319
     },
     "task_property_class_counts": {
+      "ApprovedAuthorityAndReplay": 1,
+      "DripAndConfiguration": 1,
+      "ExactHistoryCorrespondence": 1,
+      "InitializationAndWriterClosure": 1,
+      "OrdinaryAndGlobalNoReuse": 1,
+      "PayoutCoverageAndAtomicity": 1,
+      "TransactionAndSnapshots": 1,
+      "ValuationAndWidths": 1,
       "access_control_authorization": 16,
       "access_control_identity": 10,
       "accounting_and_rate_guard": 1,
@@ -146,12 +154,12 @@
     "task_proof_family_counts": {
       "authorization_enablement": 48,
       "functional_correctness": 68,
-      "protocol_transition_correctness": 48,
+      "protocol_transition_correctness": 56,
       "refinement_equivalence": 42,
       "state_preservation_local_effects": 105
     },
     "family_split_counts": {
-      "active": 51,
+      "active": 52,
       "mixed": 1
     }
   },
@@ -478,6 +486,23 @@
         "solidity"
       ],
       "manifest_path": "families/kpk/family.yaml"
+    },
+    {
+      "family_id": "kuru",
+      "display_name": "Kuru",
+      "split": "active",
+      "status": "active",
+      "description": "Source-shaped model and complete eight-group proof of the ordinary withdrawal policy and authorized exception.",
+      "implementation_ids": [
+        "v2"
+      ],
+      "case_ids": [
+        "kuru/withdrawal_limit"
+      ],
+      "source_languages": [
+        "solidity"
+      ],
+      "manifest_path": "families/kuru/family.yaml"
     },
     {
       "family_id": "kyberswap",
@@ -1347,6 +1372,22 @@
       ],
       "notes": "Package version 5.4.0 at upgradeable gitlink 37bfda9eeb81cca848a9989118485a73d002eae4 and nested contracts gitlink 3d479dca0411378a99c9191d98e9fe1e35c1585d. Matches XAUt/WBTC Carry source graph at retained block 26106081. No kUSD/kETH or bytecode-refinement claim.",
       "manifest_path": "families/kpk/implementations/carry_shares/implementation.yaml"
+    },
+    {
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "display_name": "Kuru V2 withdrawal-policy semantic model",
+      "split": "active",
+      "status": "translated",
+      "upstream_repo": null,
+      "upstream_commit": "52d8e49aff11c52654955c8591a032172a40c79e",
+      "source_language": "solidity",
+      "source_artifact_path": "Benchmark/Cases/Kuru/WithdrawalLimit",
+      "case_ids": [
+        "kuru/withdrawal_limit"
+      ],
+      "notes": "Original Solidity is not distributed. This implementation publishes the executable Lean semantic model and exact proofs; original source identity is pinned but no private repository URL or source access is required to reproduce the Lean result.",
+      "manifest_path": "families/kuru/implementations/v2/implementation.yaml"
     },
     {
       "family_id": "kyberswap",
@@ -2822,6 +2863,69 @@
       "unsupported_feature_codes": [],
       "spec_target": "Benchmark.Cases.KPK.SharesSettlementAccounting.Specs",
       "proof_target": "Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs"
+    },
+    {
+      "case_id": "kuru/withdrawal_limit",
+      "project": "kuru",
+      "case_name": "withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/case.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "stage": "proof_complete",
+      "translation_status": "translated",
+      "spec_status": "frozen",
+      "proof_status": "complete",
+      "source_language": "solidity",
+      "upstream_repo": null,
+      "upstream_commit": "52d8e49aff11c52654955c8591a032172a40c79e",
+      "original_contract_path": "src/account/AccountCore.sol",
+      "generated_artifact_path": null,
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "selected_functions": [
+        "WithdrawalWindowLib.current",
+        "WithdrawalWindowLib.write",
+        "WithdrawalWindowLib.referenceAt",
+        "WithdrawalLimiter.initialize",
+        "WithdrawalLimiter.recordDeposit",
+        "WithdrawalLimiter.recordWithdrawal",
+        "WithdrawalLimiter.checkApprovedWithdrawal",
+        "WithdrawalLimiter.setDripConfig",
+        "WithdrawalLimiter.setPriceSource",
+        "AccountCore.deposit (both overloads)",
+        "AccountCore.withdraw",
+        "AccountCore.fulfillApprovedWithdrawal",
+        "AccountCore.invalidateApprovedWithdrawalNonce",
+        "AccountCore.setWithdrawalAuthority",
+        "AccountCore._transferAsset",
+        "AccountCore.receive",
+        "AccountCore._registerAccount",
+        "AccountCore._ensureRootAccount",
+        "AccountCore._createSubaccount (successful retained-effects projection)",
+        "AccountCore.setFeeCollector",
+        "WithdrawalLimiter.previewWithdrawal"
+      ],
+      "lean_target": "Benchmark.Cases.Kuru.WithdrawalLimit.Compile",
+      "failure_reason": null,
+      "notes": "Eight runnable whole-group proof tasks with complete reference solutions in Proofs.lean; generated tasks intentionally end in exact ?_. See README.md for reproduction, proof coverage and scope. The complete global benchmark build and whole Solidity suite were not established green by this case.",
+      "buildable": true,
+      "verity_commit": "85e0262baca2656ba2444ddfc2ed1d596544cd7b",
+      "lean_toolchain": "leanprover/lean4:v4.31.0",
+      "abstraction_level": "protocol_slice",
+      "abstraction_tags": [
+        "verity_types_semantic_model_no_codegen",
+        "explicit_static_signature_acceptance",
+        "full_precision_math_library_manual_refinement",
+        "external_token_balance_observations",
+        "non_custody_writer_frame",
+        "unchanged_implementation_trace"
+      ],
+      "abstraction_notes": "Source-shaped executable multi-contract semantic model using Verity Address/UIntN and invariant APIs. All eight complete specification groups and PolicyBundle have machine-checked reference proofs. Root/child allocation and list writers are concrete; non-custody arithmetic and creation authorization use explicit projections. The ordinary batch theorem requires a successful initial capacity observation. Source/helper/storage/external correspondence is manually reviewed; no Solidity compiler or bytecode refinement is claimed. Original Solidity is not distributed.",
+      "unsupported_feature_codes": [],
+      "spec_target": "Benchmark.Cases.Kuru.WithdrawalLimit.Specs",
+      "proof_target": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs"
     },
     {
       "case_id": "kyberswap/partial_fill_price_floor",
@@ -9807,6 +9911,366 @@
       "abstraction_notes": "Complete original conjunction for actual recursive two-array processRequests, fees, signed balances/supply, registered allowance accounting, original request traces, duplicate consumption, world replay and final price. Reference proves it without the generated task additional ID-range premise. Independent terminal proof accepted; conventional-token manual model only.",
       "unsupported_feature_codes": [],
       "reference_solution_module": "Benchmark.Cases.KPK.SharesSettlementAccounting.Proofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/approved_authority_and_replay",
+      "task_id": "approved_authority_and_replay",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/approved_authority_and_replay.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "ApprovedAuthorityAndReplay",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.approved_authority_and_replay",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ApprovedAuthorityAndReplay.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/drip_and_configuration",
+      "task_id": "drip_and_configuration",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/drip_and_configuration.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "DripAndConfiguration",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.drip_and_configuration",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/DripAndConfiguration.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/exact_history_correspondence",
+      "task_id": "exact_history_correspondence",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/exact_history_correspondence.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "ExactHistoryCorrespondence",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.exact_history_correspondence",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ExactHistoryCorrespondence.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/initialization_and_writer_closure",
+      "task_id": "initialization_and_writer_closure",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/initialization_and_writer_closure.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "InitializationAndWriterClosure",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.initialization_and_writer_closure",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/InitializationAndWriterClosure.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/ordinary_and_global_no_reuse",
+      "task_id": "ordinary_and_global_no_reuse",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/ordinary_and_global_no_reuse.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "OrdinaryAndGlobalNoReuse",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.ordinary_and_global_no_reuse",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/OrdinaryAndGlobalNoReuse.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/payout_coverage_and_atomicity",
+      "task_id": "payout_coverage_and_atomicity",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/payout_coverage_and_atomicity.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "PayoutCoverageAndAtomicity",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.payout_coverage_and_atomicity",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/PayoutCoverageAndAtomicity.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.CoreProofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/transaction_and_snapshots",
+      "task_id": "transaction_and_snapshots",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/transaction_and_snapshots.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "TransactionAndSnapshots",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.transaction_and_snapshots",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/TransactionAndSnapshots.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.WriterProofs",
+      "evaluation": {
+        "engine": "lean_proof_generation",
+        "target_kind": "proof_generation"
+      },
+      "readiness": {
+        "prompt_context": "ready",
+        "editable_proof": "ready",
+        "reference_solution": "ready"
+      }
+    },
+    {
+      "task_ref": "kuru/withdrawal_limit/valuation_and_widths",
+      "task_id": "valuation_and_widths",
+      "case_id": "kuru/withdrawal_limit",
+      "suite": "active",
+      "schema_version": 1,
+      "manifest_path": "cases/kuru/withdrawal_limit/tasks/valuation_and_widths.yaml",
+      "split": "active",
+      "family_id": "kuru",
+      "implementation_id": "v2",
+      "source_ref": "model:Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean",
+      "task_interface_version": 2,
+      "track": "proof-only",
+      "property_class": "ValuationAndWidths",
+      "category": "global-withdrawal-policy",
+      "difficulty": "hard",
+      "theorem_name": "Benchmark.Cases.Kuru.WithdrawalLimit.valuation_and_widths",
+      "proof_family": "protocol_transition_correctness",
+      "translation_status": "translated",
+      "proof_status": "complete",
+      "implementation_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/History.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract/Limiter.lean",
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Contract.lean"
+      ],
+      "specification_files": [
+        "Benchmark/Cases/Kuru/WithdrawalLimit/Specs.lean"
+      ],
+      "editable_files": [
+        "Benchmark/Generated/Kuru/WithdrawalLimit/Tasks/ValuationAndWidths.lean"
+      ],
+      "abstraction_level": "protocol_slice",
+      "abstraction_notes": "The complete named proposition includes every sub-obligation of this group. The reference proof is machine-checked on the source-shaped Lean semantic model; source/helper/storage/external correspondence is manual, not Solidity/bytecode refinement. See the case README for scope.",
+      "unsupported_feature_codes": [],
+      "reference_solution_module": "Benchmark.Cases.Kuru.WithdrawalLimit.Proofs.ArithmeticProofs",
       "evaluation": {
         "engine": "lean_proof_generation",
         "target_kind": "proof_generation"
@@ -18877,5 +19341,5 @@
     }
   ],
   "backlog_tasks": [],
-  "generated_at": "2026-10-15T18:16:24.431647+00:00"
+  "generated_at": "2026-10-16T07:56:38.998663+00:00"
 }
