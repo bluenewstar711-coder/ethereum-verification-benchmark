@@ -13,6 +13,7 @@ from harness.transport_request import (
     DEFAULT_STREAMING_ENABLED,
     build_chat_request,
     chat_completion,
+    effective_sampling,
     reset_transport_fallback,
     streaming_fallback_reason,
     transport_mode,
@@ -36,7 +37,9 @@ def endpoint_smoke(base_url: str = DEFAULT_BASE_URL, model: str = DEFAULT_MODEL)
             "model": model,
             "messages": [{"role": "user", "content": "Dis moi tres brievement qui est Vasco de Gama (2 phrases)"}],
             "max_tokens": 500,
-            "temperature": 0,
+            # Same sampling policy as task requests, so providers that reject
+            # temperature (DEFAULT_HARNESS_OMIT_SAMPLING) are not failed here.
+            **effective_sampling(),
         }
     ).encode("utf-8")
     request = build_chat_request(base_url, body)
@@ -114,7 +117,9 @@ def generic_preflight(
         [{"role": "user", "content": "Reply with exactly: ok"}],
         base_url=base_url,
         model=model,
-        max_tokens=16,
+        # Same floor as the tool probe: a reasoning model can spend 16 tokens
+        # thinking, and some streaming upstreams then fail the request.
+        max_tokens=PROTOCOL_PROBE_MAX_TOKENS,
         api_key_override=api_key_override,
     )
     record_usage(text_response)
