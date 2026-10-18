@@ -7,7 +7,7 @@
   "environment_id": "sha256:c2b6593676b790a2ce3e0ba258b70438e286b809ff26811fe4099ff6d8dd897a",
   "harness_id": "sha256:98bbe897aa65ec83d32d577a183cea1a21ba6122851048d4c591f3f55c10c729",
   "panel_sha256": "sha256:6921cc27d522ecbfd0798e9bca9251526f10923855cc28dde4b22507f92eaf25",
-  "updated_at": "2026-10-15T08:38:29Z",
+  "updated_at": "2026-10-18T16:22:09Z",
   "scope": "STRAT-50 p4_normal (high budget) with reasoning_effort=low",
   "effort": {
     "profile": "p4_normal",
@@ -496,6 +496,90 @@
         "uniswap_v2/pair_fee_adjusted_swap/swap_sets_reserve1",
         "wildcat/borrow_liquidity_safety/positive_borrow_preserves_required_liquidity"
       ]
+    },
+    {
+      "rank": 10,
+      "panel": "STRAT-50",
+      "model": "mistral/mistral-small-latest",
+      "route_label": "native_provider",
+      "lane_state": "completed",
+      "profile": "p4_normal",
+      "reasoning_effort": "omit_sampling",
+      "max_attempts": 16,
+      "max_tool_calls": 120,
+      "max_turns": 50,
+      "tasks_evaluated": 50,
+      "valid_verdicts": 50,
+      "solved": 4,
+      "genuine_fail": 46,
+      "infra_invalid": 0,
+      "skipped": 0,
+      "solve_rate_on_valid": 0.08,
+      "solve_rate_on_50": 0.08,
+      "total_tokens": 2218522,
+      "total_requests": 428,
+      "cum_elapsed_seconds": 13193.7,
+      "solved_tasks": [
+        "erc4337/entry_point_invariant/no_beneficiary_payout_on_revert",
+        "ethereum/deposit_contract_minimal/deposit_count",
+        "nexus_mutual/ramm_price_band/sync_sets_buy_price",
+        "t3tris/hwm_performance_fee/fee_claim_preserves_unclaimed_le_supply"
+      ]
+    },
+    {
+      "rank": 11,
+      "panel": "STRAT-50",
+      "model": "mistral/mistral-medium-latest",
+      "route_label": "native_provider",
+      "lane_state": "completed",
+      "profile": "p4_normal",
+      "reasoning_effort": "omit_sampling",
+      "max_attempts": 16,
+      "max_tool_calls": 120,
+      "max_turns": 50,
+      "tasks_evaluated": 50,
+      "valid_verdicts": 50,
+      "solved": 3,
+      "genuine_fail": 47,
+      "infra_invalid": 0,
+      "skipped": 0,
+      "solve_rate_on_valid": 0.06,
+      "solve_rate_on_50": 0.06,
+      "total_tokens": 2675100,
+      "total_requests": 488,
+      "cum_elapsed_seconds": 11087.8,
+      "solved_tasks": [
+        "ethereum/deposit_contract_minimal/deposit_count",
+        "t3tris/hwm_performance_fee/fee_claim_preserves_unclaimed_le_supply",
+        "wildcat/borrow_liquidity_safety/positive_borrow_preserves_required_liquidity"
+      ]
+    },
+    {
+      "rank": 12,
+      "panel": "STRAT-50",
+      "model": "mistral/labs-leanstral-1-5-1",
+      "route_label": "native_provider",
+      "lane_state": "completed",
+      "profile": "p4_normal",
+      "reasoning_effort": "omit_sampling",
+      "max_attempts": 16,
+      "max_tool_calls": 120,
+      "max_turns": 50,
+      "tasks_evaluated": 50,
+      "valid_verdicts": 50,
+      "solved": 2,
+      "genuine_fail": 48,
+      "infra_invalid": 0,
+      "skipped": 0,
+      "solve_rate_on_valid": 0.04,
+      "solve_rate_on_50": 0.04,
+      "total_tokens": 3269160,
+      "total_requests": 547,
+      "cum_elapsed_seconds": 6683.5,
+      "solved_tasks": [
+        "ethereum/deposit_contract_minimal/deposit_count",
+        "wildcat/borrow_liquidity_safety/positive_borrow_preserves_required_liquidity"
+      ]
     }
   ],
   "partial_or_blocked_cohorts": [
@@ -523,6 +607,6 @@
       "solved_tasks": []
     }
   ],
-  "dedup_row_count": 451,
-  "raw_row_count": 497
+  "dedup_row_count": 601,
+  "raw_row_count": 652
 }

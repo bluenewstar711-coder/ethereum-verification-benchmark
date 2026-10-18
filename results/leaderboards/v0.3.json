@@ -194,14 +194,16 @@
     },
     {
       "avg_total_tokens_per_task": 44370.4,
-      "caveats": [],
+      "caveats": [
+        "Provider-default sampling: the Mistral route rejects reasoning_effort, and Leanstral also rejects temperature=0."
+      ],
       "completion_tokens": 113395,
-      "display_name": "mistral-small-latest",
+      "display_name": "mistral-small",
       "failed": 46,
       "inference_model_id": "mistral/mistral-small-latest",
       "inference_provider_id": "mistral",
-      "model_id": "mistral/mistral-small-latest",
-      "model_name": "mistral-small-latest",
+      "model_id": "mistral/mistral-small",
+      "model_name": "mistral-small",
       "model_provider_id": "mistral",
       "pass_rate": 0.08,
       "passed": 4,
@@ -215,14 +217,16 @@
     },
     {
       "avg_total_tokens_per_task": 53502.0,
-      "caveats": [],
+      "caveats": [
+        "Provider-default sampling: the Mistral route rejects reasoning_effort, and Leanstral also rejects temperature=0."
+      ],
       "completion_tokens": 125011,
-      "display_name": "mistral-medium-latest",
+      "display_name": "mistral-medium",
       "failed": 47,
       "inference_model_id": "mistral/mistral-medium-latest",
       "inference_provider_id": "mistral",
-      "model_id": "mistral/mistral-medium-latest",
-      "model_name": "mistral-medium-latest",
+      "model_id": "mistral/mistral-medium",
+      "model_name": "mistral-medium",
       "model_provider_id": "mistral",
       "pass_rate": 0.06,
       "passed": 3,
@@ -236,14 +240,16 @@
     },
     {
       "avg_total_tokens_per_task": 65383.2,
-      "caveats": [],
+      "caveats": [
+        "Provider-default sampling: the Mistral route rejects reasoning_effort, and Leanstral also rejects temperature=0."
+      ],
       "completion_tokens": 103457,
-      "display_name": "labs-leanstral-1.5.1",
+      "display_name": "leanstral-1.5",
       "failed": 48,
       "inference_model_id": "mistral/labs-leanstral-1-5-1",
       "inference_provider_id": "mistral",
-      "model_id": "mistral/labs-leanstral-1-5-1",
-      "model_name": "labs-leanstral-1-5-1",
+      "model_id": "mistral/leanstral-1.5",
+      "model_name": "leanstral-1.5",
       "model_provider_id": "mistral",
       "pass_rate": 0.04,
       "passed": 2,

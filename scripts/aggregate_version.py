@@ -156,6 +156,27 @@ PUBLIC_MODEL_ALIASES: dict[str, dict[str, str]] = {
         "inference_provider_id": "openai",
         "inference_model_id": "openai/gpt-6-astra",
     },
+    "mistral/labs-leanstral-1-5-1": {
+        "model_provider_id": "mistral",
+        "model_name": "leanstral-1.5",
+        "display_name": "leanstral-1.5",
+        "inference_provider_id": "mistral",
+        "inference_model_id": "mistral/labs-leanstral-1-5-1",
+    },
+    "mistral/mistral-medium-latest": {
+        "model_provider_id": "mistral",
+        "model_name": "mistral-medium",
+        "display_name": "mistral-medium",
+        "inference_provider_id": "mistral",
+        "inference_model_id": "mistral/mistral-medium-latest",
+    },
+    "mistral/mistral-small-latest": {
+        "model_provider_id": "mistral",
+        "model_name": "mistral-small",
+        "display_name": "mistral-small",
+        "inference_provider_id": "mistral",
+        "inference_model_id": "mistral/mistral-small-latest",
+    },
     "muse-code/muse-wonder-1.0": {
         "model_provider_id": "muse",
         "model_name": "muse-wonder-1.0",

@@ -1,6 +1,6 @@
 # Ethereum Verification Benchmark Leaderboard
 
-Benchmark version `0.3` · generated 2026-10-18 08:31Z
+Benchmark version `0.3` · generated 2026-10-18 16:22Z
 
 Complete rows are eligible for rank comparisons. Partial rows are shown for transparency and excluded from complete-rank comparisons.
 
@@ -15,6 +15,6 @@ Complete rows are eligible for rank comparisons. Partial rows are shown for tran
 | 7 | glm-5.3 | `complete` | 12/50 | 3589105 | 152237 | - |
 | 8 | muse-spark-1.3 | `complete` | 11/50 | 3510035 | 823418 | - |
 | 9 | grok-4.7 | `complete` | 9/50 | 2625050 | 167015 | - |
-| 10 | mistral-small-latest | `complete` | 4/50 | 2105127 | 113395 | - |
-| 11 | mistral-medium-latest | `complete` | 3/50 | 2550089 | 125011 | - |
-| 12 | labs-leanstral-1.5.1 | `complete` | 2/50 | 3165703 | 103457 | - |
+| 10 | mistral-small | `complete` | 4/50 | 2105127 | 113395 | Provider-default sampling: the Mistral route rejects reasoning_effort, and Leanstral also rejects temperature=0. |
+| 11 | mistral-medium | `complete` | 3/50 | 2550089 | 125011 | Provider-default sampling: the Mistral route rejects reasoning_effort, and Leanstral also rejects temperature=0. |
+| 12 | leanstral-1.5 | `complete` | 2/50 | 3165703 | 103457 | Provider-default sampling: the Mistral route rejects reasoning_effort, and Leanstral also rejects temperature=0. |

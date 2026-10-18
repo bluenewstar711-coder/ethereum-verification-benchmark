@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T08:38:29Z",
+  "updated_at": "2026-10-18T16:22:09Z",
   "panel": "STRAT-50",
   "budget_profile": "high (p4_normal: max_attempts=16, max_tool_calls=120, max_turns=50)",
   "reasoning_effort": "low",
@@ -120,6 +120,45 @@
       "total_tokens": 2792065,
       "total_requests": 443,
       "cum_elapsed_seconds": 10495.9
+    },
+    {
+      "model": "mistral/mistral-small-latest",
+      "lane_state": "completed",
+      "valid_completed": 50,
+      "solved": 4,
+      "genuine_fail": 46,
+      "infra_invalid": 0,
+      "pass_rate_on_valid_pct": 8.0,
+      "pass_rate_on_50_pct": 8.0,
+      "total_tokens": 2218522,
+      "total_requests": 428,
+      "cum_elapsed_seconds": 13193.7
+    },
+    {
+      "model": "mistral/mistral-medium-latest",
+      "lane_state": "completed",
+      "valid_completed": 50,
+      "solved": 3,
+      "genuine_fail": 47,
+      "infra_invalid": 0,
+      "pass_rate_on_valid_pct": 6.0,
+      "pass_rate_on_50_pct": 6.0,
+      "total_tokens": 2675100,
+      "total_requests": 488,
+      "cum_elapsed_seconds": 11087.8
+    },
+    {
+      "model": "mistral/labs-leanstral-1-5-1",
+      "lane_state": "completed",
+      "valid_completed": 50,
+      "solved": 2,
+      "genuine_fail": 48,
+      "infra_invalid": 0,
+      "pass_rate_on_valid_pct": 4.0,
+      "pass_rate_on_50_pct": 4.0,
+      "total_tokens": 3269160,
+      "total_requests": 547,
+      "cum_elapsed_seconds": 6683.5
     },
     {
       "model": "kimi/k3-256k",

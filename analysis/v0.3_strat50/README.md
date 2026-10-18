@@ -109,7 +109,7 @@ explicit version/commit selection and should never silently fall back from v0.3.
 
 ## Multi-Model Campaign Results (`p4_normal`, `reasoning_effort=low`)
 
-Nine complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"`. Across all evaluated models, **31 / 50 tasks (62.0%)** were solved by at least one model.
+Twelve complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) were evaluated on the frozen v0.3 STRAT-50 panel under `p4_normal` (`max_attempts=16`, `max_tool_calls=120`, `max_turns=50`) with `reasoning_effort="low"` (the three Mistral cohorts use provider-default sampling because the Mistral route rejects `reasoning_effort`). Across all evaluated models, **31 / 50 tasks (62.0%)** were solved by at least one model.
 
 ### Complete Cohorts (50/50 valid verifier verdicts, 0 `INFRA_INVALID`)
 
@@ -124,6 +124,9 @@ Nine complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) were
 | 6 (tie) | **`zai/glm-5.3`** | **12** | 50/50 | **24.0%** | 3,741,342 | 702 | 16,994.3 | Native provider route. |
 | 8 | **`muse-spark-1.3`** | **11** | 50/50 | **22.0%** | 4,333,453 | 690 | 19,451.3 | Unified 50/50 cohort across 35 preserved `muse/muse-spark-1.3` tasks (9 solved) and 15 `muse-code/muse-spark-1.3` subscription tasks (2 solved). |
 | 9 | **`xai/grok-4.7`** | **9** | 50/50 | **18.0%** | 2,792,065 | 443 | 10,495.9 | Native provider route. |
+| 10 | **`mistral/mistral-small-latest`** | **4** | 50/50 | **8.0%** | 2,218,522 | 428 | 13,193.7 | Provider-default sampling (the Mistral route rejects `reasoning_effort`). |
+| 11 | **`mistral/mistral-medium-latest`** | **3** | 50/50 | **6.0%** | 2,675,100 | 488 | 11,087.8 | Provider-default sampling (the Mistral route rejects `reasoning_effort`). |
+| 12 | **`mistral/labs-leanstral-1-5-1`** | **2** | 50/50 | **4.0%** | 3,269,160 | 547 | 6,683.5 | Provider-default sampling (the Mistral route rejects `reasoning_effort`). |
 
 ### Quota-Blocked Cohorts
 
@@ -136,4 +139,5 @@ Nine complete 50-task cohorts and one quota-blocked cohort (`kimi/k3-256k`) were
 - [`leaderboard.json`](./leaderboard.json) — machine-readable v0.3 STRAT-50 leaderboard, solved task lists per model, and union of solved tasks (`31/50`).
 - [`summary.json`](./summary.json) — per-model aggregate metrics and lane status.
 - [`results.json`](./results.json) — deduplicated per-task outcomes across evaluated models (with per-task `provider_model` and `route_label` provenance).
+- Two `mistral/mistral-medium-latest` runs (`paladin_votes/.../both_matches_independent_claims`, `uniswap_v2/.../swap_sets_reserve1`) were first classified `INFRA_INVALID` because the 120 s verifier check timed out under machine load. Their submitted proofs were re-verified on an idle machine with a 900 s timeout and fail with Lean errors, so they count as `GENUINE_FAIL` (see `reverification_note` in their `run.json`).
 - [`results_muse_code_subscription.json`](./results_muse_code_subscription.json) — subscription route records for `muse-code/muse-spark-1.3` and `muse-code/muse-wonder-1.0`.
