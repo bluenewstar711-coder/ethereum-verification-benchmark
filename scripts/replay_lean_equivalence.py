@@ -34,9 +34,9 @@ DEFAULT_BENCH = Path("/var/lib/sandboxed-node/4f2d1609-558c-4b71-805a-af5dae112f
 FAST_RUNNER_DIR = Path("/var/lib/sandboxed-node/4f2d1609-558c-4b71-805a-af5dae112f5d/.gemini/antigravity-cli/brain/a2664f62-92f7-48f4-a506-ae80c95dca3a/scratch")
 
 
-def run(cmd: list[str], cwd: Path, timeout: int) -> tuple[int, str, float]:
+def run(cmd: list[str], cwd: Path, timeout: int, env: dict | None = None) -> tuple[int, str, float]:
     t0 = time.time()
-    proc = subprocess.Popen(cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+    proc = subprocess.Popen(cmd, cwd=cwd, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
     try:
         out, err = proc.communicate(timeout=timeout)
         code = proc.returncode
@@ -144,7 +144,8 @@ def sample_attempts(bench: Path, n: int, seed: int, since: str) -> list[tuple[Pa
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--bench-root", type=Path, default=DEFAULT_BENCH)
-    ap.add_argument("--candidate", default="lake", choices=["lake", "warm"])
+    ap.add_argument("--candidate", default="lake", choices=["lake", "warm", "turbo"])
+    ap.add_argument("--turbo-bin", default=os.environ.get("TURBO_LEAN_BIN", "turbo-lean"))
     ap.add_argument("--warm-bin", type=Path, default=Path(__file__).resolve().parent.parent / "tools/warm_lean/.lake/build/bin/warm-lean")
     ap.add_argument("--n", type=int, default=40)
     ap.add_argument("--runs", type=int, default=0, help="replay N whole runs in order instead of --n random attempts")
@@ -195,6 +196,11 @@ def main() -> int:
             shutil.rmtree(ws)
         shutil.copytree(base, ws, symlinks=True)
         worker = WarmWorker(ws, args.warm_bin, args.timeout) if args.candidate == "warm" else None
+        turbo_env = None
+        if args.candidate == "turbo":
+            # `turbo-lean eval` is a drop-in for `lean <file>`: same cwd, LEAN_PATH as `lake env` sets it.
+            lean_path = subprocess.run(["lake", "env", "printenv", "LEAN_PATH"], cwd=ws, capture_output=True, text=True).stdout.strip()
+            turbo_env = {**os.environ, "LEAN_PATH": lean_path}
         rows = []
         try:
             for idx, attempt in by_task[task_ref]:
@@ -202,6 +208,9 @@ def main() -> int:
                 a_code, a_out, a_t = run(["lake", "env", "lean", rel], ws, args.timeout)
                 if worker:
                     b_code, b_out, b_t = worker.check(rel)
+                elif args.candidate == "turbo":
+                    b_code, b_out, b_t = run([args.turbo_bin, "eval", "--timeout-ms", str(args.timeout * 1000), rel],
+                                             ws, args.timeout + 60, env=turbo_env)
                 else:
                     b_code, b_out, b_t = run(["lake", "env", "lean", rel], ws, args.timeout)
                 row = {
