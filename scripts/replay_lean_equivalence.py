@@ -149,6 +149,7 @@ def main() -> int:
     ap.add_argument("--warm-bin", type=Path, default=Path(__file__).resolve().parent.parent / "tools/warm_lean/.lake/build/bin/warm-lean")
     ap.add_argument("--n", type=int, default=40)
     ap.add_argument("--runs", type=int, default=0, help="replay N whole runs in order instead of --n random attempts")
+    ap.add_argument("--corpus", type=Path, help="replay exactly the attempts of a previous out dir's corpus.json (or rows.jsonl)")
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--since", default="20261009", help="only runs whose id starts at or after this date")
     ap.add_argument("--timeout", type=int, default=240)
@@ -165,8 +166,18 @@ def main() -> int:
 
     args.out.mkdir(parents=True, exist_ok=True)
     ws_root = args.out / "workspaces"
-    attempts = (sample_runs(args.bench_root, args.runs, args.seed, args.since) if args.runs
-                else sample_attempts(args.bench_root, args.n, args.seed, args.since))
+    if args.corpus:
+        # results/runs keeps growing while campaigns run, so a seed alone does not pin a corpus.
+        if args.corpus.name == "rows.jsonl":
+            items = [json.loads(l) for l in args.corpus.read_text().splitlines() if l.strip()]
+        else:
+            items = json.loads(args.corpus.read_text())
+        attempts = [(args.bench_root / r["attempt"], r["task_ref"]) for r in items]
+    else:
+        attempts = (sample_runs(args.bench_root, args.runs, args.seed, args.since) if args.runs
+                    else sample_attempts(args.bench_root, args.n, args.seed, args.since))
+    (args.out / "corpus.json").write_text(json.dumps(
+        [{"attempt": str(a.relative_to(args.bench_root)), "task_ref": t} for a, t in attempts], indent=1) + "\n")
     workspaces: dict[str, tuple[Path, str]] = {}
 
     def workspace_for(task_ref: str) -> tuple[Path, str]:
