@@ -45,18 +45,26 @@ def run(cmd: list[str], cwd: Path, timeout: int) -> tuple[int, str, float]:
 
 
 def sample_attempts(bench: Path, n: int, seed: int, since: str) -> list[tuple[Path, str]]:
-    rows = []
+    """Half intermediate attempts (mostly failing), half final submissions of solved runs."""
+    attempts, solved = [], []
     for run_dir in sorted((bench / "results" / "runs").iterdir()):
         if run_dir.name[:8] < since or not (run_dir / "run.json").is_file():
             continue
-        attempts = sorted((run_dir / "attempts").glob("*-check_proof.lean")) if (run_dir / "attempts").is_dir() else []
-        if not attempts:
+        run = json.loads((run_dir / "run.json").read_text())
+        task_ref = run.get("task_ref")
+        if not task_ref:
             continue
-        task_ref = json.loads((run_dir / "run.json").read_text()).get("task_ref")
-        if task_ref:
-            rows += [(a, task_ref) for a in attempts]
-    random.Random(seed).shuffle(rows)
-    return rows[:n]
+        if (run_dir / "attempts").is_dir():
+            attempts += [(a, task_ref) for a in sorted((run_dir / "attempts").glob("*-check_proof.lean"))]
+        targets = (run.get("classification") or {}).get("targets") or []
+        if targets and targets[0].get("final_class") == "SOLVED" and (run_dir / "submitted").is_dir():
+            solved += [(f, task_ref) for f in sorted((run_dir / "submitted").rglob("*.lean"))[:1]]
+    rng = random.Random(seed)
+    rng.shuffle(attempts)
+    rng.shuffle(solved)
+    picked = solved[: n // 2] + attempts[: n - min(n // 2, len(solved))]
+    rng.shuffle(picked)
+    return picked
 
 
 def main() -> int:
@@ -112,9 +120,11 @@ def main() -> int:
             "a_code": a_code, "b_code": b_code, "a_seconds": round(a_t, 1), "b_seconds": round(b_t, 1),
             "a_sha": hashlib.sha256(a_out.encode()).hexdigest(), "b_sha": hashlib.sha256(b_out.encode()).hexdigest(),
             "timeout": 124 in (a_code, b_code),
+            # A full disk or other host failure is not a property of the backend.
+            "infra": any("no space left" in o.lower() for o in (a_out, b_out)),
         }
         row["identical"] = row["a_code"] == row["b_code"] and row["a_sha"] == row["b_sha"]
-        if not row["identical"] and not row["timeout"]:
+        if not row["identical"] and not row["timeout"] and not row["infra"]:
             (args.out / "diffs").mkdir(exist_ok=True)
             (args.out / "diffs" / f"{idx:05d}.a.txt").write_text(a_out)
             (args.out / "diffs" / f"{idx:05d}.b.txt").write_text(b_out)
@@ -125,9 +135,11 @@ def main() -> int:
 
     with ThreadPoolExecutor(args.jobs) as ex:
         rows = list(ex.map(one, enumerate(attempts)))
-    compared = [r for r in rows if not r["timeout"]]
+    compared = [r for r in rows if not r["timeout"] and not r["infra"]]
     summary = {
-        "candidate": args.candidate, "attempts": len(rows), "timeouts": len(rows) - len(compared),
+        "candidate": args.candidate, "attempts": len(rows),
+        "timeouts": sum(r["timeout"] for r in rows), "infra": sum(r["infra"] and not r["timeout"] for r in rows),
+        "reference_passed": sum(r["a_code"] == 0 for r in compared),
         "identical": sum(r["identical"] for r in compared), "compared": len(compared),
         "verdict_agree": sum((r["a_code"] == 0) == (r["b_code"] == 0) for r in compared),
     }
