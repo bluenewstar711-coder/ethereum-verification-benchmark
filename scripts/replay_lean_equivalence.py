@@ -21,8 +21,11 @@ import json
 import os
 import random
 import shutil
+import statistics
 import subprocess
 import sys
+import tempfile
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -42,6 +45,77 @@ def run(cmd: list[str], cwd: Path, timeout: int) -> tuple[int, str, float]:
         out, err = proc.communicate()
         code = 124
     return code, (out + err).decode("utf-8", "replace"), time.time() - t0
+
+
+FALLBACK = -1
+
+
+class WarmWorker:
+    """`lake env warm-lean` in one workspace; restarted after a timeout or crash."""
+
+    def __init__(self, workspace: Path, binary: Path, timeout: int):
+        self.workspace, self.binary, self.timeout = workspace, binary, timeout
+        self.proc: subprocess.Popen | None = None
+
+    def _start(self) -> None:
+        self.proc = subprocess.Popen(["lake", "env", str(self.binary)], cwd=self.workspace, stdin=subprocess.PIPE,
+                                     stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, start_new_session=True)
+
+    def close(self) -> None:
+        if self.proc and self.proc.poll() is None:
+            os.killpg(self.proc.pid, 9)
+        self.proc = None
+
+    def check(self, rel: str) -> tuple[int, str, float]:
+        if self.proc is None or self.proc.poll() is not None:
+            self._start()
+        with tempfile.NamedTemporaryFile(prefix="warm-out-", delete=False) as fh:
+            out_path = fh.name
+        t0 = time.time()
+        reply: list[str] = []
+        reader = threading.Thread(target=lambda: reply.append(self.proc.stdout.readline()))
+        self.proc.stdin.write(f"{out_path}\t{rel}\n")
+        self.proc.stdin.flush()
+        reader.start()
+        reader.join(self.timeout)
+        elapsed = time.time() - t0
+        out = Path(out_path).read_text("utf-8", "replace") if Path(out_path).exists() else ""
+        os.unlink(out_path)
+        if reader.is_alive() or not reply or not reply[0]:
+            timed_out = reader.is_alive()
+            exit_code = self.proc.wait() if not timed_out else None
+            self.close()
+            if timed_out:
+                return 124, out + "\ntimeout", elapsed
+            # Lean's message reporter calls `IO.Process.exit 1` once `maxErrors` is hit; the
+            # `lean` binary stops at exactly the same point, so this output is the result.
+            if exit_code == 1 and "from option `maxErrors`) reached, exiting" in out:
+                return 1, out, elapsed
+            return FALLBACK, out, elapsed
+        status = reply[0].split()
+        if status[0] != "ok":
+            return FALLBACK, out, elapsed
+        return int(status[1]), out, elapsed
+
+
+def sample_runs(bench: Path, n_runs: int, seed: int, since: str) -> list[tuple[Path, str]]:
+    """Whole agent loops: every attempt of a run in order, then its final submission."""
+    runs = []
+    for run_dir in sorted((bench / "results" / "runs").iterdir()):
+        if run_dir.name[:8] < since or not (run_dir / "run.json").is_file() or not (run_dir / "attempts").is_dir():
+            continue
+        attempts = sorted((run_dir / "attempts").glob("*-check_proof.lean"),
+                          key=lambda p: int(p.name.rsplit("-fair-", 1)[1].split("-")[0]))
+        if len(attempts) >= 2:
+            runs.append((run_dir, attempts))
+    random.Random(seed).shuffle(runs)
+    picked = []
+    for run_dir, attempts in runs[:n_runs]:
+        task_ref = json.loads((run_dir / "run.json").read_text())["task_ref"]
+        picked += [(a, task_ref) for a in attempts]
+        final = sorted((run_dir / "submitted").rglob("*.lean"))[:1] if (run_dir / "submitted").is_dir() else []
+        picked += [(f, task_ref) for f in final]
+    return picked
 
 
 def sample_attempts(bench: Path, n: int, seed: int, since: str) -> list[tuple[Path, str]]:
@@ -70,8 +144,10 @@ def sample_attempts(bench: Path, n: int, seed: int, since: str) -> list[tuple[Pa
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--bench-root", type=Path, default=DEFAULT_BENCH)
-    ap.add_argument("--candidate", default="lake", choices=["lake"])
+    ap.add_argument("--candidate", default="lake", choices=["lake", "warm"])
+    ap.add_argument("--warm-bin", type=Path, default=Path(__file__).resolve().parent.parent / "tools/warm_lean/.lake/build/bin/warm-lean")
     ap.add_argument("--n", type=int, default=40)
+    ap.add_argument("--runs", type=int, default=0, help="replay N whole runs in order instead of --n random attempts")
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--since", default="20261009", help="only runs whose id starts at or after this date")
     ap.add_argument("--timeout", type=int, default=240)
@@ -88,7 +164,8 @@ def main() -> int:
 
     args.out.mkdir(parents=True, exist_ok=True)
     ws_root = args.out / "workspaces"
-    attempts = sample_attempts(args.bench_root, args.n, args.seed, args.since)
+    attempts = (sample_runs(args.bench_root, args.runs, args.seed, args.since) if args.runs
+                else sample_attempts(args.bench_root, args.n, args.seed, args.since))
     workspaces: dict[str, tuple[Path, str]] = {}
 
     def workspace_for(task_ref: str) -> tuple[Path, str]:
@@ -104,37 +181,56 @@ def main() -> int:
     for _, task_ref in attempts:
         workspace_for(task_ref)
 
-    def one(item: tuple[int, tuple[Path, str]]) -> dict:
-        idx, (attempt, task_ref) = item
+    by_task: dict[str, list[tuple[int, Path]]] = {}
+    for idx, (attempt, task_ref) in enumerate(attempts):
+        by_task.setdefault(task_ref, []).append((idx, attempt))
+
+    def task_lane(task_ref: str) -> list[dict]:
+        # One workspace and (for `warm`) one long-lived worker per task, fed the task's
+        # attempts one after another in the same file: this is the agent loop, so any
+        # state leaking between requests shows up as a diff.
         base, rel = workspace_for(task_ref)
-        ws = args.out / "scratch" / f"{idx:05d}"
+        ws = args.out / "scratch" / task_ref.replace("/", "__")
         if ws.exists():
             shutil.rmtree(ws)
         shutil.copytree(base, ws, symlinks=True)
-        shutil.copy2(attempt, ws / rel)
-        a_code, a_out, a_t = run(["lake", "env", "lean", rel], ws, args.timeout)
-        b_code, b_out, b_t = run(["lake", "env", "lean", rel], ws, args.timeout)
-        shutil.rmtree(ws, ignore_errors=True)
-        row = {
-            "attempt": str(attempt.relative_to(args.bench_root)), "task_ref": task_ref,
-            "a_code": a_code, "b_code": b_code, "a_seconds": round(a_t, 1), "b_seconds": round(b_t, 1),
-            "a_sha": hashlib.sha256(a_out.encode()).hexdigest(), "b_sha": hashlib.sha256(b_out.encode()).hexdigest(),
-            "timeout": 124 in (a_code, b_code),
-            # A full disk or other host failure is not a property of the backend.
-            "infra": any("no space left" in o.lower() for o in (a_out, b_out)),
-        }
-        row["identical"] = row["a_code"] == row["b_code"] and row["a_sha"] == row["b_sha"]
-        if not row["identical"] and not row["timeout"] and not row["infra"]:
-            (args.out / "diffs").mkdir(exist_ok=True)
-            (args.out / "diffs" / f"{idx:05d}.a.txt").write_text(a_out)
-            (args.out / "diffs" / f"{idx:05d}.b.txt").write_text(b_out)
-        with (args.out / "rows.jsonl").open("a") as fh:
-            fh.write(json.dumps(row) + "\n")
-        print(f"[{idx}] {task_ref} a={a_code}/{a_t:.0f}s b={b_code}/{b_t:.0f}s identical={row['identical']}", flush=True)
-        return row
+        worker = WarmWorker(ws, args.warm_bin, args.timeout) if args.candidate == "warm" else None
+        rows = []
+        try:
+            for idx, attempt in by_task[task_ref]:
+                shutil.copy2(attempt, ws / rel)
+                a_code, a_out, a_t = run(["lake", "env", "lean", rel], ws, args.timeout)
+                if worker:
+                    b_code, b_out, b_t = worker.check(rel)
+                else:
+                    b_code, b_out, b_t = run(["lake", "env", "lean", rel], ws, args.timeout)
+                row = {
+                    "attempt": str(attempt.relative_to(args.bench_root)), "task_ref": task_ref,
+                    "a_code": a_code, "b_code": b_code, "a_seconds": round(a_t, 1), "b_seconds": round(b_t, 1),
+                    "a_sha": hashlib.sha256(a_out.encode()).hexdigest(), "b_sha": hashlib.sha256(b_out.encode()).hexdigest(),
+                    "timeout": 124 in (a_code, b_code),
+                    # A full disk or other host failure is not a property of the backend.
+                    "infra": any("no space left" in o.lower() for o in (a_out, b_out)),
+                    "fallback": b_code == FALLBACK,
+                }
+                row["identical"] = row["a_code"] == row["b_code"] and row["a_sha"] == row["b_sha"]
+                if not row["identical"] and not row["timeout"] and not row["infra"]:
+                    (args.out / "diffs").mkdir(exist_ok=True)
+                    (args.out / "diffs" / f"{idx:05d}.a.txt").write_text(a_out)
+                    (args.out / "diffs" / f"{idx:05d}.b.txt").write_text(b_out)
+                with lock, (args.out / "rows.jsonl").open("a") as fh:
+                    fh.write(json.dumps(row) + "\n")
+                print(f"[{idx}] {task_ref} a={a_code}/{a_t:.0f}s b={b_code}/{b_t:.1f}s identical={row['identical']}", flush=True)
+                rows.append(row)
+        finally:
+            if worker:
+                worker.close()
+            shutil.rmtree(ws, ignore_errors=True)
+        return rows
 
+    lock = threading.Lock()
     with ThreadPoolExecutor(args.jobs) as ex:
-        rows = list(ex.map(one, enumerate(attempts)))
+        rows = [r for lane in ex.map(task_lane, list(by_task)) for r in lane]
     compared = [r for r in rows if not r["timeout"] and not r["infra"]]
     summary = {
         "candidate": args.candidate, "attempts": len(rows),
@@ -142,6 +238,9 @@ def main() -> int:
         "reference_passed": sum(r["a_code"] == 0 for r in compared),
         "identical": sum(r["identical"] for r in compared), "compared": len(compared),
         "verdict_agree": sum((r["a_code"] == 0) == (r["b_code"] == 0) for r in compared),
+        "fallbacks": sum(r["fallback"] for r in rows),
+        "median_a_seconds": statistics.median([r["a_seconds"] for r in compared]) if compared else None,
+        "median_b_seconds": statistics.median([r["b_seconds"] for r in compared]) if compared else None,
     }
     (args.out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary))
